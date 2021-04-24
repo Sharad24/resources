@@ -1,8 +1,10 @@
 ---
-title: "About this blog"
+title: "About this site"
 description: |
-  Some additional details about the blog
+  Some additional details about the site
 ---
+This site is meant to be a collection of informative resources that I read centered largely around Machine Learning.
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)

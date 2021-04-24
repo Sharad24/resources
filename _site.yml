@@ -3,6 +3,12 @@ title: "resources"
 description: |
   resources
 output_dir: "."
+base_url: https://resources.sharadchitlang.ai
+collections:
+  posts:
+    categories: true
+    categories_metadata: true
+    authors_metadata: true
 navbar:
   right:
     - text: "Home"

@@ -2,6 +2,8 @@
 title: "resources"
 site: distill::distill_website
 listing: posts
+collections:
+  posts:
+    feed_items_max: 50
 ---
 
-Hello
