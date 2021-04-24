@@ -1,6 +1,6 @@
 ---
 title: "resources"
 site: distill::distill_website
-listing: _posts
+listing: posts
 ---
 

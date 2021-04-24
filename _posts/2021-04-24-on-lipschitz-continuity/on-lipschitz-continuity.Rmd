@@ -1,20 +1,62 @@
 ---
 title: "Lipschitz Continuity"
 description: |
-  A new article created using the Distill format.
+  On Lipschitz Continuity
 author:
   - name: Sharad Chitlangia
     url: https://www.sharadchitlang.ai
-    affiliation: APPCAIR
-    affiliation_url: https://appciar.com
-date: "24th April 2021"
+    affiliation: Dept. of EEE & APPCAIR, BITS Pilani 
+date: April-20-2021
 categories:
   - Math
+output: 
+  distill::distill_article:
+    self_contained: false
 ---
 
-Lipschitz Continuity
+### Theorem
 
-Distill is a publication format for scientific and technical writing, native to the web. 
+A function $f : I \rightarrow \mathbb{R}$ over some set $I \subseteq \mathbb{R}$ is called Lipschitz-continuous
+if there exists some $L \geq 0$ such that 
 
-Learn more about using Distill for R Markdown at <https://rstudio.github.io/distill>.
+$$
+|f(x)\ -\ f(y)| \leq L (x\ -\ y)
+$$
+
+where, $x,\ y\ \epsilon\ I$
+
+
+If such a constant $L$ exists, then we call $L$ as the Lipschitz Constant of $f$ over $I$.
+
+Equivalently, $f$ is Lipschitz continuous is there exists $L \geq 0$ such that 
+
+$$
+\frac{|f(x)\ -\ f(y)|}{x\ -\ y} \leq L
+$$
+
+where, $x,\ y\ \epsilon\ I,\ x\ \neq\ y$
+
+### Lemma
+
+A function $f\ :\ I\ \rightarrow \ \mathbb{R}$ is Lipschitz-continuous with Lipschitz-constant $L$ if and only if 
+$$
+f(x)\ -\ L |x\ -\ y|\ \leq \ f(y) \ \leq \ f(x) \ + \ L |x\ -\ y|
+$$
+
+#### Proof
+
+If $f$ if Lipschitz-constinuous with constant $L$ then,
+
+$$
+|f(x)\ -\ f(y)| \leq L (x\ -\ y)
+$$
+
+On resolving the modulus we can get two equations. 
+
+The first one, $$f(x)\ -\ f(y) \leq L (x\ -\ y)$$
+which equivalently is $$f(x)\ -\ L |x\ -\ y|\ \leq \ f(y)$$
+
+and the second one, $$f(y)\ -\ f(x) \leq L (x\ -\ y)$$
+which is $$f(y)\ \leq \ f(x) +\ L |x\ -\ y|$$
+
 

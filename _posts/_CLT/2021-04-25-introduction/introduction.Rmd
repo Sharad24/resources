@@ -1,0 +1,32 @@
+---
+title: "Computational Learning Theory Introduction"
+description: |
+  Introduction to Computational Learning Theory
+author:
+  - name: Sharad Chitlangia
+    url: https://www.sharadchitlang.ai
+    affiliation: Dept. of EEE & APPCAIR, BITS Pilani 
+date: 04-24-2021
+categories:
+  - Theory
+output: 
+  distill::distill_article:
+    self_contained: false
+---
+
+
+#### What is learning theory?
+
+The goal of learning theory is to be able to develop formal models to analyse complexity of learning systems.
+Such as:
+
+  * How much data do we need to learn? 
+  * How much computational resources are necessary for learning?
+  * Are there any hard problems?
+
+Computational Learning theory also helps us in answerning burning questions in modern machine learning, such as:
+
+  * How can we learn in the presence of noisy data?
+  * What can we learn when data is obtained in an online manner?
+  * How can we do useful machine learning when the data is noisy?
+  * Can we learn when data and computational power is distributed?

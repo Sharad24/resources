@@ -1,1 +1,40 @@
-[]
+[
+  {
+    "path": "posts/2021-04-24-on-lipschitz-continuity/",
+    "title": "Lipschitz Continuity",
+    "description": "On Lipschitz Continuity",
+    "author": [
+      {
+        "name": "Sharad Chitlangia",
+        "url": "https://www.sharadchitlang.ai"
+      }
+    ],
+    "date": "2021-04-24",
+    "categories": [
+      "Math"
+    ],
+    "contents": "\nTheorem\nA function \\(f : I \\rightarrow \\mathbb{R}\\) over some set \\(I \\subseteq \\mathbb{R}\\) is called Lipschitz-continuous if there exists some \\(L \\geq 0\\) such that\n\\[\n|f(x)\\ -\\ f(y)| \\leq L (x\\ -\\ y)\n\\]\nwhere, \\(x,\\ y\\ \\epsilon\\ I\\)\nIf such a constant \\(L\\) exists, then we call \\(L\\) as the Lipschitz Constant of \\(f\\) over \\(I\\).\nEquivalently, \\(f\\) is Lipschitz continuous is there exists \\(L \\geq 0\\) such that\n\\[\n\\frac{|f(x)\\ -\\ f(y)|}{x\\ -\\ y} \\leq L\n\\]\nwhere, \\(x,\\ y\\ \\epsilon\\ I,\\ x\\ \\neq\\ y\\)\nLemma\nA function \\(f\\ :\\ I\\ \\rightarrow \\ \\mathbb{R}\\) is Lipschitz-continuous with Lipschitz-constant \\(L\\) if and only if \\[\nf(x)\\ -\\ L |x\\ -\\ y|\\ \\leq \\ f(y) \\ \\leq \\ f(x) \\ + \\ L |x\\ -\\ y|\n\\]\nProof\nIf \\(f\\) if Lipschitz-constinuous with constant \\(L\\) then,\n\\[\n|f(x)\\ -\\ f(y)| \\leq L (x\\ -\\ y)\n\\]\nOn resolving the modulus we can get two equations.\nThe first one, \\[f(x)\\ -\\ f(y) \\leq L (x\\ -\\ y)\\] which equivalently is \\[f(x)\\ -\\ L |x\\ -\\ y|\\ \\leq \\ f(y)\\]\nand the second one, \\[f(y)\\ -\\ f(x) \\leq L (x\\ -\\ y)\\] which is \\[f(y)\\ \\leq \\ f(x) -\\ L |x\\ -\\ y|\\]\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-04-25T00:51:49+05:30",
+    "input_file": {}
+  },
+  {
+    "path": "posts/_CLT/2021-04-25-introduction/",
+    "title": "Computational Learning Theory Introduction",
+    "description": "Introduction to Computational Learning Theory",
+    "author": [
+      {
+        "name": "Sharad Chitlangia",
+        "url": "https://www.sharadchitlang.ai"
+      }
+    ],
+    "date": "2021-04-24",
+    "categories": [
+      "Theory"
+    ],
+    "contents": "\nWhat is learning theory?\nThe goal of learning theory is to be able to develop formal models to analyse complexity of learning systems. Such as:\nHow much data do we need to learn?\nHow much computational resources are necessary for learning?\nAre there any hard problems?\nComputational Learning theory also helps us in answerning burning questions in modern machine learning, such as:\nHow can we learn in the presence of noisy data?\nWhat can we learn when data is obtained in an online manner?\nHow can we do useful machine learning when the data is noisy?\nCan we learn when data and computational power is distributed?\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-04-25T01:34:59+05:30",
+    "input_file": {}
+  }
+]

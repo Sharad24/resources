@@ -6,15 +6,15 @@
       "description": "Some additional details about the site",
       "author": [],
       "contents": "\nThis site is meant to be a collection of informative resources that I read centered largely around Machine Learning.\n\n\n\n",
-      "last_modified": "2021-04-24T23:59:53+05:30"
+      "last_modified": "2021-04-25T01:40:36+05:30"
     },
     {
       "path": "index.html",
       "title": "resources",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-04-24T23:59:54+05:30"
+      "last_modified": "2021-04-25T01:40:36+05:30"
     }
   ],
-  "collections": ["posts/posts.json", "_posts/_posts.json"]
+  "collections": ["posts/posts.json"]
 }
