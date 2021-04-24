@@ -1,0 +1,15 @@
+---
+title: "Law of Large Numbers"
+description: |
+  Law of Large Numbers
+author:
+  - name: Sharad Chitlangia
+    url: https://www.sharadchitlang.ai
+    affiliation: Dept. of EEE & APPCAIR, BITS Pilani 
+date: 04-25-2021
+categories:
+  - Course - Statistics
+output: 
+  distill::distill_article:
+    self_contained: false
+---

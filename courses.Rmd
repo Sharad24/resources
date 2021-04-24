@@ -1,0 +1,13 @@
+---
+title: "Coursework Notes"
+description: |
+  Notes from some of the Courses I've done
+---
+
+![Computational Learning Theory](./CLT.html)
+![Machine Learning](./ML.html)
+![Statistics](./stats.html)
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```

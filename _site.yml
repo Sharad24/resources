@@ -1,8 +1,9 @@
-name: "resources"
-title: "resources"
+name: "Resources"
+title: "Resources"
 description: |
-  resources
+  Resources
 output_dir: "docs"
+theme: test.css
 base_url: https://resources.sharadchitlang.ai
 collections:
   posts:
@@ -13,4 +14,12 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
+    - text: "Courses"
+      menu:
+        - text: "Computational Learning Theory"
+          href: CLT.html
+        - text: "Machine Learning"
+          href: ML.html
+        - text: "Statistics"
+          href: stats.html
 output: distill::distill_article

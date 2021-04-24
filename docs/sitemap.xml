@@ -1,12 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
+    <loc>https://resources.sharadchitlang.ai/CLT.html</loc>
+    <lastmod>2021-04-25T02:57:40+05:30</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/ML.html</loc>
+    <lastmod>2021-04-25T03:08:47+05:30</lastmod>
+  </url>
+  <url>
     <loc>https://resources.sharadchitlang.ai/about.html</loc>
     <lastmod>2021-04-24T23:10:33+05:30</lastmod>
   </url>
   <url>
+    <loc>https://resources.sharadchitlang.ai/courses.html</loc>
+    <lastmod>2021-04-25T02:56:31+05:30</lastmod>
+  </url>
+  <url>
     <loc>https://resources.sharadchitlang.ai/</loc>
-    <lastmod>2021-04-25T01:37:26+05:30</lastmod>
+    <lastmod>2021-04-25T02:51:11+05:30</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/stats.html</loc>
+    <lastmod>2021-04-25T03:08:04+05:30</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/_ML/2021-04-25-linear-regression/</loc>
+    <lastmod>2021-04-25T03:06:05+05:30</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/_ML/2021-04-25-logistic-regression/</loc>
+    <lastmod>2021-04-25T03:06:18+05:30</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/_Statistics/2021-04-25-central-limit-theorem/</loc>
+    <lastmod>2021-04-25T03:06:32+05:30</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/_Statistics/2021-04-25-law-of-large-numbers/</loc>
+    <lastmod>2021-04-25T03:06:41+05:30</lastmod>
   </url>
   <url>
     <loc>https://resources.sharadchitlang.ai/posts/2021-04-24-on-lipschitz-continuity/</loc>
@@ -14,10 +46,10 @@
   </url>
   <url>
     <loc>https://resources.sharadchitlang.ai/posts/_CLT/2021-04-25-introduction/</loc>
-    <lastmod>2021-04-25T01:53:53+05:30</lastmod>
+    <lastmod>2021-04-25T01:58:17+05:30</lastmod>
   </url>
   <url>
     <loc>https://resources.sharadchitlang.ai/posts/_CLT/2021-04-25-pac/</loc>
-    <lastmod>2021-04-25T01:54:17+05:30</lastmod>
+    <lastmod>2021-04-25T01:57:42+05:30</lastmod>
   </url>
 </urlset>

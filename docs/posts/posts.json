@@ -1,5 +1,81 @@
 [
   {
+    "path": "posts/_ML/2021-04-25-linear-regression/",
+    "title": "Linear Regression",
+    "description": "Linear Regression",
+    "author": [
+      {
+        "name": "Sharad Chitlangia",
+        "url": "https://www.sharadchitlang.ai"
+      }
+    ],
+    "date": "2021-04-25",
+    "categories": [
+      "Course - Machine Learning"
+    ],
+    "contents": "\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-04-25T03:06:05+05:30",
+    "input_file": {}
+  },
+  {
+    "path": "posts/_ML/2021-04-25-logistic-regression/",
+    "title": "Logistic Regression",
+    "description": "Logistic Regression",
+    "author": [
+      {
+        "name": "Sharad Chitlangia",
+        "url": "https://www.sharadchitlang.ai"
+      }
+    ],
+    "date": "2021-04-25",
+    "categories": [
+      "Course - Machine Learning"
+    ],
+    "contents": "\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-04-25T03:06:18+05:30",
+    "input_file": {}
+  },
+  {
+    "path": "posts/_Statistics/2021-04-25-central-limit-theorem/",
+    "title": "Central Limit Theorem",
+    "description": "Central Limit Theorem",
+    "author": [
+      {
+        "name": "Sharad Chitlangia",
+        "url": "https://www.sharadchitlang.ai"
+      }
+    ],
+    "date": "2021-04-25",
+    "categories": [
+      "Course - Statistics"
+    ],
+    "contents": "\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-04-25T03:06:32+05:30",
+    "input_file": {}
+  },
+  {
+    "path": "posts/_Statistics/2021-04-25-law-of-large-numbers/",
+    "title": "Law of Large Numbers",
+    "description": "Law of Large Numbers",
+    "author": [
+      {
+        "name": "Sharad Chitlangia",
+        "url": "https://www.sharadchitlang.ai"
+      }
+    ],
+    "date": "2021-04-25",
+    "categories": [
+      "Course - Statistics"
+    ],
+    "contents": "\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-04-25T03:06:41+05:30",
+    "input_file": {}
+  },
+  {
     "path": "posts/2021-04-24-on-lipschitz-continuity/",
     "title": "Lipschitz Continuity",
     "description": "On Lipschitz Continuity",
@@ -31,12 +107,12 @@
     "date": "2021-04-24",
     "categories": [
       "Theory",
-      "Course"
+      "Course - Computational Learning Theory"
     ],
     "contents": "\nWhat is learning theory?\nThe goal of learning theory is to be able to develop formal models to analyse complexity of learning systems. Such as:\nHow much data do we need to learn?\nHow much computational resources are necessary for learning?\nAre there any hard problems?\nComputational Learning theory also helps us in answerning burning questions in modern machine learning, such as:\nHow can we learn in the presence of noisy data?\nWhat can we learn when data is obtained in an online manner?\nHow can we do useful machine learning when the data is noisy?\nCan we learn when data and computational power is distributed?\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-04-25T01:53:53+05:30",
-    "input_file": "introduction.utf8.md"
+    "last_modified": "2021-04-25T01:58:17+05:30",
+    "input_file": {}
   },
   {
     "path": "posts/_CLT/2021-04-25-pac/",
@@ -51,11 +127,11 @@
     "date": "2021-04-24",
     "categories": [
       "Theory",
-      "Course"
+      "Course - Computational Learning Theory"
     ],
     "contents": "\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-04-25T01:54:17+05:30",
-    "input_file": "pac.utf8.md"
+    "last_modified": "2021-04-25T01:57:42+05:30",
+    "input_file": {}
   }
 ]

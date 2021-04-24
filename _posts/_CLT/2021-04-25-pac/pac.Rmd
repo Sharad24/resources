@@ -8,8 +8,7 @@ author:
     affiliation: Dept. of EEE & APPCAIR, BITS Pilani 
 date: 04-24-2021
 categories:
-  - Theory
-  - Course
+  - Course - Computational Learning Theory
 output: 
   distill::distill_article:
     self_contained: false

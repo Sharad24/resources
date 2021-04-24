@@ -1,6 +1,8 @@
 ---
-title: "resources"
+title: "Resources"
 site: distill::distill_website
-listing: posts
+listing: 
+  posts:
+    - 2021-04-24-on-lipschitz-continuity
 ---
 

@@ -1,0 +1,15 @@
+---
+title: "Central Limit Theorem"
+description: |
+  Central Limit Theorem
+author:
+  - name: Sharad Chitlangia
+    url: https://www.sharadchitlang.ai
+    affiliation: Dept. of EEE & APPCAIR, BITS Pilani 
+date: 04-25-2021
+categories:
+  - Course - Statistics
+output: 
+  distill::distill_article:
+    self_contained: false
+---

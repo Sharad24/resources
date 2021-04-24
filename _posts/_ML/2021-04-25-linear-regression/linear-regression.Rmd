@@ -1,0 +1,15 @@
+---
+title: "Linear Regression"
+description: |
+  Linear Regression
+author:
+  - name: Sharad Chitlangia
+    url: https://www.sharadchitlang.ai
+    affiliation: Dept. of EEE & APPCAIR, BITS Pilani 
+date: 04-25-2021
+categories:
+  - Course - Machine Learning
+output: 
+  distill::distill_article:
+    self_contained: false
+---
