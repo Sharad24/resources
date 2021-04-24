@@ -23,7 +23,18 @@
       <link>https://resources.sharadchitlang.ai/posts/_CLT/2021-04-25-introduction</link>
       <description>Introduction to Computational Learning Theory</description>
       <category>Theory</category>
+      <category>Course</category>
       <guid>https://resources.sharadchitlang.ai/posts/_CLT/2021-04-25-introduction</guid>
+      <pubDate>Sat, 24 Apr 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Probably Approximate Learning</title>
+      <dc:creator>Sharad Chitlangia</dc:creator>
+      <link>https://resources.sharadchitlang.ai/posts/_CLT/2021-04-25-pac</link>
+      <description>The Probably Approximate Learning Framework in Computational Learning Theory</description>
+      <category>Theory</category>
+      <category>Course</category>
+      <guid>https://resources.sharadchitlang.ai/posts/_CLT/2021-04-25-pac</guid>
       <pubDate>Sat, 24 Apr 2021 00:00:00 +0000</pubDate>
     </item>
   </channel>

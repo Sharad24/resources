@@ -1,0 +1,16 @@
+---
+title: "Probably Approximate Learning"
+description: |
+  The Probably Approximate Learning Framework in Computational Learning Theory
+author:
+  - name: Sharad Chitlangia
+    url: https://www.sharadchitlang.ai
+    affiliation: Dept. of EEE & APPCAIR, BITS Pilani 
+date: 04-24-2021
+categories:
+  - Theory
+  - Course
+output: 
+  distill::distill_article:
+    self_contained: false
+---

@@ -30,11 +30,32 @@
     ],
     "date": "2021-04-24",
     "categories": [
-      "Theory"
+      "Theory",
+      "Course"
     ],
     "contents": "\nWhat is learning theory?\nThe goal of learning theory is to be able to develop formal models to analyse complexity of learning systems. Such as:\nHow much data do we need to learn?\nHow much computational resources are necessary for learning?\nAre there any hard problems?\nComputational Learning theory also helps us in answerning burning questions in modern machine learning, such as:\nHow can we learn in the presence of noisy data?\nWhat can we learn when data is obtained in an online manner?\nHow can we do useful machine learning when the data is noisy?\nCan we learn when data and computational power is distributed?\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-04-25T01:34:59+05:30",
-    "input_file": {}
+    "last_modified": "2021-04-25T01:53:53+05:30",
+    "input_file": "introduction.utf8.md"
+  },
+  {
+    "path": "posts/_CLT/2021-04-25-pac/",
+    "title": "Probably Approximate Learning",
+    "description": "The Probably Approximate Learning Framework in Computational Learning Theory",
+    "author": [
+      {
+        "name": "Sharad Chitlangia",
+        "url": "https://www.sharadchitlang.ai"
+      }
+    ],
+    "date": "2021-04-24",
+    "categories": [
+      "Theory",
+      "Course"
+    ],
+    "contents": "\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-04-25T01:54:17+05:30",
+    "input_file": "pac.utf8.md"
   }
 ]

@@ -9,6 +9,7 @@ author:
 date: 04-24-2021
 categories:
   - Theory
+  - Course
 output: 
   distill::distill_article:
     self_contained: false
