@@ -2,13 +2,11 @@ name: "resources"
 title: "resources"
 description: |
   resources
-output_dir: "."
+output_dir: "docs/"
 base_url: https://resources.sharadchitlang.ai
 collections:
   posts:
     categories: true
-    categories_metadata: true
-    authors_metadata: true
 navbar:
   right:
     - text: "Home"

@@ -4,7 +4,7 @@
       "path": "HOW_TO_GENERATE_HTML.html",
       "author": [],
       "contents": "\n:x\nlibrary(rmarkdown)\nrender_site()\n\n\n",
-      "last_modified": "2021-04-24T23:27:06+05:30"
+      "last_modified": "2021-04-24T23:32:49+05:30"
     },
     {
       "path": "about.html",
@@ -12,14 +12,14 @@
       "description": "Some additional details about the site",
       "author": [],
       "contents": "\nThis site is meant to be a collection of informative resources that I read centered largely around Machine Learning.\n\n\n\n",
-      "last_modified": "2021-04-24T23:27:07+05:30"
+      "last_modified": "2021-04-24T23:32:50+05:30"
     },
     {
       "path": "index.html",
       "title": "resources",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-04-24T23:27:07+05:30"
+      "last_modified": "2021-04-24T23:32:50+05:30"
     }
   ],
   "collections": ["posts/posts.json"]
