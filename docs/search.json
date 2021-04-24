@@ -5,14 +5,14 @@
       "title": "Computational Learning Theory",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-04-25T03:08:59+05:30"
+      "last_modified": "2021-04-25T03:13:33+05:30"
     },
     {
       "path": "ML.html",
       "title": "Machine Learning",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-04-25T03:09:00+05:30"
+      "last_modified": "2021-04-25T03:13:34+05:30"
     },
     {
       "path": "about.html",
@@ -20,7 +20,7 @@
       "description": "Some additional details about the site",
       "author": [],
       "contents": "\nThis site is meant to be a collection of informative resources that I read centered largely around Machine Learning.\n\n\n\n",
-      "last_modified": "2021-04-25T03:09:01+05:30"
+      "last_modified": "2021-04-25T03:13:35+05:30"
     },
     {
       "path": "courses.html",
@@ -28,21 +28,21 @@
       "description": "Notes from some of the Courses I've done",
       "author": [],
       "contents": "\n\n\n\n\n",
-      "last_modified": "2021-04-25T03:09:02+05:30"
+      "last_modified": "2021-04-25T03:13:36+05:30"
     },
     {
       "path": "index.html",
       "title": "Resources",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-04-25T03:09:03+05:30"
+      "last_modified": "2021-04-25T03:13:37+05:30"
     },
     {
       "path": "stats.html",
       "title": "Statistics",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-04-25T03:09:04+05:30"
+      "last_modified": "2021-04-25T03:13:38+05:30"
     }
   ],
   "collections": ["posts/posts.json"]

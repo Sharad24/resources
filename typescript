@@ -1,0 +1,4 @@
+setwd("Desktop/Others/github/resources")
+create_post("","")
+render("")
+render_site("")
