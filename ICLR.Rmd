@@ -2,5 +2,5 @@
 title: "Notes from the International Conference on Learning Representations 2021"
 listing:
   posts:
-    - _ICLR/2021-05-03-fedbn
+    - 2021-05-03-fedbn
 ---

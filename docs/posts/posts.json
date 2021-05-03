@@ -1,44 +1,6 @@
 [
   {
-    "path": "posts/_ML/2021-04-25-linear-regression/",
-    "title": "Linear Regression",
-    "description": "Linear Regression",
-    "author": [
-      {
-        "name": "Sharad Chitlangia",
-        "url": "https://www.sharadchitlang.ai"
-      }
-    ],
-    "date": "2021-04-25",
-    "categories": [
-      "Course - Machine Learning"
-    ],
-    "contents": "\n\n\n\n",
-    "preview": {},
-    "last_modified": "2021-04-25T03:06:05+05:30",
-    "input_file": {}
-  },
-  {
-    "path": "posts/_ML/2021-04-25-logistic-regression/",
-    "title": "Logistic Regression",
-    "description": "Logistic Regression",
-    "author": [
-      {
-        "name": "Sharad Chitlangia",
-        "url": "https://www.sharadchitlang.ai"
-      }
-    ],
-    "date": "2021-04-25",
-    "categories": [
-      "Course - Machine Learning"
-    ],
-    "contents": "\n\n\n\n",
-    "preview": {},
-    "last_modified": "2021-04-25T03:06:18+05:30",
-    "input_file": {}
-  },
-  {
-    "path": "posts/_Statistics/2021-04-25-central-limit-theorem/",
+    "path": "posts/2021-04-25-central-limit-theorem/",
     "title": "Central Limit Theorem",
     "description": "Central Limit Theorem",
     "author": [
@@ -57,7 +19,7 @@
     "input_file": {}
   },
   {
-    "path": "posts/_Statistics/2021-04-25-law-of-large-numbers/",
+    "path": "posts/2021-04-25-law-of-large-numbers/",
     "title": "Law of Large Numbers",
     "description": "Law of Large Numbers",
     "author": [
@@ -73,6 +35,44 @@
     "contents": "\n\n\n\n",
     "preview": {},
     "last_modified": "2021-04-25T03:06:41+05:30",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-04-25-linear-regression/",
+    "title": "Linear Regression",
+    "description": "Linear Regression",
+    "author": [
+      {
+        "name": "Sharad Chitlangia",
+        "url": "https://www.sharadchitlang.ai"
+      }
+    ],
+    "date": "2021-04-25",
+    "categories": [
+      "Course - Machine Learning"
+    ],
+    "contents": "\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-04-25T03:06:05+05:30",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-04-25-logistic-regression/",
+    "title": "Logistic Regression",
+    "description": "Logistic Regression",
+    "author": [
+      {
+        "name": "Sharad Chitlangia",
+        "url": "https://www.sharadchitlang.ai"
+      }
+    ],
+    "date": "2021-04-25",
+    "categories": [
+      "Course - Machine Learning"
+    ],
+    "contents": "\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-04-25T03:06:18+05:30",
     "input_file": {}
   },
   {
@@ -135,7 +135,7 @@
     "input_file": {}
   },
   {
-    "path": "posts/_ICLR/2021-05-03-fedbn/",
+    "path": "posts/2021-05-03-fedbn/",
     "title": "FedBN",
     "description": "FedBN",
     "author": [
@@ -154,7 +154,7 @@
     "input_file": {}
   },
   {
-    "path": "posts/_metal/2021-05-03-reptile/",
+    "path": "posts/2021-05-03-reptile/",
     "title": "REPTILE",
     "description": "Reptile",
     "author": [

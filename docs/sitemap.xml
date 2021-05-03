@@ -6,11 +6,11 @@
   </url>
   <url>
     <loc>https://resources.sharadchitlang.ai/ICLR.html</loc>
-    <lastmod>2021-05-03T14:25:46+05:30</lastmod>
+    <lastmod>2021-05-03T16:20:38+05:30</lastmod>
   </url>
   <url>
     <loc>https://resources.sharadchitlang.ai/ML.html</loc>
-    <lastmod>2021-04-25T03:08:47+05:30</lastmod>
+    <lastmod>2021-05-03T16:20:17+05:30</lastmod>
   </url>
   <url>
     <loc>https://resources.sharadchitlang.ai/about.html</loc>
@@ -26,27 +26,27 @@
   </url>
   <url>
     <loc>https://resources.sharadchitlang.ai/metal.html</loc>
-    <lastmod>2021-05-03T14:43:33+05:30</lastmod>
+    <lastmod>2021-05-03T16:20:21+05:30</lastmod>
   </url>
   <url>
     <loc>https://resources.sharadchitlang.ai/stats.html</loc>
-    <lastmod>2021-04-25T03:08:04+05:30</lastmod>
+    <lastmod>2021-05-03T16:20:10+05:30</lastmod>
   </url>
   <url>
-    <loc>https://resources.sharadchitlang.ai/posts/_ML/2021-04-25-linear-regression/</loc>
-    <lastmod>2021-04-25T03:06:05+05:30</lastmod>
-  </url>
-  <url>
-    <loc>https://resources.sharadchitlang.ai/posts/_ML/2021-04-25-logistic-regression/</loc>
-    <lastmod>2021-04-25T03:06:18+05:30</lastmod>
-  </url>
-  <url>
-    <loc>https://resources.sharadchitlang.ai/posts/_Statistics/2021-04-25-central-limit-theorem/</loc>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-04-25-central-limit-theorem/</loc>
     <lastmod>2021-04-25T03:06:32+05:30</lastmod>
   </url>
   <url>
-    <loc>https://resources.sharadchitlang.ai/posts/_Statistics/2021-04-25-law-of-large-numbers/</loc>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-04-25-law-of-large-numbers/</loc>
     <lastmod>2021-04-25T03:06:41+05:30</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-04-25-linear-regression/</loc>
+    <lastmod>2021-04-25T03:06:05+05:30</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-04-25-logistic-regression/</loc>
+    <lastmod>2021-04-25T03:06:18+05:30</lastmod>
   </url>
   <url>
     <loc>https://resources.sharadchitlang.ai/posts/2021-04-24-on-lipschitz-continuity/</loc>
@@ -61,11 +61,11 @@
     <lastmod>2021-04-25T01:57:42+05:30</lastmod>
   </url>
   <url>
-    <loc>https://resources.sharadchitlang.ai/posts/_ICLR/2021-05-03-fedbn/</loc>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-05-03-fedbn/</loc>
     <lastmod>2021-05-03T14:15:16+05:30</lastmod>
   </url>
   <url>
-    <loc>https://resources.sharadchitlang.ai/posts/_metal/2021-05-03-reptile/</loc>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-05-03-reptile/</loc>
     <lastmod>2021-05-03T14:43:39+05:30</lastmod>
   </url>
 </urlset>

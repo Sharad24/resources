@@ -2,6 +2,6 @@
 title: "Machine Learning"
 listing:
   posts:
-    - _ML/2021-04-25-linear-regression
-    - _ML/2021-04-25-logistic-regression
+    - 2021-04-25-linear-regression
+    - 2021-04-25-logistic-regression
 ---

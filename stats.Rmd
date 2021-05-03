@@ -2,6 +2,6 @@
 title: "Statistics"
 listing:
   posts:
-    - _Statistics/2021-04-25-central-limit-theorem
-    - _Statistics/2021-04-25-law-of-large-numbers
+    - 2021-04-25-central-limit-theorem
+    - 2021-04-25-law-of-large-numbers
 ---

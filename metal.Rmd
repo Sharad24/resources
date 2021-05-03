@@ -2,5 +2,5 @@
 title: "Meta Learning"
 listing:
   posts:
-    - _metal/2021-05-03-reptile
+    - 2021-05-03-reptile
 ---
