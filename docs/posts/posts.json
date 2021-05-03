@@ -95,7 +95,7 @@
     "input_file": {}
   },
   {
-    "path": "posts/_CLT/2021-04-25-introduction/",
+    "path": "posts/2021-04-25-introduction/",
     "title": "Computational Learning Theory Introduction",
     "description": "Introduction to Computational Learning Theory",
     "author": [
@@ -115,7 +115,7 @@
     "input_file": {}
   },
   {
-    "path": "posts/_CLT/2021-04-25-pac/",
+    "path": "posts/2021-04-25-pac/",
     "title": "Probably Approximate Learning",
     "description": "The Probably Approximate Learning Framework in Computational Learning Theory",
     "author": [
