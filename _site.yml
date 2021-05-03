@@ -22,4 +22,8 @@ navbar:
           href: ML.html
         - text: "Statistics"
           href: stats.html
+    - text: "Conferences"
+      menu: 
+        - text: "ICLR 2021"
+          href: ICLR.html
 output: distill::distill_article

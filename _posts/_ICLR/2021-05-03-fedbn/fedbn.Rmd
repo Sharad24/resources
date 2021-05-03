@@ -1,0 +1,18 @@
+---
+title: "FedBN"
+description: |
+  FedBN
+author:
+  - name: Sharad Chitlangia
+    url: https://www.sharadchitlang.ai
+    affiliation: Dept. of EEE & APPCAIR, BITS Pilani 
+date: 04-24-2021
+categories:
+  - Conference - ICLR
+output: 
+  distill::distill_article:
+    self_contained: false
+---
+
+
+#### Batch Normalization

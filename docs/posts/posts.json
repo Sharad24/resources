@@ -133,5 +133,24 @@
     "preview": {},
     "last_modified": "2021-04-25T01:57:42+05:30",
     "input_file": {}
+  },
+  {
+    "path": "posts/_ICLR/2021-05-03-fedbn/",
+    "title": "FedBN",
+    "description": "FedBN",
+    "author": [
+      {
+        "name": "Sharad Chitlangia",
+        "url": "https://www.sharadchitlang.ai"
+      }
+    ],
+    "date": "2021-04-24",
+    "categories": [
+      "Conference - ICLR"
+    ],
+    "contents": "\nBatch Normalization == No\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-05-03T14:15:16+05:30",
+    "input_file": {}
   }
 ]
