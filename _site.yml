@@ -22,6 +22,8 @@ navbar:
           href: ML.html
         - text: "Statistics"
           href: stats.html
+        - text: "Meta Learning"
+          href: metal.html
     - text: "Conferences"
       menu: 
         - text: "ICLR 2021"

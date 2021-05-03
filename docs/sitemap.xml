@@ -25,6 +25,10 @@
     <lastmod>2021-04-25T02:51:11+05:30</lastmod>
   </url>
   <url>
+    <loc>https://resources.sharadchitlang.ai/metal.html</loc>
+    <lastmod>2021-05-03T14:43:33+05:30</lastmod>
+  </url>
+  <url>
     <loc>https://resources.sharadchitlang.ai/stats.html</loc>
     <lastmod>2021-04-25T03:08:04+05:30</lastmod>
   </url>
@@ -59,5 +63,9 @@
   <url>
     <loc>https://resources.sharadchitlang.ai/posts/_ICLR/2021-05-03-fedbn/</loc>
     <lastmod>2021-05-03T14:15:16+05:30</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/_metal/2021-05-03-reptile/</loc>
+    <lastmod>2021-05-03T14:43:39+05:30</lastmod>
   </url>
 </urlset>
