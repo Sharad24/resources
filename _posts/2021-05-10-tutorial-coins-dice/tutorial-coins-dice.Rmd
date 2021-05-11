@@ -1,17 +1,21 @@
 ---
-title: "FedBN"
+title: "Coins and Dice Tutorial"
 description: |
-  FedBN
+  Questions from the tutorial on Coins and Dice
+header-includes:
+  - \usepackage{amsmath}
+  - \usepackage{mathbb}
+  - \usepackage{bbm}
+  - \usepackage{mathcal}
 author:
   - name: Sharad Chitlangia
     url: https://www.sharadchitlang.ai
     affiliation: Dept. of EEE & APPCAIR, BITS Pilani 
 date: 04-24-2021
 categories:
-  - Conference - ICLR
+  - Courses - ML
 output: 
   distill::distill_article:
     self_contained: false
 ---
 
-Idea: Dont include Batch Norm Statistics and evolve them locally rather than aggregating. Also helps in Out of Distribution Generalization

@@ -86,635 +86,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Resources: Machine Learning</title>
+  <title>Generative Models</title>
+
+  <meta property="description" itemprop="description" content="Generative Models"/>
 
 
-
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2021-04-24"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-04-24"/>
+  <meta name="article:author" content="Sharad Chitlangia"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Resources: Machine Learning"/>
+  <meta property="og:title" content="Generative Models"/>
   <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Generative Models"/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="Resources"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Resources: Machine Learning"/>
+  <meta property="twitter:title" content="Generative Models"/>
+  <meta property="twitter:description" content="Generative Models"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","listing"]}},"value":[{"type":"character","attributes":{},"value":["Machine Learning"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["posts"]}},"value":[{"type":"character","attributes":{},"value":["2021-04-25-linear-regression","2021-04-25-logistic-regression","2021-05-03-trees","2021-05-05-generativemodels","2021-05-10-clustering","2021-05-11-evaluation"]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","header-includes","author","date","categories","output"]}},"value":[{"type":"character","attributes":{},"value":["Generative Models"]},{"type":"character","attributes":{},"value":["Generative Models\n"]},{"type":"character","attributes":{},"value":["\\usepackage{amsmath}","\\usepackage{mathbb}","\\usepackage{bbm}","\\usepackage{mathcal}"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation"]}},"value":[{"type":"character","attributes":{},"value":["Sharad Chitlangia"]},{"type":"character","attributes":{},"value":["https://www.sharadchitlang.ai"]},{"type":"character","attributes":{},"value":["Dept. of EEE & APPCAIR, BITS Pilani"]}]}]},{"type":"character","attributes":{},"value":["04-24-2021"]},{"type":"character","attributes":{},"value":["Courses - ML"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["autoencoder.png","bn.png","gan.png","generativemodels_files/anchor-4.2.2/anchor.min.js","generativemodels_files/bowser-1.9.3/bowser.min.js","generativemodels_files/distill-2.2.21/template.v2.js","generativemodels_files/header-attrs-2.7/header-attrs.js","generativemodels_files/jquery-1.11.3/jquery.min.js","generativemodels_files/popper-2.6.0/popper.min.js","generativemodels_files/tippy-6.2.7/tippy-bundle.umd.min.js","generativemodels_files/tippy-6.2.7/tippy-light-border.css","generativemodels_files/tippy-6.2.7/tippy.css","generativemodels_files/tippy-6.2.7/tippy.umd.min.js","generativemodels_files/webcomponents-2.0.0/webcomponents.js","nb.png","pipeline_an.png","vae.png"]}
+  </script>
   <!--radix_placeholder_navigation_in_header-->
-  <meta name="distill:offset" content=""/>
-
-  <script type="application/javascript">
-
-    window.headroom_prevent_pin = false;
-
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-
-      // initialize headroom for banner
-      var header = $('header').get(0);
-      var headerHeight = header.offsetHeight;
-      var headroom = new Headroom(header, {
-        tolerance: 5,
-        onPin : function() {
-          if (window.headroom_prevent_pin) {
-            window.headroom_prevent_pin = false;
-            headroom.unpin();
-          }
-        }
-      });
-      headroom.init();
-      if(window.location.hash)
-        headroom.unpin();
-      $(header).addClass('headroom--transition');
-
-      // offset scroll location for banner on hash change
-      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-      window.addEventListener("hashchange", function(event) {
-        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-      });
-
-      // responsive menu
-      $('.distill-site-header').each(function(i, val) {
-        var topnav = $(this);
-        var toggle = topnav.find('.nav-toggle');
-        toggle.on('click', function() {
-          topnav.toggleClass('responsive');
-        });
-      });
-
-      // nav dropdowns
-      $('.nav-dropbtn').click(function(e) {
-        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-        $(this).parent().siblings('.nav-dropdown')
-           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $("body").click(function(e){
-        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $(".nav-dropdown").click(function(e){
-        e.stopPropagation();
-      });
-    });
-  </script>
-
-  <style type="text/css">
-
-  /* Theme (user-documented overrideables for nav appearance) */
-
-  .distill-site-nav {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #0F2E3D;
-    font-size: 15px;
-    font-weight: 300;
-  }
-
-  .distill-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .distill-site-nav a:hover {
-    color: white;
-  }
-
-  @media print {
-    .distill-site-nav {
-      display: none;
-    }
-  }
-
-  .distill-site-header {
-
-  }
-
-  .distill-site-footer {
-
-  }
-
-
-  /* Site Header */
-
-  .distill-site-header {
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-
-  .distill-site-header .nav-left {
-    display: inline-block;
-    margin-left: 8px;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header .nav-left {
-      margin-left: 0;
-    }
-  }
-
-
-  .distill-site-header .nav-right {
-    float: right;
-    margin-right: 8px;
-  }
-
-  .distill-site-header a,
-  .distill-site-header .title {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 10px 14px 10px;
-  }
-
-  .distill-site-header .title {
-    font-size: 18px;
-    min-width: 150px;
-  }
-
-  .distill-site-header .logo {
-    padding: 0;
-  }
-
-  .distill-site-header .logo img {
-    display: none;
-    max-height: 20px;
-    width: auto;
-    margin-bottom: -4px;
-  }
-
-  .distill-site-header .nav-image img {
-    max-height: 18px;
-    width: auto;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-
-
-
-  @media screen and (min-width: 1000px) {
-    .distill-site-header .logo img {
-      display: inline-block;
-    }
-    .distill-site-header .nav-left {
-      margin-left: 20px;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 20px;
-    }
-    .distill-site-header .title {
-      padding-left: 12px;
-    }
-  }
-
-
-  .distill-site-header .nav-toggle {
-    display: none;
-  }
-
-  .nav-dropdown {
-    display: inline-block;
-    position: relative;
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    border: none;
-    outline: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 16px 10px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    margin-top: 1px;
-    z-index: 2;
-  }
-
-  .nav-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-
-  .nav-dropdown-content hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-dropdown-active {
-    display: block;
-  }
-
-  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-    color: black;
-    padding: 6px 24px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-
-  .nav-dropdown-content .nav-dropdown-header {
-    display: block;
-    padding: 5px 24px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #999999;
-    white-space: nowrap;
-  }
-
-  .nav-dropdown:hover .nav-dropbtn {
-    color: white;
-  }
-
-  .nav-dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-  .nav-right .nav-dropdown-content {
-    margin-left: -45%;
-    right: 0;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
-    .distill-site-header a.nav-toggle {
-      float: right;
-      display: block;
-    }
-    .distill-site-header .title {
-      margin-left: 0;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 0;
-    }
-    .distill-site-header {
-      overflow: hidden;
-    }
-    .nav-right .nav-dropdown-content {
-      margin-left: 0;
-    }
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header.responsive {position: relative; min-height: 500px; }
-    .distill-site-header.responsive a.nav-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .distill-site-header.responsive a,
-    .distill-site-header.responsive .nav-dropdown {
-      display: block;
-      text-align: left;
-    }
-    .distill-site-header.responsive .nav-left,
-    .distill-site-header.responsive .nav-right {
-      width: 100%;
-    }
-    .distill-site-header.responsive .nav-dropdown {float: none;}
-    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
-    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
-
-  /* Site Footer */
-
-  .distill-site-footer {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 3;
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-  }
-
-  /* Headroom */
-
-  d-title {
-    padding-top: 6rem;
-  }
-
-  @media print {
-    d-title {
-      padding-top: 4rem;
-    }
-  }
-
-  .headroom {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .headroom--transition {
-    transition: all .4s ease-in-out;
-  }
-
-  .headroom--unpinned {
-    top: -100px;
-  }
-
-  .headroom--pinned {
-    top: 0;
-  }
-
-  /* adjust viewport for navbar height */
-  /* helps vertically center bootstrap (non-distill) content */
-  .min-vh-100 {
-    min-height: calc(100vh - 100px) !important;
-  }
-
-  </style>
-
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
-  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
-  <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
-  <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
-
-  <script type="application/javascript">
-
-  function getMeta(metaName) {
-    var metas = document.getElementsByTagName('meta');
-    for (let i = 0; i < metas.length; i++) {
-      if (metas[i].getAttribute('name') === metaName) {
-        return metas[i].getAttribute('content');
-      }
-    }
-    return '';
-  }
-
-  function offsetURL(url) {
-    var offset = getMeta('distill:offset');
-    return offset ? offset + '/' + url : url;
-  }
-
-  function createFuseIndex() {
-
-    // create fuse index
-    var options = {
-      keys: [
-        { name: 'title', weight: 20 },
-        { name: 'categories', weight: 15 },
-        { name: 'description', weight: 10 },
-        { name: 'contents', weight: 5 },
-      ],
-      ignoreLocation: true,
-      threshold: 0
-    };
-    var fuse = new window.Fuse([], options);
-
-    // fetch the main search.json
-    return fetch(offsetURL('search.json'))
-      .then(function(response) {
-        if (response.status == 200) {
-          return response.json().then(function(json) {
-            // index main articles
-            json.articles.forEach(function(article) {
-              fuse.add(article);
-            });
-            // download collections and index their articles
-            return Promise.all(json.collections.map(function(collection) {
-              return fetch(offsetURL(collection)).then(function(response) {
-                if (response.status === 200) {
-                  return response.json().then(function(articles) {
-                    articles.forEach(function(article) {
-                      fuse.add(article);
-                    });
-                  })
-                } else {
-                  return Promise.reject(
-                    new Error('Unexpected status from search index request: ' +
-                              response.status)
-                  );
-                }
-              });
-            })).then(function() {
-              return fuse;
-            });
-          });
-
-        } else {
-          return Promise.reject(
-            new Error('Unexpected status from search index request: ' +
-                        response.status)
-          );
-        }
-      });
-  }
-
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-
-    // get search element (bail if we don't have one)
-    var searchEl = window.document.getElementById('distill-search');
-    if (!searchEl)
-      return;
-
-    createFuseIndex()
-      .then(function(fuse) {
-
-        // make search box visible
-        searchEl.classList.remove('hidden');
-
-        // initialize autocomplete
-        var options = {
-          autoselect: true,
-          hint: false,
-          minLength: 2,
-        };
-        window.autocomplete(searchEl, options, [{
-          source: function(query, callback) {
-            const searchOptions = {
-              isCaseSensitive: false,
-              shouldSort: true,
-              minMatchCharLength: 2,
-              limit: 10,
-            };
-            var results = fuse.search(query, searchOptions);
-            callback(results
-              .map(function(result) { return result.item; })
-            );
-          },
-          templates: {
-            suggestion: function(suggestion) {
-              var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
-                ? `<img src="${offsetURL(suggestion.preview)}"</img>`
-                : '';
-              var html = `
-                <div class="search-item">
-                  <h3>${suggestion.title}</h3>
-                  <div class="search-item-description">
-                    ${suggestion.description || ''}
-                  </div>
-                  <div class="search-item-preview">
-                    ${img}
-                  </div>
-                </div>
-              `;
-              return html;
-            }
-          }
-        }]).on('autocomplete:selected', function(event, suggestion) {
-          window.location.href = offsetURL(suggestion.path);
-        });
-        // remove inline display style on autocompleter (we want to
-        // manage responsive display via css)
-        $('.algolia-autocomplete').css("display", "");
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-
-  });
-
-  </script>
-
-  <style type="text/css">
-
-  .nav-search {
-    font-size: x-small;
-  }
-
-  /* Algolioa Autocomplete */
-
-  .algolia-autocomplete {
-    display: inline-block;
-    margin-left: 10px;
-    vertical-align: sub;
-    background-color: white;
-    color: black;
-    padding: 6px;
-    padding-top: 8px;
-    padding-bottom: 0;
-    border-radius: 6px;
-    border: 1px #0F2E3D solid;
-    width: 180px;
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-nav .algolia-autocomplete {
-      display: none;
-      visibility: hidden;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete {
-      display: inline-block;
-      visibility: visible;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
-      margin-left: 0;
-      width: 400px;
-      max-height: 400px;
-    }
-  }
-
-  .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
-    width: 90%;
-    outline: none;
-    border: none;
-  }
-
-  .algolia-autocomplete .aa-hint {
-    color: #999;
-  }
-  .algolia-autocomplete .aa-dropdown-menu {
-    width: 550px;
-    max-height: 70vh;
-    overflow-x: visible;
-    overflow-y: scroll;
-    padding: 5px;
-    margin-top: 3px;
-    margin-left: -150px;
-    background-color: #fff;
-    border-radius: 5px;
-    border: 1px solid #999;
-    border-top: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
-    cursor: pointer;
-    padding: 5px 4px;
-    border-bottom: 1px solid #eee;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
-    border-bottom: none;
-    margin-bottom: 2px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
-    overflow: hidden;
-    font-size: 0.8em;
-    line-height: 1.4em;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
-    font-size: 1rem;
-    margin-block-start: 0;
-    margin-block-end: 5px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
-    display: inline-block;
-    overflow: hidden;
-    height: 2.8em;
-    width: 80%;
-    margin-right: 4%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
-    display: inline-block;
-    width: 15%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
-    height: 3em;
-    width: auto;
-    display: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
-    display: initial;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
-    background-color: #eee;
-  }
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
-    font-weight: bold;
-    font-style: normal;
-  }
-
-  </style>
-
-
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
 
@@ -2029,665 +1433,199 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </script>
 
-  <style type="text/css">
-  /* base variables */
-
-  /* Edit the CSS properties in this file to create a custom
-     Distill theme. Only edit values in the right column
-     for each row; values shown are the CSS defaults.
-     To return any property to the default,
-     you may set its value to: unset
-     All rows must end with a semi-colon.                      */
-
-  /* Optional: embed custom fonts here with `@import`          */
-  /* This must remain at the top of this file.                 */
-
-
-
-  html {
-    /*-- Main font sizes --*/
-    --title-size:      50px;
-    --body-size:       1.06rem;
-    --code-size:       14px;
-    --aside-size:      12px;
-    --fig-cap-size:    13px;
-    /*-- Main font colors --*/
-    --title-color:     #000000;
-    --header-color:    rgba(0, 0, 0, 0.8);
-    --body-color:      rgba(0, 0, 0, 0.8);
-    --aside-color:     rgba(0, 0, 0, 0.6);
-    --fig-cap-color:   rgba(0, 0, 0, 0.6);
-    /*-- Specify custom fonts ~~~ must be imported above   --*/
-    --heading-font:    sans-serif;
-    --mono-font:       monospace;
-    --body-font:       sans-serif;
-    --navbar-font:     sans-serif;  /* websites + blogs only */
-  }
-
-  /*-- ARTICLE METADATA --*/
-  d-byline {
-    --heading-size:    0.6rem;
-    --heading-color:   rgba(0, 0, 0, 0.5);
-    --body-size:       0.8rem;
-    --body-color:      rgba(0, 0, 0, 0.8);
-  }
-
-  /*-- ARTICLE TABLE OF CONTENTS --*/
-  .d-contents {
-    --heading-size:    18px;
-    --contents-size:   13px;
-  }
-
-  /*-- ARTICLE APPENDIX --*/
-  d-appendix {
-    --heading-size:    15px;
-    --heading-color:   rgba(0, 0, 0, 0.65);
-    --text-size:       0.8em;
-    --text-color:      rgba(0, 0, 0, 0.5);
-  }
-
-  /*-- WEBSITE HEADER + FOOTER --*/
-  /* These properties only apply to Distill sites and blogs  */
-
-  .distill-site-header {
-    --title-size:       18px;
-    --text-color:       rgba(255, 255, 255, 0.8);
-    --text-size:        15px;
-    --hover-color:      white;
-    --bkgd-color:       #0F2E3D;
-  }
-
-  .distill-site-footer {
-    --text-color:       rgba(255, 255, 255, 0.8);
-    --text-size:        15px;
-    --hover-color:      white;
-    --bkgd-color:       #0F2E3D;
-  }
-
-  /*-- Additional custom styles --*/
-  /* Add any additional CSS rules below                      */
-  </style>
-  <style type="text/css">
-  /* base variables */
-
-  /* Edit the CSS properties in this file to create a custom
-     Distill theme. Only edit values in the right column
-     for each row; values shown are the CSS defaults.
-     To return any property to the default,
-     you may set its value to: unset
-     All rows must end with a semi-colon.                      */
-
-  /* Optional: embed custom fonts here with `@import`          */
-  /* This must remain at the top of this file.                 */
-
-
-
-  html {
-    /*-- Main font sizes --*/
-    --title-size:      50px;
-    --body-size:       1.06rem;
-    --code-size:       14px;
-    --aside-size:      12px;
-    --fig-cap-size:    13px;
-    /*-- Main font colors --*/
-    --title-color:     #000000;
-    --header-color:    rgba(0, 0, 0, 0.8);
-    --body-color:      rgba(0, 0, 0, 0.8);
-    --aside-color:     rgba(0, 0, 0, 0.6);
-    --fig-cap-color:   rgba(0, 0, 0, 0.6);
-    /*-- Specify custom fonts ~~~ must be imported above   --*/
-    --heading-font:    sans-serif;
-    --mono-font:       monospace;
-    --body-font:       sans-serif;
-    --navbar-font:     sans-serif;  /* websites + blogs only */
-  }
-
-  /*-- ARTICLE METADATA --*/
-  d-byline {
-    --heading-size:    0.6rem;
-    --heading-color:   rgba(0, 0, 0, 0.5);
-    --body-size:       0.8rem;
-    --body-color:      rgba(0, 0, 0, 0.8);
-  }
-
-  /*-- ARTICLE TABLE OF CONTENTS --*/
-  .d-contents {
-    --heading-size:    18px;
-    --contents-size:   13px;
-  }
-
-  /*-- ARTICLE APPENDIX --*/
-  d-appendix {
-    --heading-size:    15px;
-    --heading-color:   rgba(0, 0, 0, 0.65);
-    --text-size:       0.8em;
-    --text-color:      rgba(0, 0, 0, 0.5);
-  }
-
-  /*-- WEBSITE HEADER + FOOTER --*/
-  /* These properties only apply to Distill sites and blogs  */
-
-  .distill-site-header {
-    --title-size:       18px;
-    --text-color:       rgba(255, 255, 255, 0.8);
-    --text-size:        15px;
-    --hover-color:      white;
-    --bkgd-color:       #0F2E3D;
-  }
-
-  .distill-site-footer {
-    --text-color:       rgba(255, 255, 255, 0.8);
-    --text-size:        15px;
-    --hover-color:      white;
-    --bkgd-color:       #0F2E3D;
-  }
-
-  /*-- Additional custom styles --*/
-  /* Add any additional CSS rules below                      */
-  </style>
-  <style type="text/css">
-  /* base style */
-
-  /* FONT FAMILIES */
-
-  :root {
-    --heading-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
-    --mono-default: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    --body-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
-  }
-
-  body,
-  .posts-list .post-preview p,
-  .posts-list .description p {
-    font-family: var(--body-font), var(--body-default);
-  }
-
-  h1, h2, h3, h4, h5, h6,
-  .posts-list .post-preview h2,
-  .posts-list .description h2 {
-    font-family: var(--heading-font), var(--heading-default);
-  }
-
-  d-article div.sourceCode code,
-  d-article pre code {
-    font-family: var(--mono-font), var(--mono-default);
-  }
-
-
-  /*-- TITLE --*/
-  d-title h1,
-  .posts-list > h1 {
-    color: var(--title-color, black);
-  }
-
-  d-title h1 {
-    font-size: var(--title-size, 50px);
-  }
-
-  /*-- HEADERS --*/
-  d-article h1,
-  d-article h2,
-  d-article h3,
-  d-article h4,
-  d-article h5,
-  d-article h6 {
-    color: var(--header-color, rgba(0, 0, 0, 0.8));
-  }
-
-  /*-- BODY --*/
-  d-article > p,  /* only text inside of <p> tags */
-  d-article > ul, /* lists */
-  d-article > ol {
-    color: var(--body-color, rgba(0, 0, 0, 0.8));
-    font-size: var(--body-size, 1.06rem);
-  }
-
-
-  /*-- CODE --*/
-  d-article div.sourceCode code,
-  d-article pre code {
-    font-size: var(--code-size, 14px);
-  }
-
-  /*-- ASIDE --*/
-  d-article aside {
-    font-size: var(--aside-size, 12px);
-    color: var(--aside-color, rgba(0, 0, 0, 0.6));
-  }
-
-  /*-- FIGURE CAPTIONS --*/
-  figure .caption,
-  figure figcaption,
-  .figure .caption {
-    font-size: var(--fig-cap-size, 13px);
-    color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
-  }
-
-  /*-- METADATA --*/
-  d-byline h3 {
-    font-size: var(--heading-size, 0.6rem);
-    color: var(--heading-color, rgba(0, 0, 0, 0.5));
-  }
-
-  d-byline {
-    font-size: var(--body-size, 0.8rem);
-    color: var(--body-color, rgba(0, 0, 0, 0.8));
-  }
-
-  d-byline a,
-  d-article d-byline a {
-    color: var(--body-color, rgba(0, 0, 0, 0.8));
-  }
-
-  /*-- TABLE OF CONTENTS --*/
-  .d-contents nav h3 {
-    font-size: var(--heading-size, 18px);
-  }
-
-  .d-contents nav a {
-    font-size: var(--contents-size, 13px);
-  }
-
-  /*-- APPENDIX --*/
-  d-appendix h3 {
-    font-size: var(--heading-size, 15px);
-    color: var(--heading-color, rgba(0, 0, 0, 0.65));
-  }
-
-  d-appendix {
-    font-size: var(--text-size, 0.8em);
-    color: var(--text-color, rgba(0, 0, 0, 0.5));
-  }
-
-  d-appendix d-footnote-list a.footnote-backlink {
-    color: var(--text-color, rgba(0, 0, 0, 0.5));
-  }
-
-  /*-- WEBSITE HEADER + FOOTER --*/
-  .distill-site-header .title {
-    font-size: var(--title-size, 18px);
-    font-family: var(--navbar-font), var(--heading-default);
-  }
-
-  .distill-site-header a,
-  .nav-dropdown .nav-dropbtn {
-    font-family: var(--navbar-font), var(--heading-default);
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    font-size: var(--text-size, 15px);
-  }
-
-  .distill-site-header a:hover,
-  .nav-dropdown:hover .nav-dropbtn {
-    color: var(--hover-color, white);
-  }
-
-  .distill-site-header {
-    font-size: var(--text-size, 15px);
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    background-color: var(--bkgd-color, #0F2E3D);
-  }
-
-  .distill-site-footer {
-    font-size: var(--text-size, 15px);
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    background-color: var(--bkgd-color, #0F2E3D);
-  }
-
-  .distill-site-footer a:hover {
-    color: var(--hover-color, white);
-  }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
-  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
-  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
-  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
-  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
-  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="generativemodels_files/header-attrs-2.7/header-attrs.js"></script>
+  <script src="generativemodels_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="generativemodels_files/popper-2.6.0/popper.min.js"></script>
+  <link href="generativemodels_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="generativemodels_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="generativemodels_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="generativemodels_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="generativemodels_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="generativemodels_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="generativemodels_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
   <!--/radix_placeholder_site_in_header-->
 
 
 </head>
 
-<body class="layout-listing">
+<body>
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Machine Learning","authors":[]}
+{"title":"Generative Models","description":"Generative Models","authors":[{"author":"Sharad Chitlangia","authorURL":"https://www.sharadchitlang.ai","affiliation":"Dept. of EEE & APPCAIR, BITS Pilani","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-04-24T00:00:00.000+00:00","citationText":"Chitlangia, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
-<header class="header header--fixed" role="banner">
-<nav class="distill-site-nav distill-site-header">
-<div class="nav-left">
-<a href="index.html" class="title">Resources</a>
-<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
-</div>
-<div class="nav-right">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<div class="nav-dropdown">
-<button class="nav-dropbtn">
-Courses
- 
-<span class="down-arrow">&#x25BE;</span>
-</button>
-<div class="nav-dropdown-content">
-<a href="CLT.html">Computational Learning Theory</a>
-<a href="ML.html">Machine Learning</a>
-<a href="stats.html">Statistics</a>
-<a href="metal.html">Meta Learning</a>
-</div>
-</div>
-<div class="nav-dropdown">
-<button class="nav-dropbtn">
-Conferences
- 
-<span class="down-arrow">&#x25BE;</span>
-</button>
-<div class="nav-dropdown-content">
-<a href="ICLR.html">ICLR 2021</a>
-</div>
-</div>
-<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-</div>
-</nav>
-</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
-<!--radix_placeholder_article_listing-->
-
-
-<script type="application/javascript">
-
-function init_posts_list() {
-
-  function load_image(img) {
-    var src = $(img).attr('data-src');
-    if (src) {
-      $(img).attr('src', src);
-      $(img).load(function() {
-        img.removeAttribute('data-src');
-      });
-    }
-  }
-
-  function set_posts_visible(posts, visible) {
-    if (visible) {
-
-      // show bottom border by default
-      $(posts).removeClass('post-preview-last');
-
-      // apply limits if need be
-      var max_posts = 25;
-      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
-      if (apply_limits && posts.length > max_posts) {
-        posts = $(posts).slice(0, max_posts);
-      } else {
-        $('.posts-more a').addClass('hidden');
-      }
-
-      // apply last style
-      $(posts.slice(-1)[0]).addClass('post-preview-last');
-
-      $(posts).removeClass('hidden');
-      $(posts).find('img[data-src]').each(function(i, img) {
-        load_image(img);
-      });
-    } else {
-      $(posts).addClass('hidden');
-    }
-  }
-
-  function apply_hash_filter() {
-
-    // clear active state
-    $('.categories .active').removeClass('active');
-
-    // mark all posts invisible to start
-    set_posts_visible($('.posts-list').children('a'), false);
-
-    // if we have a hash filter
-    if (window.location.hash && window.location.hash.startsWith("#category:")) {
-
-      // mark posts that match the category visible
-      var page_category = window.location.hash.replace(/^#category:/, "");
-      var posts = $('.post-metadata').map(function(idx, script) {
-        var metadata = $.parseJSON($(script).html());
-        var post = null;
-        $.each(metadata.categories, function(idx, category) {
-          category = category.replace(/ /g,"_");
-          if ((page_category || '').toLowerCase() === "articles" || category === page_category) {
-            post = $(script).parent().get();
-            return false;
-          }
-        });
-        return post;
-      });
-      set_posts_visible(posts, true);
-
-      // mark the hash active
-      $('.categories li>a[href="' + window.location.hash + '"]').addClass('active');
-
-      // update the list_caption
-      var list_caption = $('.posts-list-caption');
-      var caption = (page_category || '').toLowerCase() === "articles"
-        ? list_caption.attr('data-caption')
-        : ('Category: ' + page_category.replace(/_/g," "));
-      list_caption.text(caption);
-
-    } else {
-
-      // no hash filter, make all posts visible (subject to max display)
-      set_posts_visible($('.posts-list').children(), true);
-
-      // reset list caption
-      var list_caption = $('.posts-list-caption');
-      list_caption.text(list_caption.attr('data-caption'));
-
-
-    }
-  }
-
-  // more articles
-  function apply_post_limits(apply) {
-    if (apply) {
-      $('.posts-container').addClass('posts-apply-limit');
-      $('.posts-more a').removeClass('hidden');
-    } else {
-      $('.posts-container').removeClass('posts-apply-limit');
-      $('.posts-more a').addClass('hidden');
-    }
-  }
-
-  // click handling for tags
-  $('.dt-tag').click(function(ev) {
-    window.location.hash = '#category:' + $(this).text().replace(/ /g, "_");
-    return false;
-  })
-
-  // hash filter handling
-  apply_hash_filter();
-  $(window).on('hashchange',function() {
-    apply_post_limits(true);
-    apply_hash_filter();
-  });
-
-  // more articles link
-  $('.posts-more a').click(function(e) {
-    e.preventDefault();
-    apply_post_limits(false);
-    apply_hash_filter();
-    return false;
-  });
-
-}
-
-</script>
-
-
-
-<div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
-<div class="posts-list">
-<h1 class="posts-list-caption" data-caption="Machine Learning">Machine Learning</h1>
-<a href="posts/2021-04-25-linear-regression/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["Course - Machine Learning"]}</script>
-<div class="metadata">
-<div class="publishedDate">April 25, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Sharad Chitlangia</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Linear Regression</h2>
-<div class="dt-tags">
-<div class="dt-tag">Course - Machine Learning</div>
-</div>
-<p>Linear Regression</p>
-</div>
-</a>
-<a href="posts/2021-04-25-logistic-regression/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["Course - Machine Learning"]}</script>
-<div class="metadata">
-<div class="publishedDate">April 25, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Sharad Chitlangia</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Logistic Regression</h2>
-<div class="dt-tags">
-<div class="dt-tag">Course - Machine Learning</div>
-</div>
-<p>Logistic Regression</p>
-</div>
-</a>
-<a href="posts/2021-05-03-trees/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["Courses - ML"]}</script>
-<div class="metadata">
-<div class="publishedDate">April 24, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Sharad Chitlangia</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Trees</h2>
-<div class="dt-tags">
-<div class="dt-tag">Courses - ML</div>
-</div>
-<p>Trees</p>
-</div>
-</a>
-<a href="posts/2021-05-05-generativemodels/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["Courses - ML"]}</script>
-<div class="metadata">
-<div class="publishedDate">April 24, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Sharad Chitlangia</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Generative Models</h2>
-<div class="dt-tags">
-<div class="dt-tag">Courses - ML</div>
-</div>
-<p>Generative Models</p>
-</div>
-</a>
-<a href="posts/2021-05-10-clustering/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["Courses - ML"]}</script>
-<div class="metadata">
-<div class="publishedDate">April 24, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Sharad Chitlangia</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Clustering</h2>
-<div class="dt-tags">
-<div class="dt-tag">Courses - ML</div>
-</div>
-<p>Clustering</p>
-</div>
-</a>
-<a href="posts/2021-05-11-evaluation/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["Courses - ML"]}</script>
-<div class="metadata">
-<div class="publishedDate">April 24, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Sharad Chitlangia</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Evaluation</h2>
-<div class="dt-tags">
-<div class="dt-tag">Courses - ML</div>
-</div>
-<p>Evaluation</p>
-</div>
-</a>
-</div>
-<div class="posts-sidebar">
-<div class="sidebar-section categories">
-<h3>Categories</h3>
-<ul>
-<li>
-<a href="#category:Articles">Articles</a>
-<span class="category-count">(6)</span>
-</li>
-<li>
-<a href="#category:Course_-_Machine_Learning">Course - Machine Learning</a>
-<span class="category-count">(2)</span>
-</li>
-<li>
-<a href="#category:Courses_-_ML">Courses - ML</a>
-<span class="category-count">(4)</span>
-</li>
-</ul>
-</div>
-</div>
-<div class="posts-more">
-<a href="#">More articles &raquo;</a>
-</div>
-</div>
-<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>Machine Learning</h1>
+<h1>Generative Models</h1>
 <!--radix_placeholder_categories-->
+<div class="dt-tags">
+<div class="dt=tag">Courses - ML</div>
+</div>
 <!--/radix_placeholder_categories-->
-
+<p><p>Generative Models</p></p>
 </div>
 
+<div class="d-byline">
+  Sharad Chitlangia <a href="https://www.sharadchitlang.ai" class="uri">https://www.sharadchitlang.ai</a> (Dept. of EEE &amp; APPCAIR, BITS Pilani)
+  
+<br/>04-24-2021
+</div>
 
 <div class="d-article">
+<h1 id="generative-models">Generative Models</h1>
+<h2 id="why-are-we-interested-in-generative-models">Why are we interested in Generative Models?</h2>
+<p>Till now we’ve been modelling <span class="math inline">\(P(Y|X)\)</span>. Generative Models have the general form <span class="math inline">\(P(X,Y)\)</span></p>
+<p>If we are able to build a generative model then we can build a classifier out of that generative model really easily as so:</p>
+<p><span class="math display">\[ P(Y|X) = \frac{P(X,Y)}{P(X)} \]</span></p>
+<p>Here, <span class="math inline">\(P(X)\)</span> can be substituted with <span class="math inline">\(\sum_{y}(P(X,Y))\)</span> . Finally giving us:</p>
+<p><span class="math display">\[ P(Y|X) = \frac{P(X,Y)}{\sum_{y}P(X,Y)} \]</span></p>
+<p>The ideal goal is to be able to model <span class="math inline">\(P(X_1, X_2, X_3, ..., X_d, Y)\)</span></p>
+<p><span class="math display">\[P(X_1, X_2, X_3, ..., X_d, Y) = P(X_1, X_2, X_3, ..., X_d|Y)P(Y)\]</span></p>
+<p>If <span class="math inline">\(X_1, X_2, ... X_d\)</span> are conditionally independent given <span class="math inline">\(Y\)</span>, then the above equation simplifies to:</p>
+<p><span class="math display">\[ P(X_1, X_2, X_3, ..., X_d, Y) = P(X_1|Y)P(X_2|Y)P(X_3|Y)...P(X_d|Y) P(Y) \]</span></p>
+<p>Or,</p>
+<p><span class="math display">\[ P(X_1, X_2, X_3, ..., X_d, Y) = P(Y)\prod_{i=1}^{d}P(X_i|Y)\]</span></p>
+<figure>
+<img src="nb.png" alt="A Naive Bayes Classifier" /><figcaption aria-hidden="true">A Naive Bayes Classifier</figcaption>
+</figure>
+<p>The assumption of the variables being class conditionally independent is called the <em>Naive Bayes Assumption</em>. Since our end goal was to build a classifier from this generative model, we can use the generative model as so:</p>
+<p><span class="math display">\[ P(Y=0|X_1,X_2...X_d) \propto P(Y=0,X_1,X_2...X_d) \]</span> <span class="math display">\[ P(Y=1|X_1,X_2...X_d) \propto P(Y=1,X_1,X_2...X_d) \]</span></p>
+<p>We know that the constant term in both these equations is going to be the same (i.e., the denominator term from the Bayes equation) So if we assume the constant term to be <span class="math inline">\(\alpha\)</span> to get rid of the proportionality and add the equations, we get:</p>
+<p><span class="math display">\[ \alpha = \frac{1}{P(Y=0,X_1,X_2...X_d)+P(Y=1,X_1,X_2...X_d)}\]</span></p>
+<p>Hence the naive bayes classifier equation becomes:</p>
+<p><span class="math display">\[ P(Y=0|X_1,X_2...X_d) = \frac{P(Y=0,X_1,X_2...X_d)}{P(Y=0,X_1,X_2...X_d)+P(Y=1,X_1,X_2...X_d)} \]</span> <span class="math display">\[ P(Y=1|X_1,X_2...X_d) = \frac{P(Y=1,X_1,X_2...X_d)}{P(Y=0,X_1,X_2...X_d)+P(Y=1,X_1,X_2...X_d)} \]</span></p>
+<p>Both the probabilities in the denominator are joint pdfs and can be obtained from the generative model.</p>
+<h3 id="structure-and-params">Structure and Params</h3>
+<p>The Structure of the Naive Bayes Classifier is a DAG (short for Directed Acyclic Graph) and the parameters would be the conditional probabilities. The parameters could be esimated using MLE or using just the priors. But where are the priors in a Naive Bayes Classifier? The priors are encoded by the relationships between the variables and the variable which is assumed to be given (e.g. <span class="math inline">\(Y\)</span>). So for each such relationship (e.g. <span class="math inline">\(X_1|Y\)</span>), there can be two priors - one encoding the prior in the case <span class="math inline">\(Y=0\)</span> and the other encoding the prior in the case <span class="math inline">\(Y=1\)</span>. Hence, if we are modelling P(Y|X_1, X_2, …, X_d) then there are <span class="math inline">\(2\ \times\ d\)</span> priors for the conditionally independent variables and a prior for <span class="math inline">\(Y\)</span> itself giving us a total of <span class="math inline">\(2\ \times\ d + 1\)</span> priors.</p>
+<h1 id="bayesian-network">Bayesian Network</h1>
+<p>Bayesian Networks are a type of model where the structure is a DAG such that the random variables encoded in it satisfy the Markov Condition.</p>
+<figure>
+<img src="bn.png" alt="An example Bayesian Network" /><figcaption aria-hidden="true">An example Bayesian Network</figcaption>
+</figure>
+<p>For a network like the above, we will require a total of 10 priors (<span class="math inline">\(1+1+4+2+2\)</span>)</p>
+<table>
+<thead>
+<tr class="header">
+<th>Node</th>
+<th>Parents</th>
+<th>Non-Descendents</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>B</td>
+<td><span class="math inline">\(\phi\)</span></td>
+<td><span class="math inline">\(\phi\)</span></td>
+</tr>
+<tr class="even">
+<td>E</td>
+<td><span class="math inline">\(\phi\)</span></td>
+<td><span class="math inline">\(\phi\)</span></td>
+</tr>
+<tr class="odd">
+<td>A</td>
+<td>B, E</td>
+<td><span class="math inline">\(\phi\)</span></td>
+</tr>
+<tr class="even">
+<td>J</td>
+<td>A</td>
+<td>B, E, M</td>
+</tr>
+<tr class="odd">
+<td>M</td>
+<td>A</td>
+<td>B, E, J</td>
+</tr>
+</tbody>
+</table>
+<p>Note that we dont include parents in its non-descendents.</p>
+<h2 id="markov-condition">Markov Condition</h2>
+<p>The Markov Condition states that a random variable <span class="math inline">\(X\)</span> is a conditionally independent of its non-descendents given Parents.</p>
+<ul>
+<li><span class="math inline">\(X\)</span> is a parent of <span class="math inline">\(Y\)</span> if there is an edge <span class="math inline">\(X \rightarrow Y\)</span>.</li>
+<li><span class="math inline">\(Y\)</span> is a descendent of <span class="math inline">\(X\)</span> if there is an edge <span class="math inline">\(X \rightarrow Y\)</span>.</li>
+<li><span class="math inline">\(Y\)</span> is a non-descendent of <span class="math inline">\(X\)</span> if there is no path from <span class="math inline">\(X\)</span> to <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> do not have a parent-child relationship.</li>
+</ul>
+<p>If we know the Markov Condition holds, we should be able to answer any conditional query fairly easily using the joint distribution over all the variables</p>
+<p><span class="math display">\[ P(B,E,A,J,M) = P(B)P(E)P(A|B,E)P(J|A)P(M|A)\]</span></p>
+<h2 id="selecting-a-graph">Selecting a Graph</h2>
+<h3 id="what-was-before-bic">What was before BIC?</h3>
+<h3 id="bic">BIC</h3>
+<h1 id="neural-network-based-generative-models">Neural Network based Generative Models</h1>
+<h2 id="autoencoder">Autoencoder</h2>
+<figure>
+<img src="autoencoder.png" alt="A typical autoencoder" /><figcaption aria-hidden="true">A typical autoencoder</figcaption>
+</figure>
+<p>An autoencoder (AE) is a neural network that learns to copy its input to its output. The internal representation between the encoder and the decoder is commonly called as the <em>code</em> or the <em>latent vector</em> of that input sample.</p>
+<p>AE reconstructs the input <em>approximately</em> to preserve the most relevant parts of the data i.e., some important <strong>latent</strong> aspects.</p>
+<p>Let <strong>x</strong> be an input example. The encoder maps <span class="math inline">\(Enc: \mathcal{X} \rightarrow \mathcal{H}\)</span> and the decoder maps <span class="math inline">\(Dec: \mathcal{H} \rightarrow \mathcal{X}\)</span>. The encoder and decoder functions are obtained by minimising a reconstruction loss:</p>
+<p><span class="math display">\[ Enc, Dec\ =\ argmin_{Enc, Dec} \| \ x \ -\ (Dec \cdot Enc)(x) \|^{2} \]</span></p>
+<p>In the simplest case, both encoder and decoder are single layered. That is,</p>
+<p><span class="math display">\[ h\ =\ \sigma (wx\ +\ b)\]</span></p>
+<p>Usually there is a regularization term added to the loss so that the encoder and decoder do not collapse into an identity function. <strong>h</strong> is referred to as the <em>code</em> or the <em>latent</em> variable or the <em>latent</em> representation.</p>
+<figure>
+<img src="pipeline_an.png" alt="The end to end pipeline of an autoencoder" /><figcaption aria-hidden="true">The end to end pipeline of an autoencoder</figcaption>
+</figure>
+<p>The idea is that each hidden dimension represents some latent feature learned about the input. For example, for an autoencoder made to reconstruct human faces, it might learn features such as smile, skin tone, gender, beard, etc. Ofcourse, this is just to give an example. In actuality it may end up learning latent features that may not necessarily be even understandable to us.</p>
+<p>An autoencoder is a <strong>discriminative</strong> model. It can be used for: * compressing data * greedy layer wise pre-training * cannot be used for generating new data.</p>
+<p>The greedy way of pre-training is basically that we first train an autoencoder with encoder and decoder of only size 1. Then we keep adding layers and only train the new layers. This was very important back in the day when there was not a lot of compute at hand.</p>
+<p><strong>For generating new data, the model needs to learn a join distribution <span class="math inline">\(p(x)\)</span> or <span class="math inline">\(p(x,h)\)</span></strong> Or, a model can be considered to be generative when the latent variable has a probability distribution associated with it - a kind of autoencoder that is called as a Variational Autoencoder.</p>
+<figure>
+<img src="vae.png" alt="A basic Variational Autoencoder setup" /><figcaption aria-hidden="true">A basic Variational Autoencoder setup</figcaption>
+</figure>
+<p>In such a case, the encoder network is usually called as the <em>recognition</em> model and the decoder network is called as the <em>generative</em> model.</p>
+<p>For the complete dataset, the VAE would output a range of values for each latent dimension hence creating a statistical distribution in each of those dimensions. Ideally, a very minute difference between the sampled points should result in the same output being created from the generative model.</p>
+<h3 id="variational-inference">Variational Inference</h3>
+<h2 id="limitations">Limitations</h2>
+<h1 id="generative-adversarial-networks-gan">Generative Adversarial Networks (GAN)</h1>
+<table>
+<colgroup>
+<col style="width: 45%" />
+<col style="width: 54%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Generative Model</th>
+<th>Discriminative Model</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Estimates the joint probability <span class="math inline">\(p(x,y)\)</span>.</td>
+<td>Estimates the conditional probability <span class="math inline">\(p(y|x)\)</span> of the label <em>y</em>, given data instance <em>x</em> (e.g. MLP, CNN).</td>
+</tr>
+<tr class="even">
+<td>It can be used in a supervised and an unsupervised setting</td>
+<td>It can be only used in a supervised setting</td>
+</tr>
+<tr class="odd">
+<td>The goal of the generative model is to synthesize data instances that are so realistic that it is hard for an observer to say it is synthetic i.e., <span class="math inline">\(D(x^\prime) \approx 1\)</span></td>
+<td>The goal of the Discriminative Model is to classify correctly real examples from training data from synthetic samples created using the generative model.</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(max_G(-(1-y)log(1-D(G(z))))\)</span> where <span class="math inline">\(z \sim \mathcal{N}(0,1)\)</span></td>
+<td><span class="math inline">\(min_D(-ylog(D(x)) - (1-y)log(1-D(x)))\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The term <em><strong>adversarial</strong></em> is used as the goals of the discriminator and generator is to fool each other.</p>
+<figure>
+<img src="gan.png" alt="Generative Adversarial Networks" /><figcaption aria-hidden="true">Generative Adversarial Networks</figcaption>
+</figure>
+<h2 id="training">Training</h2>
+<p>The final objective is</p>
+<p><span class="math display">\[ min_D \ max_G \{- \textbf{E}_{x \sim \mathcal{X}}(logD(x)) - \textbf{E}_{z \sim \mathcal{N}(0,1)} (log(1 - D(G(z)))) \} \]</span></p>
+<p>The solution is actually a saddle point here due to the combined minimization and maximization here. In game theoretic terms, it is a nash equlibrium.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
@@ -2696,6 +1634,15 @@ function init_posts_list() {
 <div class="d-appendix">
 </div>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
@@ -2703,11 +1650,7 @@ function init_posts_list() {
 <div class="appendix-bottom"></div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
-<div class="distill-site-nav distill-site-footer">
-<p><c2><a9> Copyright 2020 Sharad Chitlangia</p>
-</div>
 <!--/radix_placeholder_navigation_after_body-->
-
 
 </body>
 
