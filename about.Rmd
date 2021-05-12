@@ -3,8 +3,9 @@ title: "About this site"
 description: |
   Some additional details about the site
 ---
-This site is meant to be a collection of informative resources that I read centered largely around Machine Learning.
-
+This site is meant to be a collection of informative resources that I read centered largely around Machine Learning. 
+Material on this site is constantly being updated. For a lot of articles (especially coursework related), there are PDFs
+that are attached as well (on the right side of the margin at the start of the article).
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)

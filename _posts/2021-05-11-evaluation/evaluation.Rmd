@@ -18,6 +18,9 @@ output:
   distill::distill_article:
     self_contained: false
 ---
+<aside>
+[PDF](./evaluation.pdf)
+</aside>
 
 # Evaluation
 

@@ -21,6 +21,9 @@ output:
   distill::distill_article:
     self_contained: false
 ---
+<aside>
+[PDF](./support-vector-machines.pdf)
+</aside>
 
 # Support Vector Machines
 
