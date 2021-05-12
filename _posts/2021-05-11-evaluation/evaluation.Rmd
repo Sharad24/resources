@@ -4,16 +4,16 @@ description: |
   Evaluation
 header-includes:
   - \usepackage{amsmath}
-  - \usepackage{mathbb}
-  - \usepackage{mathop}
+  - \usepackage{amsfonts}
   - \usepackage{bbm}
 author:
   - name: Sharad Chitlangia
     url: https://www.sharadchitlang.ai
     affiliation: Dept. of EEE & APPCAIR, BITS Pilani 
-date: 04-24-2021
+date: 05-11-2021
 categories:
   - Courses - ML
+  - Lecture
 output: 
   distill::distill_article:
     self_contained: false
@@ -26,7 +26,7 @@ When we evaluate models, we will need a loss function and our goal is to minimiz
 The reason for it to be _expected_ loss is because our loss is always going to be computed over a sample of data points. 
 So in the probabilitic sense, the loss is associated with an actual distribution.
 
-Suppose we're given $(x_1, y_1), ...., (x_n, y_n)$ and a new point $(x_i, ?)$. We want to find the value of \hat{y} that 
+Suppose we're given $(x_1, y_1), ...., (x_n, y_n)$ and a new point $(x_i, ?)$. We want to find the value of $\hat{y}$ that 
 minimizes $L(y, \hat{y})$ for the point
 
 **Problem**: We do not know $y$, so we cannot really figure out if something is minimizing $L(y, \hat{y})$. 
@@ -41,38 +41,38 @@ the loss?
 
 ### Case 1: Given x i.e., X=x
 
-$$\mathop{\mathbb{E}}[L(y,\hat{y})] = \sum_y L(y,\hat{y})P(Y=y|X=x) $$
+$$\mathop{\mathbb{E}} \lbrack L(y,\hat{y}) \rbrack = \sum_y L(y,\hat{y})P(Y=y|X=x)$$
 
 This is called as conditional risk. If we assume that we have $0-1$ loss function:
 
-$$\mathop{\mathbb{E}}[L(y,\hat{y})] = \sum_{y \neq \hat{y}}P(Y=y|X=x) $$
+$$\mathop{\mathbb{E}} \lbrack L(y,\hat{y})\rbrack = \sum_{y \neq \hat{y}}P(Y=y|X=x)$$
 
 which further reduces to:
 
-$$\mathop{\mathbb{E}}[L(y,\hat{y})] = 1 - P(Y=\hat{y}|X=x) $$
+$$\mathop{\mathbb{E}} \lbrack L(y,\hat{y})\rbrack = 1 - P(Y=\hat{y}|X=x) $$
 
 So minimizing the expected loss is similar to maximizing $P(Y=\hat{y}|X=x)$. Note that this is the right decision to take 
 because we are using a $0-1$ loss function.
 
-Assume a squared loss function: $L(y, \hat{y}) = (y-\hat{y})^2
+Assume a squared loss function: $L(y, \hat{y}) = (y-\hat{y})^2$
 
-$$\mathop{\mathbb{E}}[L(y,\hat{y})] = \int (y-\hat{y})^2 f(y|x)dy $$
+$$\mathop{\mathbb{E}} \lbrack L(y,\hat{y})\rbrack = \int (y-\hat{y})^2 f(y|x)dy$$
 
-To minimize this predict $\hat{y} = \mathop{\mathbb{E}}[y|x]. Proven by setting 
+To minimize this predict $\hat{y} = \mathop{\mathbb{E}} \lbrack y|x \rbrack$. Proven by setting 
 $\frac{\partial \mathop{\mathbb{E}}[L(y,\hat{y})}{\partial \hat{y}} = 0$
 
 ### Case 2: Both x and y are unknown
 
-$$ \mathop{\mathbb{E}}[L(y,\hat{y})] = \sum_{x,y} L(y, \hat{y}) P(X=x, Y=y) $$
+$$\mathop{\mathbb{E}} \lbrack L(y,\hat{y})\rbrack = \sum_{x,y} L(y, \hat{y}) P(X=x, Y=y)$$
 
 We can make this a bit more explicit by specifying the prediction $\hat{y}$ to be a function of $x$.
 
-$$ \mathop{\mathbb{E}}[L(y,\hat{y})] = \sum_{x,y} L(y, f(X=x)) P(X=x, Y=y) $$
+$$\mathop{\mathbb{E}} \lbrack L(y,\hat{y})\rbrack = \sum_{x,y} L(y, f(X=x)) P(X=x, Y=y)$$
 
 Note that $f(x)$ here is conditional on the given dataset $d$ which can be thought of as an instance of the random variable
 $D$.
 
-$ \mathop{\mathbb{E}}[L(y,\hat{y})|D=d] $ is called the generalization error.
+$\mathop{\mathbb{E}} \lbrack L(y,\hat{y})|D=d\rbrack$ is called the generalization error.
 
 We can estimate the generalisation error using a train-test split. But the problem then becomes that we are not really 
 estimation the generalisation error on $d$ then. It is rather a subset of $d$. There are three possible solutions to this:
@@ -84,7 +84,7 @@ estimation the generalisation error on $d$ then. It is rather a subset of $d$. T
 $d$ as an instance of a random variable $D$ and calculate the expected generalisation error ($e_m$) rather than the generalisation
 error:
 
-$$ EGE (e_M) = \mathop{\mathbb{E}}(e_{M,d}) = \sum_{x,y}L(y,f_{M,d}(x))P(x,y|D=d)P(D=d)$$
+$$EGE (e_M) = \mathop{\mathbb{E}}(e_{M,d}) = \sum_{x,y}L(y,f_{M,d}(x))P(x,y|D=d)P(D=d)$$
 
 The advantage here is that the error is not calculated for one instance of the dataset but rather considering all 
 possible datasets at once.
@@ -96,9 +96,9 @@ equivalent to sampling from $D$.
 Now in the case that we had estimated $e_{M,d}$ using the entire training dataset, then our estimate for $e_{M,d}$ 
 will be _optimistic_, i.e., given new data $d\prime$:
 
-$$ e_{M,d\prime} = e_{M,d} + \epsilon $$
+$$e_{M,d\prime} = e_{M,d} + \epsilon$$
 
-where \epsilon is the training error or _optimism_.
+where $\epsilon$ is the training error or _optimism_.
 
 ## Evaluating two models for the same problem
 
@@ -113,8 +113,8 @@ Incorrect | $n_3$ | $n_4$
 
 If both the models are doing the same thing, then the points at which they differ is just some random noise.
 
-$$ Expected\ Count\ of\ A=0,B=1 = \frac{n_2 + n_3}{2} $$
-$$ Expected\ Count\ of\ B=0,A=1 = \frac{n_2 + n_3}{2} $$
+$$Expected\ Count\ of\ A=0,B=1 = \frac{n_2 + n_3}{2}$$
+$$Expected\ Count\ of\ B=0,A=1 = \frac{n_2 + n_3}{2}$$
 
 We can use $\chi^2$ test to check for the independence of the two variables above. If we find that the two models are not
 doing the same thing, try and identify where one of the models does better so we can use that information to improve.
@@ -143,20 +143,20 @@ use the Wilcoxon signed rank test.
 
 True Positive Rate (TPR):
 
-$$ TPR = \frac{TP}{TP+FN}$$
-$$ TPR = 1\ -\ FNR $$
+$$TPR = \frac{TP}{TP+FN}$$
+$$TPR = 1\ -\ FNR$$
 
 False Positive Rate (FPR)
 
-$$ FPR = \frac{FP}{FP+TN} = 1 - TNR $$
+$$FPR = \frac{FP}{FP+TN} = 1 - TNR$$
 
 Each model will have a point on the ROC Curve for a given dataset.
 
 So far we have mostly assumed that a false positive and a false negative are equally penalized. In reality, this might 
 not be the case.
 
-$$ Loss = P(+) P(-|+) C(-|+) + P(-) P(+|-) C(+|-) $$
+$$Loss = P(+) P(-|+) C(-|+) + P(-) P(+|-) C(+|-)$$
 
-$$ Loss = P(+) C(-|+) (1 - TPR) + P(-) C(+|-) FPR $$
+$$Loss = P(+) C(-|+) (1 - TPR) + P(-) C(+|-) FPR$$
 
 This loss is a linear function of FPR and TPR which define the space of the ROC curve.

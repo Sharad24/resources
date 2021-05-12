@@ -2,20 +2,89 @@
 title: "Coins and Dice Tutorial"
 description: |
   Questions from the tutorial on Coins and Dice
+resources:
+  include:
+    tutorial-coins-dice.pdf
 header-includes:
   - \usepackage{amsmath}
-  - \usepackage{mathbb}
+  - \usepackage{amsfonts}
   - \usepackage{bbm}
-  - \usepackage{mathcal}
 author:
   - name: Sharad Chitlangia
     url: https://www.sharadchitlang.ai
-    affiliation: Dept. of EEE & APPCAIR, BITS Pilani 
-date: 04-24-2021
+    affiliation: Dept. of EEE & APPCAIR, BITS Pilani
+date: 05-12-2021
 categories:
   - Courses - ML
+  - Tutorial
 output: 
   distill::distill_article:
     self_contained: false
 ---
+
+# Tutorial on Coins and Dice
+
+For a given $F: \mathbb{R}\rightarrow \lbrack 0,1 \rbrack$ is a random variable with a p.d.f $p(F)$, show that $P(heads) = \mathop{\mathbb{E}}\lbrack F \rbrack$
+
+$$P(heads) = \int_0^1 P(heads|F=f)p(F=f)df$$
+$$P(heads) = \int_0^1 fp(f)df$$
+$$P(heads) = \mathop{\mathbb{E}} \lbrack F \rbrack$$
+
+### Gamma and Beta Distributions
+
+#### Gamma
+
+$$\Gamma{(x+1)} = \int_0^{\infty} t^x e^{-t} dt$$
+$$\Gamma{(x+1)} = x\Gamma{(x)}$$
+
+#### Beta
+
+$$B(x,y) = \int_0^1 t^{x-1}(1-t)^{y-1}dt$$
+$$B(x,y) = \frac{\Gamma{(x)}\Gamma{(y)}}{\Gamma{(x+y)}}$$
+
+Beta p.d.f. 
+
+$$beta(x;\alpha,\beta) = \frac{x^{\alpha-1}(1-x)^{\beta-1}}{B(\alpha,\beta)}$$
+
+For a random variable $F \sim beta(f;\alpha,\beta)$,
+
+$$\mathop{\mathbb{E}}\lbrack F \rbrack = \frac{\alpha}{\alpha+\beta}$$
+
+### Binomial Sampling
+
+Given a binomial random sample $D$ of size $M$ given a random variable $F$ with p.d.f. $p(F)$ over relative frequencies
+of heads and a dataset $d = \{x^{(1)},x^{(2)}...,x^{(M)}\}$ in which there are $s$ values of heads and $t$ values of tails
+
+$$P(d) = \mathop{\mathbb{E}}(F^s \lbrack 1-F \rbrack^{t})$$
+
+If $F \sim p(f) = beta(f;\alpha,\beta)$, then
+
+$$P(d) = \frac{B(\alpha+s,\beta+t)}{B(\alpha,\beta)}$$
+
+The posterior $P(f|d)$ can also be computed now.
+
+$$P(f|d) = \frac{P(d|f)P(f)}{P(d)}$$
+$$P(f|d) = \frac{f^s(1-f)^t p(f)}{\mathop{\mathbb{E}}(F^s \lbrack 1-F \rbrack^{t} )}$$
+$$P(f|d) = beta(f;\alpha+s,\beta+t)$$
+
+$$P(X^{(M+1)} = 1|d) = \frac{\alpha+s}{\alpha+s+\beta+t}$$
+
+Therefore,
+
+$$Prior = B(\alpha,\beta)$$
+$$Likelihood = \frac{B(\alpha+s,\beta+t)}{B(\alpha,\beta)}$$
+$$Posterior = B(\alpha+s,\beta+t)$$
+
+## Relevance to Class Probability Trees (CPT)
+
+We will treat each leaf in a CPT as a coin with its own prior. These coins are independent of coints at other leaves.
+
+Parameter estimation is also straightforward now, if we have the prior and the data. We can directly apply the beta update
+rule.
+
+For the search procedure, how can we calculate $P(d)$. Recall that calculating this term helps in guiding the search 
+procedure. At each node, we select the successor which increases the value of this term the most (in both trees and
+bayesian networks).
+
+## Conditional Urns Model
 

@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://resources.sharadchitlang.ai/ML.html</loc>
-    <lastmod>2021-05-11T17:20:33+05:30</lastmod>
+    <lastmod>2021-05-12T06:46:04+05:30</lastmod>
   </url>
   <url>
     <loc>https://resources.sharadchitlang.ai/about.html</loc>
@@ -33,6 +33,22 @@
     <lastmod>2021-05-03T16:20:10+05:30</lastmod>
   </url>
   <url>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-05-10-tutorial-coins-dice/</loc>
+    <lastmod>2021-05-12T06:39:21+05:30</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-05-11-support-vector-machines/</loc>
+    <lastmod>2021-05-12T06:29:36+05:30</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-05-11-evaluation/</loc>
+    <lastmod>2021-05-12T06:32:23+05:30</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-05-10-clustering/</loc>
+    <lastmod>2021-05-12T06:38:52+05:30</lastmod>
+  </url>
+  <url>
     <loc>https://resources.sharadchitlang.ai/posts/2021-04-25-central-limit-theorem/</loc>
     <lastmod>2021-04-25T03:06:32+05:30</lastmod>
   </url>
@@ -47,10 +63,6 @@
   <url>
     <loc>https://resources.sharadchitlang.ai/posts/2021-04-25-logistic-regression/</loc>
     <lastmod>2021-04-25T03:06:18+05:30</lastmod>
-  </url>
-  <url>
-    <loc>https://resources.sharadchitlang.ai/posts/2021-04-24-on-lipschitz-continuity/</loc>
-    <lastmod>2021-04-25T00:51:49+05:30</lastmod>
   </url>
   <url>
     <loc>https://resources.sharadchitlang.ai/posts/2021-04-25-introduction/</loc>
@@ -70,18 +82,14 @@
   </url>
   <url>
     <loc>https://resources.sharadchitlang.ai/posts/2021-05-03-trees/</loc>
-    <lastmod>2021-05-03T19:34:03+05:30</lastmod>
+    <lastmod>2021-05-12T06:37:55+05:30</lastmod>
   </url>
   <url>
     <loc>https://resources.sharadchitlang.ai/posts/2021-05-05-generativemodels/</loc>
-    <lastmod>2021-05-10T17:46:52+05:30</lastmod>
+    <lastmod>2021-05-12T06:38:25+05:30</lastmod>
   </url>
   <url>
-    <loc>https://resources.sharadchitlang.ai/posts/2021-05-10-clustering/</loc>
-    <lastmod>2021-05-11T04:00:42+05:30</lastmod>
-  </url>
-  <url>
-    <loc>https://resources.sharadchitlang.ai/posts/2021-05-11-evaluation/</loc>
-    <lastmod>2021-05-11T23:36:47+05:30</lastmod>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-04-24-on-lipschitz-continuity/</loc>
+    <lastmod>2021-05-12T06:33:22+05:30</lastmod>
   </url>
 </urlset>

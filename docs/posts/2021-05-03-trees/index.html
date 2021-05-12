@@ -122,12 +122,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","header-includes","author","date","categories","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Trees"]},{"type":"character","attributes":{},"value":["Trees"]},{"type":"character","attributes":{},"value":["\\usepackage{bbm}"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation"]}},"value":[{"type":"character","attributes":{},"value":["Sharad Chitlangia"]},{"type":"character","attributes":{},"value":["https://www.sharadchitlang.ai"]},{"type":"character","attributes":{},"value":["Dept. of EEE & APPCAIR, BITS Pilani"]}]}]},{"type":"character","attributes":{},"value":["04-24-2021"]},{"type":"character","attributes":{},"value":["Courses - ML"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["https://resources.sharadchitlang.ai/posts/2021-05-03-trees/"]},{"type":"character","attributes":{},"value":["https://resources.sharadchitlang.ai/posts/2021-05-03-trees/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","resources","header-includes","author","date","categories","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Trees"]},{"type":"character","attributes":{},"value":["Trees"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["include"]}},"value":[{"type":"character","attributes":{},"value":["trees.pdf"]}]},{"type":"character","attributes":{},"value":["\\usepackage{amsmath}","\\usepackage{amsfonts}","\\usepackage{bbm}"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation"]}},"value":[{"type":"character","attributes":{},"value":["Sharad Chitlangia"]},{"type":"character","attributes":{},"value":["https://www.sharadchitlang.ai"]},{"type":"character","attributes":{},"value":["Dept. of EEE & APPCAIR, BITS Pilani"]}]}]},{"type":"character","attributes":{},"value":["04-24-2021"]},{"type":"character","attributes":{},"value":["Courses - ML","Lecture"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["https://resources.sharadchitlang.ai/posts/2021-05-03-trees/"]},{"type":"character","attributes":{},"value":["https://resources.sharadchitlang.ai/posts/2021-05-03-trees/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["trees_files/anchor-4.2.2/anchor.min.js","trees_files/bowser-1.9.3/bowser.min.js","trees_files/distill-2.2.21/template.v2.js","trees_files/header-attrs-2.7/header-attrs.js","trees_files/jquery-1.11.3/jquery.min.js","trees_files/popper-2.6.0/popper.min.js","trees_files/tippy-6.2.7/tippy-bundle.umd.min.js","trees_files/tippy-6.2.7/tippy-light-border.css","trees_files/tippy-6.2.7/tippy.css","trees_files/tippy-6.2.7/tippy.umd.min.js","trees_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["trees.pdf","trees_files/anchor-4.2.2/anchor.min.js","trees_files/bowser-1.9.3/bowser.min.js","trees_files/distill-2.2.21/template.v2.js","trees_files/header-attrs-2.7/header-attrs.js","trees_files/jquery-1.11.3/jquery.min.js","trees_files/popper-2.6.0/popper.min.js","trees_files/tippy-6.2.7/tippy-bundle.umd.min.js","trees_files/tippy-6.2.7/tippy-light-border.css","trees_files/tippy-6.2.7/tippy.css","trees_files/tippy-6.2.7/tippy.umd.min.js","trees_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2446,31 +2446,57 @@ Conferences
 <h3 id="naive-bayes-classifier">Naive Bayes Classifier</h3>
 <p>The Naive Bayes Classifier predicts the final value to be the maximum from the posterior distribution. The NB Classifier has the least expected error but the problem with NB classifier is that we dont know the posterior distribution. For instance, we approximate the posterior distribution in logistic regression to be representable with the logistic function.</p>
 <h2 id="structure-and-parameters">Structure and Parameters</h2>
-<p>Every Machine Learning models usually has two components: - Structure - Parameters</p>
+<p>Every Machine Learning models usually has two components: * Structure * Parameters</p>
 <p>For instance, for a Neural network the structure is multiple layers connected together and the parameters are its weights. For a linear regression model, the structure is the linear line and the parameter is the weight. Similarly for a logistic model, the structure is the sigmoid function and the parameter is the weight.</p>
 <p>In the case of a tree based classifier, the structure is a tree and the parameters are the probabilities.</p>
 <h2 id="building-a-tree">Building a Tree</h2>
 <p>The problem of learning a tree is unique in the sense that we also need to build the tree instead of just learning some weights. But lets assume we have a tree and binary valued data with a binary classification problem. The nodes in this tree are assigned variables where if a variable is <span class="math inline">\(1\)</span>, we move to the left or if is <span class="math inline">\(0\)</span>, then we move to the right. We can perform this procedure for the data instance and finally reach a leaf node where we keep track of the counts of the two classes</p>
-<p>Finally for this tree <span class="math inline">\(T_0\)</span> at each leaf node, we can calculate the the class conditional probability as: <span class="math display">\[ P(Y|X) = \sum_{i=0}^{n}\frac{\mathbf{1}}{n}\]</span></p>
+<p>Finally for this tree <span class="math inline">\(T_0\)</span> at each leaf node, we can calculate the the class conditional probability as: <span class="math display">\[P(Y|X) = \sum_{i=0}^{n}\frac{\mathbf{1}}{n}\]</span></p>
 <p>For a binary problem, if we choose a Beta Prior <span class="math inline">\(Beta(a,b)\)</span> then the posterior can be calculated simply as <span class="math inline">\(Beta(a+c_0,b+c_1)\)</span> where <span class="math inline">\(c_0\)</span> and <span class="math inline">\(c_1\)</span> just represent the counts that have been stored after running through the dataset at that leaf.</p>
 <p>For a problem with more than 2 classes, a similar relationship is exhibited by the multinomial and dirichlet distributions.</p>
 <h2 id="choosing-a-tree">Choosing a Tree</h2>
 <p>But why should we pick a particular tree? We can create so many trees out of a set of variables. Lets assume we have a set of trees <span class="math inline">\(T = \{T_0, T_1, ..., T_k\}\)</span>. How do we calculate the class conditional probability now?</p>
 <p>The answer is that we could use a simple Bayes rule over all these trees as so:</p>
-<p><span class="math display">\[  P(Y|X,D) = \sum_{j=o}^{k}(P(T_j|D)P(Y|X,D,T_j))  \]</span></p>
+<p><span class="math display">\[P(Y|X,D) = \sum_{j=o}^{k}(P(T_j|D)P(Y|X,D,T_j))\]</span></p>
 <p>This will give us a final probabilistic estimate of the class conditional probability. We know how to compute <span class="math inline">\(P(Y|X,D,T_j)\)</span> but how do we find <span class="math inline">\(P(T_j|D)\)</span>? This is the posterior of a tree given a dataset. We can again use the Bayes Rule here:</p>
 <p><span class="math display">\[P(T_j|D) = P(\pi_j,\theta_j|D)\]</span> <span class="math display">\[P(\pi_j,\theta_j|D) \propto P(D|\pi_j,\theta_j)p(\theta_j|\pi_j)P(\pi_j)\]</span></p>
-<p>The likelihood term here is can be decomposed into indvidual likelihood terms of the leaves which is: <span class="math display">\[ P(D|c_0, c_1; a, b) = \frac{\Gamma(a+c_0, b+c_1)}{\Gamma(a,b)}\]</span></p>
-<p>The total likelihood from the tree now would just be a product of the individual likelihood terms: <span class="math display">\[ P(D|Tj) = \prod_{k=0}^{m}P(D|leaf)\]</span></p>
+<p>The likelihood term here can be decomposed into indvidual likelihood terms of the leaves which is: <span class="math display">\[P(D|c_0, c_1; a, b) = \frac{\Gamma(a+c_0, b+c_1)}{\Gamma(a,b)}\]</span></p>
+<p>The total likelihood from the tree now would just be a product of the individual likelihood terms: <span class="math display">\[P(D|Tj) = \prod_{k=0}^{m}P(D|leaf)\]</span></p>
 <p>So we have the likelihood term calculated in the following equation <span class="math display">\[P(\pi_j,\theta_j|D) \propto P(D|\pi_j,\theta_j)p(\theta_j|\pi_j)P(\pi_j)\]</span></p>
 <p>Now what is <span class="math inline">\(P(\theta_j, \pi_j)\)</span>? <span class="math inline">\(\theta_j\)</span> is just the set of all priors in the tree hence:</p>
-<p><span class="math display">\[ P(\theta_j, \pi_j) = P(\theta_{j0},\theta_{j1}...|\pi_j)P(\pi_j) \]</span></p>
+<p><span class="math display">\[P(\theta_j, \pi_j) = P(\theta_{j0},\theta_{j1}...|\pi_j)P(\pi_j)\]</span></p>
 <p>And this can be calculated quite simply as this is just expected value of each individual distribution (before running the data i.e., prior distribution).</p>
 <p>Now <span class="math inline">\(P(\pi_j)\)</span> is just a regularization term at this point because we can keep going more and more deep like this but we have to stop at some point.</p>
 <p>So finally, now we have each term calculated in the equation</p>
 <p><span class="math display">\[P(Y|X,D) = \sum_{j=o}^{k}(P(T_j|D)P(Y|X,D,T_j))\]</span></p>
+<h2 id="enumerating-trees">Enumerating Trees</h2>
 <p>But what is the problem with this kind of formulation? For each dataset, we can create so many trees that the computation described above would not be tractable in any sense.</p>
-<p>Here is where we come to decision trees.</p>
+<p>But how can we enumerate all possible trees. Enumeration of all possible trees is straightforward as long it chooses its procedure in a stochastic manner over all possible.</p>
+<h3 id="procedure">Procedure</h3>
+<ol type="1">
+<li>Pick a box.</li>
+<li>Pick a feature.</li>
+<li>Change the box to an internal node (with the selected feature) and add leaves.</li>
+</ol>
+<p>This procedure will generate all possible trees if the picking is stochastic. Hence, for each tree we can now calculate <span class="math inline">\(P(T|D)\)</span>.</p>
+<p>Conceptually this is feasible but the number of trees is exceptionally large. Hence, practically considering all possible trees is not feasible, so we search the space from some <strong>optimal</strong> trees.</p>
+<p>An example of this is to use <em>greedy search</em> which maximizes <span class="math inline">\(P(T_i|D)\)</span>.</p>
+<h3 id="overfitting">Overfitting</h3>
+<p>As we go from top to bottom while expanding a tree, we’re imposing more and more conditions, so the number of instances keeps decreasing. At a point we will hit a tree with only pure leaves (instances of one class are not seen at this leaf). Here, the likelihood is maximum and it makes no sense to expand further. Theoretically, with enough features we would always end up with a tree with pure leaves (<em>overfitting</em>).</p>
+<p>It is the prior in a tree, which ensures that we do not overfit. This is analogous to regularization in numeric prediction.</p>
+<h3 id="going-from-one-tree-to-another">Going from one tree to another</h3>
+<p>When we’re calculating the posterior for a tree, we will perform a lot of repeated calculations at each step. That is, only perhaps a few leaves are added but the posterior requires considering the older leaves as well. Hence, instead of going with the highest value of <span class="math inline">\(P(T_i|D)\)</span>, we will rather go in the direction of highest value of the ratio <span class="math inline">\(\frac{P(T_k|D)}{P(T_i|D)}\)</span>, assuming the new tree is <span class="math inline">\(T_k\)</span> and the older tree is <span class="math inline">\(T_i\)</span>. In this ratio, most of the terms get cancelled.</p>
+<p>In practise, algorithms use other metrics such as <strong>entropy</strong> or <strong>gini</strong>. (Higher entropy correlated with higher likelihood). As we just saw this is clearly prone to overfitting. Libraries dont handle this explicitly but rather implicitly through conditions on maximum possible depth or pruning.</p>
+<h3 id="entropy-of-a-tree">Entropy of a Tree</h3>
+<p>We’ve already seen how to calculate the entropy of a leaf. Now we’ll see how to calculate the entropy of a tree. The entropy of a tree is just the weighted average of its leaves. Now we pick the tree with the maximum entropy gain.</p>
+<h3 id="decision-trees">Decision Trees</h3>
+<p>Classification trees can be made into a decision tree by simply setting a probability threshold. The choice of the threshold is usually dependent on the loss function.</p>
+<h3 id="n-ary-trees">n-ary trees</h3>
+<p>If the attributes are not binary, we can still use the entropy gain as we have conditioned it to be dependent on 2 classes.</p>
+<h3 id="real-valued-attributes">Real Valued Attributes</h3>
+<p>Real Valued attributes present a novel challenge since they are not bucketed. The solution to this is simple - We can discretize the an attribute based on its histogram. That is, we could use a threshold type of relation e.g. if <span class="math inline">\(X &lt; 11.8\)</span>, etc. Each of these trees generated in this manner would have an entropy associated with them and the previously described procedure can be used here.</p>
+<h3 id="regression-trees-real-valued-classes">Regression Trees (Real Valued Classes)</h3>
+<p>It is not that straightforward to calculate the entropy gain if the classes are real valued (e.g. in regression). Recall that entropy gain measures how much uncertainity exists in a distribution. The measure of uncertainity for a real valued distribution can simply be its standard deviation. Hence, the search can be directed using standard deviation over subtrees.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

@@ -2,10 +2,10 @@
 title: "Machine Learning"
 listing:
   posts:
-    - 2021-04-25-linear-regression
-    - 2021-04-25-logistic-regression
+    - 2021-05-11-support-vector-machines
     - 2021-05-03-trees
     - 2021-05-05-generativemodels
     - 2021-05-10-clustering
     - 2021-05-11-evaluation
+    - 2021-05-10-tutorial-coins-dice
 ---

@@ -2,17 +2,21 @@
 title: "Clustering"
 description: |
   Clustering
+resources:
+  include:
+    clustering.pdf
 header-includes:
   - \usepackage{amsmath}
-  - \usepackage{mathbb}
+  - \usepackage{amsfonts}
   - \usepackage{bbm}
 author:
   - name: Sharad Chitlangia
     url: https://www.sharadchitlang.ai
     affiliation: Dept. of EEE & APPCAIR, BITS Pilani 
-date: 04-24-2021
+date: 05-10-2021
 categories:
   - Courses - ML
+  - Lecture
 output: 
   distill::distill_article:
     self_contained: false
@@ -33,7 +37,7 @@ between objects, as we want to group similar instances together.
 
 #### Minkowski Distance
 
-$$ D_p(x,y) = (\sum_{i=1}^{d}\| x_i - y_i \|^{p})^{\frac{1}{p}} $$
+$$D_p(x,y) = (\sum_{i=1}^{d}\| x_i - y_i \|^{p})^{\frac{1}{p}}$$
 
 Minkowski distance is the euclidean distance for $p=2$ and the manhattan distance for $p=1$. As p becomes larger, $max(|x_i - y_i|)$ 
 becomes dominant.
@@ -79,7 +83,7 @@ points and we will have to _construct_ these distributions.
 
 In this case, if we know $\mu_a, \sigma_a$ and $\mu_b, \sigma_b$, then calculating $P(X=x|A)$ and $P(X=x|B)$ is straightforward.
 
-$$ P(A|X=x) \propto P(X=x|A)P(A) $$
+$$P(A|X=x) \propto P(X=x|A)P(A)$$
 
 Let us assume we know the prior $P(A)$. The clustering problem here is that we don't know $\mu, \sigma$ for each of these distributions.
 If $\mu, \sigma$ are known, then we are done.
@@ -91,7 +95,7 @@ And that they are normal.
 
 1. Randomly guess $\mu_a, \sigma_a, \mu_b, \sigma_b, P(A)$. Note: $P(B) = 1 - P(A)$.
 2. Using these guesses calculate the probability that each of these points belong to A and the probability that each of these belong to B.
-3. Similarly we do this for every point and finally we can calculate the mean $\mu_a = \frac{\sum_{i=0}{d} w_{i,A}x_i}{N}. We can 
+3. Similarly we do this for every point and finally we can calculate the mean $\mu_a = \frac{\sum_{i=0}{d} w_{i,A}x_i}{N}$. We can 
 calculate the other required parameters similarly.
 4. With these parameters, we can calculate the likelihood of the given data using the gaussian pmf function. The likelihood would simply
 be the product of the probabilities of the individual data points being produced given the the parameters of the gaussian calculated in 
@@ -122,7 +126,7 @@ Clusters are described entirely by the mean.
 Similar to the EM Algorithm, this procedure does not alone guarantee convergence. If we think about this as an optimization algorithm, 
 we need to minimize the sum of squares of each point to its closest mean i.e.,
 
-$$ L = \sum_{i=1}^{N} \sum_{j=1}^{k} z_{ij} |x_i - \mu_j|^2  $$
+$$L = \sum_{i=1}^{N} \sum_{j=1}^{k} z_{ij} |x_i - \mu_j|^2$$
 
 where $z_{ij} = 1$ if $x_i$ belongs to cluster $\mu_j$ and $0$ otherwise.
 

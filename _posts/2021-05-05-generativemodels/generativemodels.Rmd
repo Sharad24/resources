@@ -2,11 +2,13 @@
 title: "Generative Models"
 description: |
   Generative Models
+resources:
+  include:
+    generativemodels.pdf
 header-includes:
   - \usepackage{amsmath}
-  - \usepackage{mathbb}
+  - \usepackage{amsfonts}
   - \usepackage{bbm}
-  - \usepackage{mathcal}
 author:
   - name: Sharad Chitlangia
     url: https://www.sharadchitlang.ai
@@ -14,6 +16,7 @@ author:
 date: 04-24-2021
 categories:
   - Courses - ML
+  - Lecture
 output: 
   distill::distill_article:
     self_contained: false
@@ -27,11 +30,11 @@ Till now we've been modelling $P(Y|X)$. Generative Models have the general form 
 
 If we are able to build a generative model then we can build a classifier out of that generative model really easily as so:
 
-$$ P(Y|X) = \frac{P(X,Y)}{P(X)} $$
+$$P(Y|X) = \frac{P(X,Y)}{P(X)}$$
 
-Here, $P(X)$ can be substituted with $\sum_{y}(P(X,Y))$ . Finally giving us:
+Here, $P(X)$ can be substituted with $\sum_{y}(P(X,Y))$. Finally giving us:
 
-$$ P(Y|X) = \frac{P(X,Y)}{\sum_{y}P(X,Y)} $$
+$$P(Y|X) = \frac{P(X,Y)}{\sum_{y}P(X,Y)}$$
 
 The ideal goal is to be able to model $P(X_1, X_2, X_3, ..., X_d, Y)$
 
@@ -39,7 +42,7 @@ $$P(X_1, X_2, X_3, ..., X_d, Y) = P(X_1, X_2, X_3, ..., X_d|Y)P(Y)$$
 
 If $X_1, X_2, ... X_d$ are conditionally independent given $Y$, then the above equation simplifies to:
 
-$$ P(X_1, X_2, X_3, ..., X_d, Y) = P(X_1|Y)P(X_2|Y)P(X_3|Y)...P(X_d|Y) P(Y) $$
+$$P(X_1, X_2, X_3, ..., X_d, Y) = P(X_1|Y)P(X_2|Y)P(X_3|Y)...P(X_d|Y) P(Y)$$
 
 Or,
 
@@ -50,18 +53,18 @@ $$ P(X_1, X_2, X_3, ..., X_d, Y) = P(Y)\prod_{i=1}^{d}P(X_i|Y)$$
 The assumption of the variables being class conditionally independent is called the _Naive Bayes Assumption_.
 Since our end goal was to build a classifier from this generative model, we can use the generative model as so:
 
-$$ P(Y=0|X_1,X_2...X_d) \propto P(Y=0,X_1,X_2...X_d) $$
-$$ P(Y=1|X_1,X_2...X_d) \propto P(Y=1,X_1,X_2...X_d) $$
+$$P(Y=0|X_1,X_2...X_d) \propto P(Y=0,X_1,X_2...X_d)$$
+$$P(Y=1|X_1,X_2...X_d) \propto P(Y=1,X_1,X_2...X_d)$$
 
 We know that the constant term in both these equations is going to be the same (i.e., the denominator term from the Bayes equation)
 So if we assume the constant term to be $\alpha$ to get rid of the proportionality and add the equations, we get:
 
-$$ \alpha = \frac{1}{P(Y=0,X_1,X_2...X_d)+P(Y=1,X_1,X_2...X_d)}$$
+$$\alpha = \frac{1}{P(Y=0,X_1,X_2...X_d)+P(Y=1,X_1,X_2...X_d)}$$
 
 Hence the naive bayes classifier equation becomes:
 
-$$ P(Y=0|X_1,X_2...X_d) = \frac{P(Y=0,X_1,X_2...X_d)}{P(Y=0,X_1,X_2...X_d)+P(Y=1,X_1,X_2...X_d)} $$
-$$ P(Y=1|X_1,X_2...X_d) = \frac{P(Y=1,X_1,X_2...X_d)}{P(Y=0,X_1,X_2...X_d)+P(Y=1,X_1,X_2...X_d)} $$
+$$P(Y=0|X_1,X_2...X_d) = \frac{P(Y=0,X_1,X_2...X_d)}{P(Y=0,X_1,X_2...X_d)+P(Y=1,X_1,X_2...X_d)}$$
+$$P(Y=1|X_1,X_2...X_d) = \frac{P(Y=1,X_1,X_2...X_d)}{P(Y=0,X_1,X_2...X_d)+P(Y=1,X_1,X_2...X_d)}$$
 
 Both the probabilities in the denominator are joint pdfs and can be obtained from the generative model.
 
@@ -105,7 +108,7 @@ The Markov Condition states that a random variable $X$ is a conditionally indepe
 If we know the Markov Condition holds, we should be able to answer any conditional query fairly easily using the joint distribution
 over all the variables
 
-$$ P(B,E,A,J,M) = P(B)P(E)P(A|B,E)P(J|A)P(M|A) $$
+$$P(B,E,A,J,M) = P(B)P(E)P(A|B,E)P(J|A)P(M|A)$$
 
 ## Selecting a Graph
 
@@ -129,11 +132,11 @@ Let __x__ be an input example. The encoder maps $Enc: \mathcal{X} \rightarrow \m
 $Dec: \mathcal{H} \rightarrow \mathcal{X}$. The encoder and decoder functions are obtained by minimising a reconstruction
 loss:
 
-$$ Enc, Dec\ =\ argmin_{Enc, Dec} \| \ x \ -\ (Dec \cdot Enc)(x) \|^{2} $$
+$$Enc, Dec\ =\ argmin_{Enc, Dec} \| \ x \ -\ (Dec \cdot Enc)(x) \|^{2}$$
 
 In the simplest case, both encoder and decoder are single layered. That is,
 
-$$ h\ =\ \sigma (wx\ +\ b)$$
+$$h\ =\ \sigma (wx\ +\ b)$$
 
 Usually there is a regularization term added to the loss so that the encoder and decoder do not collapse into an identity function.
 __h__ is referred to as the _code_ or the _latent_ variable or the _latent_ representation.
@@ -185,7 +188,7 @@ The term *__adversarial__* is used as the goals of the discriminator and generat
 
 The final objective is 
 
-$$ min_D \ max_G \{- \textbf{E}_{x \sim \mathcal{X}}(logD(x)) - \textbf{E}_{z \sim \mathcal{N}(0,1)} (log(1 - D(G(z)))) \} $$
+$$min_D \ max_G \{- \textbf{E}_{x \sim \mathcal{X}}(logD(x)) - \textbf{E}_{z \sim \mathcal{N}(0,1)} (log(1 - D(G(z)))) \}$$
 
 The solution is actually a saddle point here due to the combined minimization and maximization here. In game theoretic terms, it is a nash equlibrium.
 

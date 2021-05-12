@@ -111,12 +111,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","header-includes","author","date","categories","output"]}},"value":[{"type":"character","attributes":{},"value":["Generative Models"]},{"type":"character","attributes":{},"value":["Generative Models\n"]},{"type":"character","attributes":{},"value":["\\usepackage{amsmath}","\\usepackage{mathbb}","\\usepackage{bbm}","\\usepackage{mathcal}"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation"]}},"value":[{"type":"character","attributes":{},"value":["Sharad Chitlangia"]},{"type":"character","attributes":{},"value":["https://www.sharadchitlang.ai"]},{"type":"character","attributes":{},"value":["Dept. of EEE & APPCAIR, BITS Pilani"]}]}]},{"type":"character","attributes":{},"value":["04-24-2021"]},{"type":"character","attributes":{},"value":["Courses - ML"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","resources","header-includes","author","date","categories","output"]}},"value":[{"type":"character","attributes":{},"value":["Generative Models"]},{"type":"character","attributes":{},"value":["Generative Models\n"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["include"]}},"value":[{"type":"character","attributes":{},"value":["generativemodels.pdf"]}]},{"type":"character","attributes":{},"value":["\\usepackage{amsmath}","\\usepackage{amsfonts}","\\usepackage{bbm}"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation"]}},"value":[{"type":"character","attributes":{},"value":["Sharad Chitlangia"]},{"type":"character","attributes":{},"value":["https://www.sharadchitlang.ai"]},{"type":"character","attributes":{},"value":["Dept. of EEE & APPCAIR, BITS Pilani"]}]}]},{"type":"character","attributes":{},"value":["04-24-2021"]},{"type":"character","attributes":{},"value":["Courses - ML","Lecture"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["autoencoder.png","bn.png","gan.png","generativemodels_files/anchor-4.2.2/anchor.min.js","generativemodels_files/bowser-1.9.3/bowser.min.js","generativemodels_files/distill-2.2.21/template.v2.js","generativemodels_files/header-attrs-2.7/header-attrs.js","generativemodels_files/jquery-1.11.3/jquery.min.js","generativemodels_files/popper-2.6.0/popper.min.js","generativemodels_files/tippy-6.2.7/tippy-bundle.umd.min.js","generativemodels_files/tippy-6.2.7/tippy-light-border.css","generativemodels_files/tippy-6.2.7/tippy.css","generativemodels_files/tippy-6.2.7/tippy.umd.min.js","generativemodels_files/webcomponents-2.0.0/webcomponents.js","nb.png","pipeline_an.png","vae.png"]}
+  {"type":"character","attributes":{},"value":["autoencoder.png","bn.png","gan.png","generativemodels.pdf","nb.png","pipeline_an.png","vae.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1469,6 +1469,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_categories-->
 <div class="dt-tags">
 <div class="dt=tag">Courses - ML</div>
+<div class="dt=tag">Lecture</div>
 </div>
 <!--/radix_placeholder_categories-->
 <p><p>Generative Models</p></p>
@@ -1485,24 +1486,24 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="why-are-we-interested-in-generative-models">Why are we interested in Generative Models?</h2>
 <p>Till now we’ve been modelling <span class="math inline">\(P(Y|X)\)</span>. Generative Models have the general form <span class="math inline">\(P(X,Y)\)</span></p>
 <p>If we are able to build a generative model then we can build a classifier out of that generative model really easily as so:</p>
-<p><span class="math display">\[ P(Y|X) = \frac{P(X,Y)}{P(X)} \]</span></p>
-<p>Here, <span class="math inline">\(P(X)\)</span> can be substituted with <span class="math inline">\(\sum_{y}(P(X,Y))\)</span> . Finally giving us:</p>
-<p><span class="math display">\[ P(Y|X) = \frac{P(X,Y)}{\sum_{y}P(X,Y)} \]</span></p>
+<p><span class="math display">\[P(Y|X) = \frac{P(X,Y)}{P(X)}\]</span></p>
+<p>Here, <span class="math inline">\(P(X)\)</span> can be substituted with <span class="math inline">\(\sum_{y}(P(X,Y))\)</span>. Finally giving us:</p>
+<p><span class="math display">\[P(Y|X) = \frac{P(X,Y)}{\sum_{y}P(X,Y)}\]</span></p>
 <p>The ideal goal is to be able to model <span class="math inline">\(P(X_1, X_2, X_3, ..., X_d, Y)\)</span></p>
 <p><span class="math display">\[P(X_1, X_2, X_3, ..., X_d, Y) = P(X_1, X_2, X_3, ..., X_d|Y)P(Y)\]</span></p>
 <p>If <span class="math inline">\(X_1, X_2, ... X_d\)</span> are conditionally independent given <span class="math inline">\(Y\)</span>, then the above equation simplifies to:</p>
-<p><span class="math display">\[ P(X_1, X_2, X_3, ..., X_d, Y) = P(X_1|Y)P(X_2|Y)P(X_3|Y)...P(X_d|Y) P(Y) \]</span></p>
+<p><span class="math display">\[P(X_1, X_2, X_3, ..., X_d, Y) = P(X_1|Y)P(X_2|Y)P(X_3|Y)...P(X_d|Y) P(Y)\]</span></p>
 <p>Or,</p>
 <p><span class="math display">\[ P(X_1, X_2, X_3, ..., X_d, Y) = P(Y)\prod_{i=1}^{d}P(X_i|Y)\]</span></p>
 <figure>
 <img src="nb.png" alt="A Naive Bayes Classifier" /><figcaption aria-hidden="true">A Naive Bayes Classifier</figcaption>
 </figure>
 <p>The assumption of the variables being class conditionally independent is called the <em>Naive Bayes Assumption</em>. Since our end goal was to build a classifier from this generative model, we can use the generative model as so:</p>
-<p><span class="math display">\[ P(Y=0|X_1,X_2...X_d) \propto P(Y=0,X_1,X_2...X_d) \]</span> <span class="math display">\[ P(Y=1|X_1,X_2...X_d) \propto P(Y=1,X_1,X_2...X_d) \]</span></p>
+<p><span class="math display">\[P(Y=0|X_1,X_2...X_d) \propto P(Y=0,X_1,X_2...X_d)\]</span> <span class="math display">\[P(Y=1|X_1,X_2...X_d) \propto P(Y=1,X_1,X_2...X_d)\]</span></p>
 <p>We know that the constant term in both these equations is going to be the same (i.e., the denominator term from the Bayes equation) So if we assume the constant term to be <span class="math inline">\(\alpha\)</span> to get rid of the proportionality and add the equations, we get:</p>
-<p><span class="math display">\[ \alpha = \frac{1}{P(Y=0,X_1,X_2...X_d)+P(Y=1,X_1,X_2...X_d)}\]</span></p>
+<p><span class="math display">\[\alpha = \frac{1}{P(Y=0,X_1,X_2...X_d)+P(Y=1,X_1,X_2...X_d)}\]</span></p>
 <p>Hence the naive bayes classifier equation becomes:</p>
-<p><span class="math display">\[ P(Y=0|X_1,X_2...X_d) = \frac{P(Y=0,X_1,X_2...X_d)}{P(Y=0,X_1,X_2...X_d)+P(Y=1,X_1,X_2...X_d)} \]</span> <span class="math display">\[ P(Y=1|X_1,X_2...X_d) = \frac{P(Y=1,X_1,X_2...X_d)}{P(Y=0,X_1,X_2...X_d)+P(Y=1,X_1,X_2...X_d)} \]</span></p>
+<p><span class="math display">\[P(Y=0|X_1,X_2...X_d) = \frac{P(Y=0,X_1,X_2...X_d)}{P(Y=0,X_1,X_2...X_d)+P(Y=1,X_1,X_2...X_d)}\]</span> <span class="math display">\[P(Y=1|X_1,X_2...X_d) = \frac{P(Y=1,X_1,X_2...X_d)}{P(Y=0,X_1,X_2...X_d)+P(Y=1,X_1,X_2...X_d)}\]</span></p>
 <p>Both the probabilities in the denominator are joint pdfs and can be obtained from the generative model.</p>
 <h3 id="structure-and-params">Structure and Params</h3>
 <p>The Structure of the Naive Bayes Classifier is a DAG (short for Directed Acyclic Graph) and the parameters would be the conditional probabilities. The parameters could be esimated using MLE or using just the priors. But where are the priors in a Naive Bayes Classifier? The priors are encoded by the relationships between the variables and the variable which is assumed to be given (e.g. <span class="math inline">\(Y\)</span>). So for each such relationship (e.g. <span class="math inline">\(X_1|Y\)</span>), there can be two priors - one encoding the prior in the case <span class="math inline">\(Y=0\)</span> and the other encoding the prior in the case <span class="math inline">\(Y=1\)</span>. Hence, if we are modelling P(Y|X_1, X_2, …, X_d) then there are <span class="math inline">\(2\ \times\ d\)</span> priors for the conditionally independent variables and a prior for <span class="math inline">\(Y\)</span> itself giving us a total of <span class="math inline">\(2\ \times\ d + 1\)</span> priors.</p>
@@ -1557,7 +1558,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><span class="math inline">\(Y\)</span> is a non-descendent of <span class="math inline">\(X\)</span> if there is no path from <span class="math inline">\(X\)</span> to <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> do not have a parent-child relationship.</li>
 </ul>
 <p>If we know the Markov Condition holds, we should be able to answer any conditional query fairly easily using the joint distribution over all the variables</p>
-<p><span class="math display">\[ P(B,E,A,J,M) = P(B)P(E)P(A|B,E)P(J|A)P(M|A)\]</span></p>
+<p><span class="math display">\[P(B,E,A,J,M) = P(B)P(E)P(A|B,E)P(J|A)P(M|A)\]</span></p>
 <h2 id="selecting-a-graph">Selecting a Graph</h2>
 <h3 id="what-was-before-bic">What was before BIC?</h3>
 <h3 id="bic">BIC</h3>
@@ -1569,9 +1570,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>An autoencoder (AE) is a neural network that learns to copy its input to its output. The internal representation between the encoder and the decoder is commonly called as the <em>code</em> or the <em>latent vector</em> of that input sample.</p>
 <p>AE reconstructs the input <em>approximately</em> to preserve the most relevant parts of the data i.e., some important <strong>latent</strong> aspects.</p>
 <p>Let <strong>x</strong> be an input example. The encoder maps <span class="math inline">\(Enc: \mathcal{X} \rightarrow \mathcal{H}\)</span> and the decoder maps <span class="math inline">\(Dec: \mathcal{H} \rightarrow \mathcal{X}\)</span>. The encoder and decoder functions are obtained by minimising a reconstruction loss:</p>
-<p><span class="math display">\[ Enc, Dec\ =\ argmin_{Enc, Dec} \| \ x \ -\ (Dec \cdot Enc)(x) \|^{2} \]</span></p>
+<p><span class="math display">\[Enc, Dec\ =\ argmin_{Enc, Dec} \| \ x \ -\ (Dec \cdot Enc)(x) \|^{2}\]</span></p>
 <p>In the simplest case, both encoder and decoder are single layered. That is,</p>
-<p><span class="math display">\[ h\ =\ \sigma (wx\ +\ b)\]</span></p>
+<p><span class="math display">\[h\ =\ \sigma (wx\ +\ b)\]</span></p>
 <p>Usually there is a regularization term added to the loss so that the encoder and decoder do not collapse into an identity function. <strong>h</strong> is referred to as the <em>code</em> or the <em>latent</em> variable or the <em>latent</em> representation.</p>
 <figure>
 <img src="pipeline_an.png" alt="The end to end pipeline of an autoencoder" /><figcaption aria-hidden="true">The end to end pipeline of an autoencoder</figcaption>
@@ -1624,7 +1625,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </figure>
 <h2 id="training">Training</h2>
 <p>The final objective is</p>
-<p><span class="math display">\[ min_D \ max_G \{- \textbf{E}_{x \sim \mathcal{X}}(logD(x)) - \textbf{E}_{z \sim \mathcal{N}(0,1)} (log(1 - D(G(z)))) \} \]</span></p>
+<p><span class="math display">\[min_D \ max_G \{- \textbf{E}_{x \sim \mathcal{X}}(logD(x)) - \textbf{E}_{z \sim \mathcal{N}(0,1)} (log(1 - D(G(z)))) \}\]</span></p>
 <p>The solution is actually a saddle point here due to the combined minimization and maximization here. In game theoretic terms, it is a nash equlibrium.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
