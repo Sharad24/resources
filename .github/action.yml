@@ -18,11 +18,6 @@ jobs:
         run: |
           install.packages("rmarkdown")
           install.packages("distill")
-          install.packages("postcards")
-          install.packages(c('devtools','curl'))
-          install.packages("devtools")
-          install.packages("fs")
-          devtools::install_github("etiennebacher/ebmisc")
         shell: Rscript {0}
 
       - uses: actions/cache@v2
