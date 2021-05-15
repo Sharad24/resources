@@ -14,24 +14,26 @@ jobs:
 
       - uses: r-lib/actions/setup-pandoc@master
 
+      - name: Install devtools dependencies
+        run: |
+          sudo apt install build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev
+        shell: bash
+
       - name: Install dependencies
         run: |
           install.packages("rmarkdown")
           install.packages("distill")
-          install.packages("postcards")
-          install.packages("devtools")
-          install.packages("fs")
-          devtools::install_github("etiennebacher/ebmisc")
         shell: Rscript {0}
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.local/share/renv
+          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-renv-
 
       - name: Render Site
         run: Rscript -e 'rmarkdown::render_site(encoding = "UTF-8")'
-
-      - name: Commit results
-        run: |
-          git add -A
-          git commit -m 'Rebuild site' || echo "No changes to commit"
-          git push origin || echo "No changes to commit"
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.3
