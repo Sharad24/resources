@@ -4,6 +4,10 @@ on:
 
 name: Render & Deploy Site
 
+env:
+  # Version of pandoc to be used for rendering blog posts
+  AI_BLOG_PANDOC_VERSION: '2.13'
+
 jobs:
   build:
     runs-on: ubuntu-latest
