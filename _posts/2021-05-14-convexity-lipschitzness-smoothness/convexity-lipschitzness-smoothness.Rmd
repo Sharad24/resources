@@ -58,5 +58,3 @@ which equivalently is $$f(x)\ -\ L |x\ -\ y|\ \leq \ f(y)$$
 
 and the second one, $$f(y)\ -\ f(x) \leq L (x\ -\ y)$$
 which is $$f(y)\ \leq \ f(x) +\ L |x\ -\ y|$$
-
-Hello1
