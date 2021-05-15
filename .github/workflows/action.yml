@@ -6,7 +6,7 @@ name: Render & Deploy Site
 
 env:
   # Version of pandoc to be used for rendering blog posts
-  AI_BLOG_PANDOC_VERSION: '2.13'
+  PANDOC_VERSION: '2.13'
 
 jobs:
   build:
@@ -34,7 +34,7 @@ jobs:
           install.packages("rmarkdown")
           install.packages("distill")
           writeLines(sprintf('R-%i.%i', getRversion()$major, getRversion()$minor), '.github/R-version')
-          writeLines(Sys.getenv('AI_BLOG_PANDOC_VERSION'), '.github/pandoc-version')
+          writeLines(Sys.getenv('PANDOC_VERSION'), '.github/pandoc-version')
         shell: Rscript {0}
 
       - name: Cache R Packages
