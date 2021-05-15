@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://resources.sharadchitlang.ai/about.html</loc>
-    <lastmod>2021-05-12T07:08:12+05:30</lastmod>
+    <lastmod>2021-05-14T20:36:14+05:30</lastmod>
   </url>
   <url>
     <loc>https://resources.sharadchitlang.ai/courses.html</loc>
@@ -91,5 +91,9 @@
   <url>
     <loc>https://resources.sharadchitlang.ai/posts/2021-04-24-on-lipschitz-continuity/</loc>
     <lastmod>2021-05-12T06:33:22+05:30</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-05-14-convexity-lipschitzness-smoothness/</loc>
+    <lastmod>2021-05-15T07:28:44+05:30</lastmod>
   </url>
 </urlset>

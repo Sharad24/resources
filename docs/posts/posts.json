@@ -291,5 +291,24 @@
     "preview": {},
     "last_modified": "2021-05-12T06:33:22+05:30",
     "input_file": {}
+  },
+  {
+    "path": "posts/2021-05-14-convexity-lipschitzness-smoothness/",
+    "title": "Lipschitz Continuity",
+    "description": "On Lipschitz Continuity",
+    "author": [
+      {
+        "name": "Sharad Chitlangia",
+        "url": "https://www.sharadchitlang.ai"
+      }
+    ],
+    "date": "2021-04-20",
+    "categories": [
+      "Math"
+    ],
+    "contents": "\nTheorem\nA function \\(f : I \\rightarrow \\mathbb{R}\\) over some set \\(I \\subseteq \\mathbb{R}\\) is called Lipschitz-continuous if there exists some \\(L \\geq 0\\) such that\n\\[\n|f(x)\\ -\\ f(y)| \\leq L (x\\ -\\ y)\n\\]\nwhere, \\(x,\\ y\\ \\epsilon\\ I\\)\nIf such a constant \\(L\\) exists, then we call \\(L\\) as the Lipschitz Constant of \\(f\\) over \\(I\\).\nEquivalently, \\(f\\) is Lipschitz continuous is there exists \\(L \\geq 0\\) such that\n\\[\n\\frac{|f(x)\\ -\\ f(y)|}{x\\ -\\ y} \\leq L\n\\]\nwhere, \\(x,\\ y\\ \\epsilon\\ I,\\ x\\ \\neq\\ y\\)\nLemma\nA function \\(f\\ :\\ I\\ \\rightarrow \\ \\mathbb{R}\\) is Lipschitz-continuous with Lipschitz-constant \\(L\\) if and only if \\[\nf(x)\\ -\\ L |x\\ -\\ y|\\ \\leq \\ f(y) \\ \\leq \\ f(x) \\ + \\ L |x\\ -\\ y|\n\\]\nProof\nIf \\(f\\) if Lipschitz-constinuous with constant \\(L\\) then,\n\\[\n|f(x)\\ -\\ f(y)| \\leq L (x\\ -\\ y)\n\\]\nOn resolving the modulus we can get two equations.\nThe first one, \\[f(x)\\ -\\ f(y) \\leq L (x\\ -\\ y)\\] which equivalently is \\[f(x)\\ -\\ L |x\\ -\\ y|\\ \\leq \\ f(y)\\]\nand the second one, \\[f(y)\\ -\\ f(x) \\leq L (x\\ -\\ y)\\] which is \\[f(y)\\ \\leq \\ f(x) +\\ L |x\\ -\\ y|\\]\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-05-15T07:28:44+05:30",
+    "input_file": "convexity-lipschitzness-smoothness.utf8.md"
   }
 ]

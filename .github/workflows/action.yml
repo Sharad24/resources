@@ -29,12 +29,12 @@ jobs:
           install.packages("distill")
         shell: Rscript {0}
 
-      - uses: actions/cache@v2
+      - name: Cache R Packages
+        uses: actions/cache@v2
         with:
-          path: ~/.local/share/renv
-          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-renv-
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ hashFiles('.github/R-version') }}
+          restore-keys: ${{ hashFiles('.github/R-version') }}
 
       - name: Cache Build Artifacts
         uses: actions/cache@v2
