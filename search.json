@@ -6,14 +6,14 @@
       "description": "Some additional details about the site",
       "author": [],
       "contents": "\nThis site is meant to be a collection of informative resources that I read centered largely around Machine Learning. Material on this site is constantly being updated so most of the notes (especially coursework related) will be very incomplete. For a lot of articles (especially coursework related), there are PDFs that are attached as well (on the right side of the margin at the start of the article).\n\n\n\n",
-      "last_modified": "2021-05-15T05:31:47+00:00"
+      "last_modified": "2021-05-15T05:33:23+00:00"
     },
     {
       "path": "CLT.html",
       "title": "Computational Learning Theory",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-05-15T05:31:48+00:00"
+      "last_modified": "2021-05-15T05:33:24+00:00"
     },
     {
       "path": "courses.html",
@@ -21,42 +21,42 @@
       "description": "Notes from some of the Courses I've done",
       "author": [],
       "contents": "\n\n\n\n\n",
-      "last_modified": "2021-05-15T05:31:48+00:00"
+      "last_modified": "2021-05-15T05:33:24+00:00"
     },
     {
       "path": "ICLR.html",
       "title": "Notes from the International Conference on Learning Representations 2021",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-05-15T05:31:49+00:00"
+      "last_modified": "2021-05-15T05:33:25+00:00"
     },
     {
       "path": "index.html",
       "title": "Resources",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-05-15T05:31:49+00:00"
+      "last_modified": "2021-05-15T05:33:25+00:00"
     },
     {
       "path": "metal.html",
       "title": "Meta Learning",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-05-15T05:31:49+00:00"
+      "last_modified": "2021-05-15T05:33:26+00:00"
     },
     {
       "path": "ML.html",
       "title": "Machine Learning",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-05-15T05:31:50+00:00"
+      "last_modified": "2021-05-15T05:33:26+00:00"
     },
     {
       "path": "stats.html",
       "title": "Statistics",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-05-15T05:31:50+00:00"
+      "last_modified": "2021-05-15T05:33:27+00:00"
     }
   ],
   "collections": ["posts/posts.json"]
