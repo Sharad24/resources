@@ -1,2 +1,3 @@
-docs/typescript
 docs
+_posts/**/*.html
+tmp
