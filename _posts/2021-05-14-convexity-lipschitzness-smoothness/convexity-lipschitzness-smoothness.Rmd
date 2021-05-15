@@ -1,7 +1,7 @@
 ---
-title: "Lipschitz Continuity"
+title: "Convexity Lipschitzness Smoothness"
 description: |
-  On Lipschitz Continuity
+  What do these terms imply? How can they be used in the context of Machine Learning?
 author:
   - name: Sharad Chitlangia
     url: https://www.sharadchitlang.ai
@@ -14,7 +14,12 @@ output:
     self_contained: false
 ---
 
-### Theorem
+## Convexity
+
+## Lipschitzness
+
+### Lipschitz Continuous
+#### Theorem
 
 A function $f : I \rightarrow \mathbb{R}$ over some set $I \subseteq \mathbb{R}$ is called Lipschitz-continuous
 if there exists some $L \geq 0$ such that 
@@ -58,3 +63,5 @@ which equivalently is $$f(x)\ -\ L |x\ -\ y|\ \leq \ f(y)$$
 
 and the second one, $$f(y)\ -\ f(x) \leq L (x\ -\ y)$$
 which is $$f(y)\ \leq \ f(x) +\ L |x\ -\ y|$$
+
+## Smoothness
