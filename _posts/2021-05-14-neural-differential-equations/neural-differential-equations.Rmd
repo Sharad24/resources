@@ -1,0 +1,25 @@
+---
+title: "Neural Differential Equations"
+description: |
+  Neural Differential Equations were proposed in 2018 as a new family of Neural Network models that 
+  would incorporate black box ODE solvers as a component.
+author:
+  - name: Sharad Chitlangia
+    url: https://www.sharadchitlang.ai
+    affiliation: Dept. of EEE & APPCAIR, BITS Pilani 
+date: May-15-2021
+categories:
+  - Time Series
+bibliography: biblio.bib
+output: 
+  distill::distill_article:
+    self_contained: false
+---
+
+# Neural Differential Equations
+
+Neural Differential Equations [@NEURIPS2018_69386f6b] were a family of deep neural network models proposed 
+in 2018 as the infintely continuous variant of a discrete recurrent neural network. One of the major applications
+of such type of models was in time series data. Time Series are often directly modeled in terms of differential 
+equations. In this article, we will explore the literature thats developed since the introduction of Neural
+ODES in 2018.

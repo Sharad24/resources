@@ -6,13 +6,19 @@ author:
   - name: Sharad Chitlangia
     url: https://www.sharadchitlang.ai
     affiliation: Dept. of EEE & APPCAIR, BITS Pilani 
-date: April-20-2021
+date: May-15-2021
 categories:
   - Math
+bibliography: biblio.bib
 output: 
   distill::distill_article:
     self_contained: false
 ---
+
+This article is motivated by the chapter on __Convex Learning Problems__ in the book 
+__Understanding Machine Learning: From Theory To Algorithms__ [@ShalevShwartz2014UnderstandingML].
+Convexity, Lipschitzness and Smoothness are some of the most recurring topics in Machine Learning Research
+today. This article aims to provide an overview of the theory and some of their most interesting applications.
 
 ## Convexity
 

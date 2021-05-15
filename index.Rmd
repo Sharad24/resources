@@ -4,5 +4,6 @@ site: distill::distill_website
 listing: 
   posts:
     - 2021-05-14-convexity-lipschitzness-smoothness
+    - 2021-05-14-neural-differential-equations
 ---
 

@@ -27,7 +27,7 @@ jobs:
           sudo apt install build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev
         shell: bash
 
-      - name: Install dependencies
+      - name: Set versions
         run: |
           install.packages("rmarkdown")
           install.packages("distill")
@@ -41,6 +41,12 @@ jobs:
           path: ${{ env.R_LIBS_USER }}
           key: ${{ hashFiles('.github/R-version') }}
           restore-keys: ${{ hashFiles('.github/R-version') }}
+
+      - name: Install dependencies
+        run: |
+          install.packages("rmarkdown")
+          install.packages("distill")
+        shell: Rscript {0}
 
       - name: Cache Build Artifacts
         uses: actions/cache@v2
