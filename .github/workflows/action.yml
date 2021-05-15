@@ -14,6 +14,10 @@ jobs:
 
       - uses: r-lib/actions/setup-pandoc@master
 
+      - name: Install Rsync
+        run: |
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y rsync
+
       - name: Install devtools dependencies
         run: |
           sudo apt install build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev
@@ -31,6 +35,29 @@ jobs:
           key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
           restore-keys: |
             ${{ runner.os }}-renv-
+
+      - name: Cache Build Artifacts
+        uses: actions/cache@v2
+        with:
+          path: /tmp/_posts
+          key: ${{ hashFiles('.github/pandoc-version') }}-${{ hashFiles('.github/R-version') }}
+
+      - name: Render Posts
+        run: |
+          rm -rf docs/
+          set -x
+          mkdir docs
+          for file in $(find _posts -type f -name '*.Rmd')
+          do
+            (\
+              diff -q {,/tmp/}"${file}" && \
+                rsync -rv {/tmp/,}$(dirname "${file}")/ \
+            ) || \
+              Rscript -e "rmarkdown::render('${file}')"
+          done
+          rm -rf /tmp/_posts
+          cp -r _posts /tmp
+        shell: bash
 
       - name: Render Site
         run: Rscript -e 'rmarkdown::render_site(encoding = "UTF-8")'
