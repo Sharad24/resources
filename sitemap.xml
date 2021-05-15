@@ -2,98 +2,106 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
     <loc>https://resources.sharadchitlang.ai/about.html</loc>
-    <lastmod>2021-05-15T04:33:23+00:00</lastmod>
+    <lastmod>2021-05-15T05:26:01+00:00</lastmod>
   </url>
   <url>
     <loc>https://resources.sharadchitlang.ai/CLT.html</loc>
-    <lastmod>2021-05-15T04:33:23+00:00</lastmod>
+    <lastmod>2021-05-15T05:26:01+00:00</lastmod>
   </url>
   <url>
     <loc>https://resources.sharadchitlang.ai/courses.html</loc>
-    <lastmod>2021-05-15T04:33:23+00:00</lastmod>
+    <lastmod>2021-05-15T05:26:01+00:00</lastmod>
   </url>
   <url>
     <loc>https://resources.sharadchitlang.ai/ICLR.html</loc>
-    <lastmod>2021-05-15T04:33:23+00:00</lastmod>
+    <lastmod>2021-05-15T05:26:01+00:00</lastmod>
   </url>
   <url>
     <loc>https://resources.sharadchitlang.ai/</loc>
-    <lastmod>2021-05-15T04:33:23+00:00</lastmod>
+    <lastmod>2021-05-15T05:26:01+00:00</lastmod>
   </url>
   <url>
     <loc>https://resources.sharadchitlang.ai/metal.html</loc>
-    <lastmod>2021-05-15T04:33:23+00:00</lastmod>
+    <lastmod>2021-05-15T05:26:01+00:00</lastmod>
   </url>
   <url>
     <loc>https://resources.sharadchitlang.ai/ML.html</loc>
-    <lastmod>2021-05-15T04:33:23+00:00</lastmod>
+    <lastmod>2021-05-15T05:26:01+00:00</lastmod>
   </url>
   <url>
     <loc>https://resources.sharadchitlang.ai/stats.html</loc>
-    <lastmod>2021-05-15T04:33:23+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://resources.sharadchitlang.ai/posts/2021-05-10-tutorial-coins-dice/</loc>
-    <lastmod>2021-05-15T04:38:55+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://resources.sharadchitlang.ai/posts/2021-05-11-support-vector-machines/</loc>
-    <lastmod>2021-05-15T04:38:55+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://resources.sharadchitlang.ai/posts/2021-05-11-evaluation/</loc>
-    <lastmod>2021-05-15T04:38:55+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://resources.sharadchitlang.ai/posts/2021-05-10-clustering/</loc>
-    <lastmod>2021-05-15T04:38:54+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://resources.sharadchitlang.ai/posts/2021-04-25-central-limit-theorem/</loc>
-    <lastmod>2021-05-15T04:38:54+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://resources.sharadchitlang.ai/posts/2021-04-25-law-of-large-numbers/</loc>
-    <lastmod>2021-05-15T04:38:55+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://resources.sharadchitlang.ai/posts/2021-04-25-linear-regression/</loc>
-    <lastmod>2021-05-15T04:38:55+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://resources.sharadchitlang.ai/posts/2021-04-25-logistic-regression/</loc>
-    <lastmod>2021-05-15T04:38:55+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://resources.sharadchitlang.ai/posts/2021-04-25-introduction/</loc>
-    <lastmod>2021-05-15T04:38:55+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://resources.sharadchitlang.ai/posts/2021-04-25-pac/</loc>
-    <lastmod>2021-05-15T04:38:55+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://resources.sharadchitlang.ai/posts/2021-05-03-fedbn/</loc>
-    <lastmod>2021-05-15T04:38:55+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://resources.sharadchitlang.ai/posts/2021-05-03-reptile/</loc>
-    <lastmod>2021-05-15T04:38:55+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://resources.sharadchitlang.ai/posts/2021-05-03-trees/</loc>
-    <lastmod>2021-05-15T04:38:55+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://resources.sharadchitlang.ai/posts/2021-05-05-generativemodels/</loc>
-    <lastmod>2021-05-15T04:38:54+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://resources.sharadchitlang.ai/posts/2021-04-24-on-lipschitz-continuity/</loc>
-    <lastmod>2021-05-15T04:38:55+00:00</lastmod>
+    <lastmod>2021-05-15T05:26:01+00:00</lastmod>
   </url>
   <url>
     <loc>https://resources.sharadchitlang.ai/posts/2021-05-14-convexity-lipschitzness-smoothness/</loc>
-    <lastmod>2021-05-15T04:38:55+00:00</lastmod>
+    <lastmod>2021-05-15T05:31:42+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-05-14-neural-differential-equations/</loc>
+    <lastmod>2021-05-15T05:31:44+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-05-14-neural-tangent-kernels/</loc>
+    <lastmod>2021-05-15T05:31:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-05-10-tutorial-coins-dice/</loc>
+    <lastmod>2021-05-15T05:31:44+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-05-11-support-vector-machines/</loc>
+    <lastmod>2021-05-15T05:31:44+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-05-11-evaluation/</loc>
+    <lastmod>2021-05-15T05:31:44+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-05-10-clustering/</loc>
+    <lastmod>2021-05-15T05:31:41+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-04-25-central-limit-theorem/</loc>
+    <lastmod>2021-05-15T05:31:41+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-04-25-law-of-large-numbers/</loc>
+    <lastmod>2021-05-15T05:31:44+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-04-25-linear-regression/</loc>
+    <lastmod>2021-05-15T05:31:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-04-25-logistic-regression/</loc>
+    <lastmod>2021-05-15T05:31:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-04-25-introduction/</loc>
+    <lastmod>2021-05-15T05:31:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-04-25-pac/</loc>
+    <lastmod>2021-05-15T05:31:44+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-05-03-fedbn/</loc>
+    <lastmod>2021-05-15T05:31:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-05-03-reptile/</loc>
+    <lastmod>2021-05-15T05:31:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-05-03-trees/</loc>
+    <lastmod>2021-05-15T05:31:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-05-05-generativemodels/</loc>
+    <lastmod>2021-05-15T05:31:41+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://resources.sharadchitlang.ai/posts/2021-04-24-on-lipschitz-continuity/</loc>
+    <lastmod>2021-05-15T05:31:44+00:00</lastmod>
   </url>
 </urlset>
