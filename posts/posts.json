@@ -1,0 +1,295 @@
+[
+  {
+    "path": "posts/2021-05-10-tutorial-coins-dice/",
+    "title": "Coins and Dice Tutorial",
+    "description": "Questions from the tutorial on Coins and Dice",
+    "author": [
+      {
+        "name": "Sharad Chitlangia",
+        "url": "https://www.sharadchitlang.ai"
+      }
+    ],
+    "date": "2021-05-12",
+    "categories": [
+      "Courses - ML",
+      "Tutorial"
+    ],
+    "contents": "\nPDF\nTutorial on Coins and Dice\nFor a given \\(F: \\mathbb{R}\\rightarrow \\lbrack 0,1 \\rbrack\\) is a random variable with a p.d.f \\(p(F)\\), show that \\(P(heads) = \\mathop{\\mathbb{E}}\\lbrack F \\rbrack\\)\n\\[P(heads) = \\int_0^1 P(heads|F=f)p(F=f)df\\] \\[P(heads) = \\int_0^1 fp(f)df\\] \\[P(heads) = \\mathop{\\mathbb{E}} \\lbrack F \\rbrack\\]\nGamma and Beta Distributions\nGamma\n\\[\\Gamma{(x+1)} = \\int_0^{\\infty} t^x e^{-t} dt\\] \\[\\Gamma{(x+1)} = x\\Gamma{(x)}\\]\nBeta\n\\[B(x,y) = \\int_0^1 t^{x-1}(1-t)^{y-1}dt\\] \\[B(x,y) = \\frac{\\Gamma{(x)}\\Gamma{(y)}}{\\Gamma{(x+y)}}\\]\nBeta p.d.f.\n\\[beta(x;\\alpha,\\beta) = \\frac{x^{\\alpha-1}(1-x)^{\\beta-1}}{B(\\alpha,\\beta)}\\]\nFor a random variable \\(F \\sim beta(f;\\alpha,\\beta)\\),\n\\[\\mathop{\\mathbb{E}}\\lbrack F \\rbrack = \\frac{\\alpha}{\\alpha+\\beta}\\]\nBinomial Sampling\nGiven a binomial random sample \\(D\\) of size \\(M\\) given a random variable \\(F\\) with p.d.f. \\(p(F)\\) over relative frequencies of heads and a dataset \\(d = \\{x^{(1)},x^{(2)}...,x^{(M)}\\}\\) in which there are \\(s\\) values of heads and \\(t\\) values of tails\n\\[P(d) = \\mathop{\\mathbb{E}}(F^s \\lbrack 1-F \\rbrack^{t})\\]\nIf \\(F \\sim p(f) = beta(f;\\alpha,\\beta)\\), then\n\\[P(d) = \\frac{B(\\alpha+s,\\beta+t)}{B(\\alpha,\\beta)}\\]\nThe posterior \\(P(f|d)\\) can also be computed now.\n\\[P(f|d) = \\frac{P(d|f)P(f)}{P(d)}\\] \\[P(f|d) = \\frac{f^s(1-f)^t p(f)}{\\mathop{\\mathbb{E}}(F^s \\lbrack 1-F \\rbrack^{t} )}\\] \\[P(f|d) = beta(f;\\alpha+s,\\beta+t)\\]\n\\[P(X^{(M+1)} = 1|d) = \\frac{\\alpha+s}{\\alpha+s+\\beta+t}\\]\nTherefore,\n\\[Prior = B(\\alpha,\\beta)\\] \\[Likelihood = \\frac{B(\\alpha+s,\\beta+t)}{B(\\alpha,\\beta)}\\] \\[Posterior = B(\\alpha+s,\\beta+t)\\]\nRelevance to Class Probability Trees (CPT)\nWe will treat each leaf in a CPT as a coin with its own prior. These coins are independent of coints at other leaves.\nParameter estimation is also straightforward now, if we have the prior and the data. We can directly apply the beta update rule.\nFor the search procedure, how can we calculate \\(P(d)\\). Recall that calculating this term helps in guiding the search procedure. At each node, we select the successor which increases the value of this term the most (in both trees and bayesian networks).\nConditional Urns Model\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-05-15T01:45:56+00:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-05-11-support-vector-machines/",
+    "title": "Support Vector Machines",
+    "description": "Support Vector Machines",
+    "author": [
+      {
+        "name": "Sharad Chitlangia",
+        "url": "https://www.sharadchitlang.ai"
+      }
+    ],
+    "date": "2021-05-12",
+    "categories": [
+      "Courses - ML",
+      "Lecture"
+    ],
+    "contents": "\nPDF\nSupport Vector Machines\nConstraint Violation\nAt times, having a hard constraint may not be so useful especially when there are outliers or noise in the dataset. In such a case we allow for the constraints to be minimally violated. An example is show below:\n\nTo introduce this effect, we add slack variables to our model which allow constraint violation. The slack variable \\(\\xi_i \\in [0,1)\\) enables the point \\(x_i\\) to be in between the margin and on the correct side of the hyperplane. This is called margin violation. If \\(\\xi_i > 1\\), then the point is misclassified.\nIntroduction of Slack VariablesThe corresponding objective function of the SVM becomes:\n\\[ \\min_{\\textbf{w}\\in\\mathop{\\mathbb{R}}^d, \\xi\\in\\mathop{\\mathbb{R}}^+} \\| \\textbf{w} \\|^2 + C\\sum_{i}^{N}\\xi_i \\]\nsubject to:\n\\[ y_i\\{w^Tx+b\\} \\geq 1 - xi_i\\ ;\\ \\forall\\ i=1...N \\]\nKKT Conditions\nStationarity: Calculate the lagrangian and set its differential wrt each variable to \\(0\\).\nComplementary Slackness: Multiplication of multiplier and the \\(h(x)\\) condition is 0.\nPrimal Feasibility: \\(h(x) \\leq 0\\), \\(l(x) = 0\\).\nDual Feasability: Multipliers are greater than \\(0\\).\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-05-15T01:45:56+00:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-05-11-evaluation/",
+    "title": "Evaluation",
+    "description": "Evaluation",
+    "author": [
+      {
+        "name": "Sharad Chitlangia",
+        "url": "https://www.sharadchitlang.ai"
+      }
+    ],
+    "date": "2021-05-11",
+    "categories": [
+      "Courses - ML",
+      "Lecture"
+    ],
+    "contents": "\nPDF\nEvaluation\nWhen we evaluate models, we will need a loss function and our goal is to minimize the expected loss value.\nThe reason for it to be expected loss is because our loss is always going to be computed over a sample of data points. So in the probabilitic sense, the loss is associated with an actual distribution.\nSuppose we’re given \\((x_1, y_1), ...., (x_n, y_n)\\) and a new point \\((x_i, ?)\\). We want to find the value of \\(\\hat{y}\\) that minimizes \\(L(y, \\hat{y})\\) for the point\nProblem: We do not know \\(y\\), so we cannot really figure out if something is minimizing \\(L(y, \\hat{y})\\).\nSuppose we’re given data \\(D: (x_1, y_1), ...., (x_n, y_n)\\) which is drawn from a distribution \\(D_{x,y}\\). We want to predict \\(\\hat{y}\\) so as to minimize \\(L(y, \\hat{y})\\) for any \\((x,y)\\) drawn from the distribution \\(D_{x,y}\\).\nProblem: It is similar to the previous problem but worse. Here we don’t know the values of \\((x,y)\\), so how de minimize the loss?\nSolution: In both the only solution is to treat \\(X\\) and \\(Y\\) as random variables and minimize expected loss.\nCase 1: Given x i.e., X=x\n\\[\\mathop{\\mathbb{E}} \\lbrack L(y,\\hat{y}) \\rbrack = \\sum_y L(y,\\hat{y})P(Y=y|X=x)\\]\nThis is called as conditional risk. If we assume that we have \\(0-1\\) loss function:\n\\[\\mathop{\\mathbb{E}} \\lbrack L(y,\\hat{y})\\rbrack = \\sum_{y \\neq \\hat{y}}P(Y=y|X=x)\\]\nwhich further reduces to:\n\\[\\mathop{\\mathbb{E}} \\lbrack L(y,\\hat{y})\\rbrack = 1 - P(Y=\\hat{y}|X=x) \\]\nSo minimizing the expected loss is similar to maximizing \\(P(Y=\\hat{y}|X=x)\\). Note that this is the right decision to take because we are using a \\(0-1\\) loss function.\nAssume a squared loss function: \\(L(y, \\hat{y}) = (y-\\hat{y})^2\\)\n\\[\\mathop{\\mathbb{E}} \\lbrack L(y,\\hat{y})\\rbrack = \\int (y-\\hat{y})^2 f(y|x)dy\\]\nTo minimize this predict \\(\\hat{y} = \\mathop{\\mathbb{E}} \\lbrack y|x \\rbrack\\). Proven by setting \\(\\frac{\\partial \\mathop{\\mathbb{E}}[L(y,\\hat{y})}{\\partial \\hat{y}} = 0\\)\nCase 2: Both x and y are unknown\n\\[\\mathop{\\mathbb{E}} \\lbrack L(y,\\hat{y})\\rbrack = \\sum_{x,y} L(y, \\hat{y}) P(X=x, Y=y)\\]\nWe can make this a bit more explicit by specifying the prediction \\(\\hat{y}\\) to be a function of \\(x\\).\n\\[\\mathop{\\mathbb{E}} \\lbrack L(y,\\hat{y})\\rbrack = \\sum_{x,y} L(y, f(X=x)) P(X=x, Y=y)\\]\nNote that \\(f(x)\\) here is conditional on the given dataset \\(d\\) which can be thought of as an instance of the random variable \\(D\\).\n\\(\\mathop{\\mathbb{E}} \\lbrack L(y,\\hat{y})|D=d\\rbrack\\) is called the generalization error.\nWe can estimate the generalisation error using a train-test split. But the problem then becomes that we are not really estimation the generalisation error on \\(d\\) then. It is rather a subset of \\(d\\). There are three possible solutions to this: 1. Request more data so that we can train on \\(d\\) and test on the extra data. 2. Generate more data ourselves using a generative model e.g. \\(P(X,Y)\\). 3. We just provide the training estimates i.e., we train and test on the same set.\nSolution: To avoid the problems associated with calculating the generalisation error given a dataset \\(d\\), we can treat \\(d\\) as an instance of a random variable \\(D\\) and calculate the expected generalisation error (\\(e_m\\)) rather than the generalisation error:\n\\[EGE (e_M) = \\mathop{\\mathbb{E}}(e_{M,d}) = \\sum_{x,y}L(y,f_{M,d}(x))P(x,y|D=d)P(D=d)\\]\nThe advantage here is that the error is not calculated for one instance of the dataset but rather considering all possible datasets at once.\nSo now we can repeatedly do train-test splits to estimate \\(e_M\\) without facing any of the earlier problems. Here, the dataset we have \\(D=d\\) acts as a proxy for the population. By this we mean that we assure that sampling from \\(d\\) is equivalent to sampling from \\(D\\).\nNow in the case that we had estimated \\(e_{M,d}\\) using the entire training dataset, then our estimate for \\(e_{M,d}\\) will be optimistic, i.e., given new data \\(d\\prime\\):\n\\[e_{M,d\\prime} = e_{M,d} + \\epsilon\\]\nwhere \\(\\epsilon\\) is the training error or optimism.\nEvaluating two models for the same problem\nWe cannot simply compare accuracies of two different models, as the results might be sampling dependent. We need to find a way to check if two models are doing the same thing and whether the differences in performances of the two models is meaningful.\n.\nCorrect\nIncorrect\nCorrect\n\\(n_1\\)\n\\(n_2\\)\nIncorrect\n\\(n_3\\)\n\\(n_4\\)\nIf both the models are doing the same thing, then the points at which they differ is just some random noise.\n\\[Expected\\ Count\\ of\\ A=0,B=1 = \\frac{n_2 + n_3}{2}\\] \\[Expected\\ Count\\ of\\ B=0,A=1 = \\frac{n_2 + n_3}{2}\\]\nWe can use \\(\\chi^2\\) test to check for the independence of the two variables above. If we find that the two models are not doing the same thing, try and identify where one of the models does better so we can use that information to improve.\nEvaluating two models on many problems\nDataset\n\\(M_1\\)\n\\(M_2\\)\n1\n\\(A_{11}\\)\n\\(A_{21}\\)\n2\n\\(A_{12}\\)\n\\(A_{22}\\)\n.\n.\n.\n.\n.\n.\nn\n\\(A_{1n}\\)\n\\(A_{2n}\\)\nSuppose we label the datasets in which \\(M_1\\) is better as heads and datasets in which \\(M_2\\) is better as tails.\nIf \\(M_1\\) and \\(M_2\\) are doing the same thing, then the probability of heads and tails should roughly be equal. We can now make a probabilitic estimate whether \\(M_1\\) and \\(M_2\\) are doing the same thing.\nThis, ofcourse, is not taking into account the magnitude of difference in performance for each dataset. A solution is to use the Wilcoxon signed rank test.\nEvaluating many models on many problems\nROC Curve\nTrue Positive Rate (TPR):\n\\[TPR = \\frac{TP}{TP+FN}\\] \\[TPR = 1\\ -\\ FNR\\]\nFalse Positive Rate (FPR)\n\\[FPR = \\frac{FP}{FP+TN} = 1 - TNR\\]\nEach model will have a point on the ROC Curve for a given dataset.\nSo far we have mostly assumed that a false positive and a false negative are equally penalized. In reality, this might not be the case.\n\\[Loss = P(+) P(-|+) C(-|+) + P(-) P(+|-) C(+|-)\\]\n\\[Loss = P(+) C(-|+) (1 - TPR) + P(-) C(+|-) FPR\\]\nThis loss is a linear function of FPR and TPR which define the space of the ROC curve.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-05-15T01:45:56+00:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-05-10-clustering/",
+    "title": "Clustering",
+    "description": "Clustering",
+    "author": [
+      {
+        "name": "Sharad Chitlangia",
+        "url": "https://www.sharadchitlang.ai"
+      }
+    ],
+    "date": "2021-05-10",
+    "categories": [
+      "Courses - ML",
+      "Lecture"
+    ],
+    "contents": "\nPDF\nClustering\nOur visual system performs clustering in an unsupervised manner all the time. For instance, when you’re looking at a laptop, you’re not thinking of its individual parts but rather the individual components such as the keyboard, screen together as a laptop.\nLets consider data instances \\(X_1, X_2, ..., X_n\\). How many non overlapping clusters can be formed from this?\nThe answer which is the Bell’s Number comes from combinatorial math from a similar question - How many partitions exist of a set?\nThe only difference between these two is that in clustering we wouldnt care if the data instances are so close that they are considered identical – which is something that we want to learn. At the heart of clustering is a notion of similarity or distance between objects, as we want to group similar instances together.\nMinkowski Distance\n\\[D_p(x,y) = (\\sum_{i=1}^{d}\\| x_i - y_i \\|^{p})^{\\frac{1}{p}}\\]\nMinkowski distance is the euclidean distance for \\(p=2\\) and the manhattan distance for \\(p=1\\). As p becomes larger, \\(max(|x_i - y_i|)\\) becomes dominant.\nNearest neighbour Classifier\nSuppose you’ve seen some data instances and now we want to find the \\(y\\) value of a new instance \\(x\\prime\\). In the nearest neighbour classifier, we find the nearest neighbour and assign \\(y\\) of the new instance \\(x\\prime\\) to be the \\(y\\) of the nearest neighbour.\nAn alternative to this is using the average of \\(k\\) nearest neighbours.\nA problem with such a classifier (other than storage) is that it is dependent on the order in which the data instances are seen. The main difference between clustering and classification is that we dont know \\(y\\) in clustering.\nProbabilistic Clustering\nNaive Bayes Clustering\nFor each data instance, we associate a fractional weight i.e., a probability with each class.\nInstance\n\\(X_1\\)\n\\(X_2\\)\n\\(X_3\\)\n\\(X_4\\)\nY\nCount\n1a\n0\n1\n1\n1\n1\n0.4\n1b\n0\n1\n1\n1\n2\n0.1\n1c\n0\n1\n1\n1\n3\n0.5\nWith probabilitic clustering, we are simply done. We interpret this as a \\(40\\%\\) chance instance 1 belongs to cluster 1 and so on. This is also called as Soft Clustering.\nThe initial counts is a problem, but we would usually update the initial counts based on the data we’ve seen. The algorithm we to update the counts is known as the Expectation Maximization Algorithm.\nGaussian Mixture Model\nIn GMM based clustering, we will be dealing with data that is coming from a mixture of probability distributions. An example of such data is shown below\n\nLet us assume the first distribution is A and the second is B. Given a point, we can determine the probability that it came from either A or B. In some sense, every point belongs to every cluster with a probability. In practise, we will be given several points and we will have to construct these distributions.\nIn this case, if we know \\(\\mu_a, \\sigma_a\\) and \\(\\mu_b, \\sigma_b\\), then calculating \\(P(X=x|A)\\) and \\(P(X=x|B)\\) is straightforward.\n\\[P(A|X=x) \\propto P(X=x|A)P(A)\\]\nLet us assume we know the prior \\(P(A)\\). The clustering problem here is that we don’t know \\(\\mu, \\sigma\\) for each of these distributions. If \\(\\mu, \\sigma\\) are known, then we are done.\nHere there are 4 unknowns: \\(\\mu_a, \\sigma_a\\) and \\(\\mu_b, \\sigma_b\\). Not in saying this we are assuming that there are only 2 distributions. And that they are normal.\nProcedure\nRandomly guess \\(\\mu_a, \\sigma_a, \\mu_b, \\sigma_b, P(A)\\). Note: \\(P(B) = 1 - P(A)\\).\nUsing these guesses calculate the probability that each of these points belong to A and the probability that each of these belong to B.\nSimilarly we do this for every point and finally we can calculate the mean \\(\\mu_a = \\frac{\\sum_{i=0}{d} w_{i,A}x_i}{N}\\). We can calculate the other required parameters similarly.\nWith these parameters, we can calculate the likelihood of the given data using the gaussian pmf function. The likelihood would simply be the product of the probabilities of the individual data points being produced given the the parameters of the gaussian calculated in Step 3.\nA possible stopping criterion is to stop when the likelihood stops increasing/changing. But this does not guarantee convergence to optimal clustering.\nIf we generalize this to higher dimensions, we can instantly see that this would require estimation of a lot of parameters especially terms in the covariance matrix. Hence, much more data is required. As mixture models dont scale with high dimensions, we usually need some approximation to mixture models that scales well with higher dimensions.\nk-means clustering\nHere, each point belongs to a single cluster and membership is determined based on distance rather than a probability.\nClusters are described entirely by the mean.\nProcedure\nRandomly assign k means. Say \\(\\mu_1,\\mu_1,...\\mu_k\\).\nFor each iteration:\nfor every point x\nCompute distance to means.\nAssign to closest mean\n\nRecompute mean based on cluster assignments.\n\nSimilar to the EM Algorithm, this procedure does not alone guarantee convergence. If we think about this as an optimization algorithm, we need to minimize the sum of squares of each point to its closest mean i.e.,\n\\[L = \\sum_{i=1}^{N} \\sum_{j=1}^{k} z_{ij} |x_i - \\mu_j|^2\\]\nwhere \\(z_{ij} = 1\\) if \\(x_i\\) belongs to cluster \\(\\mu_j\\) and \\(0\\) otherwise.\nSo if the means of the cluster do not change after an iteration, it can be stopped as it may not be able to do any better. This is because the loss function of each cluster is at the minimum and the overall loss function is also minimum.\nThe limiting case is when \\(k=n\\) and each cluster is itself. This is not useful, but the loss is \\(0\\).\nUsually such a situation can be prevented by having a regularization term that penalizes when new clusters are created.\nAssumptions (and Drawbacks)\nk-means works best and is useful when the data is spherically distributed around the mean (But this can be resolved by data pre-processing).\nlarger clusters tend to dominate and pull in scattered points further increasing their size. Hence, k-means is suitable for evenly sized clusters.\nHierarchical Clustering\nWe can do this in a top down manner i.e., we start with all instances in a single cluster or in a bottom-up manner where we start with each instance as a single cluster.\nTop-Down Clustering\nBottom-Up Clustering (Agglomerative)\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-05-15T01:45:56+00:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-04-25-central-limit-theorem/",
+    "title": "Central Limit Theorem",
+    "description": "Central Limit Theorem",
+    "author": [
+      {
+        "name": "Sharad Chitlangia",
+        "url": "https://www.sharadchitlang.ai"
+      }
+    ],
+    "date": "2021-04-25",
+    "categories": [
+      "Course - Statistics"
+    ],
+    "contents": "\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-05-15T01:45:56+00:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-04-25-law-of-large-numbers/",
+    "title": "Law of Large Numbers",
+    "description": "Law of Large Numbers",
+    "author": [
+      {
+        "name": "Sharad Chitlangia",
+        "url": "https://www.sharadchitlang.ai"
+      }
+    ],
+    "date": "2021-04-25",
+    "categories": [
+      "Course - Statistics"
+    ],
+    "contents": "\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-05-15T01:45:56+00:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-04-25-linear-regression/",
+    "title": "Linear Regression",
+    "description": "Linear Regression",
+    "author": [
+      {
+        "name": "Sharad Chitlangia",
+        "url": "https://www.sharadchitlang.ai"
+      }
+    ],
+    "date": "2021-04-25",
+    "categories": [
+      "Course - Machine Learning"
+    ],
+    "contents": "\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-05-15T01:45:56+00:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-04-25-logistic-regression/",
+    "title": "Logistic Regression",
+    "description": "Logistic Regression",
+    "author": [
+      {
+        "name": "Sharad Chitlangia",
+        "url": "https://www.sharadchitlang.ai"
+      }
+    ],
+    "date": "2021-04-25",
+    "categories": [
+      "Course - Machine Learning"
+    ],
+    "contents": "\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-05-15T01:45:56+00:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-04-25-introduction/",
+    "title": "Computational Learning Theory Introduction",
+    "description": "Introduction to Computational Learning Theory",
+    "author": [
+      {
+        "name": "Sharad Chitlangia",
+        "url": "https://www.sharadchitlang.ai"
+      }
+    ],
+    "date": "2021-04-24",
+    "categories": [
+      "Theory",
+      "Course - Computational Learning Theory"
+    ],
+    "contents": "\nWhat is learning theory?\nThe goal of learning theory is to be able to develop formal models to analyse complexity of learning systems. Such as:\nHow much data do we need to learn?\nHow much computational resources are necessary for learning?\nAre there any hard problems?\nComputational Learning theory also helps us in answerning burning questions in modern machine learning, such as:\nHow can we learn in the presence of noisy data?\nWhat can we learn when data is obtained in an online manner?\nHow can we do useful machine learning when the data is noisy?\nCan we learn when data and computational power is distributed?\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-05-15T01:45:56+00:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-04-25-pac/",
+    "title": "Probably Approximate Learning",
+    "description": "The Probably Approximate Learning Framework in Computational Learning Theory",
+    "author": [
+      {
+        "name": "Sharad Chitlangia",
+        "url": "https://www.sharadchitlang.ai"
+      }
+    ],
+    "date": "2021-04-24",
+    "categories": [
+      "Theory",
+      "Course - Computational Learning Theory"
+    ],
+    "contents": "\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-05-15T01:45:56+00:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-05-03-fedbn/",
+    "title": "FedBN",
+    "description": "FedBN",
+    "author": [
+      {
+        "name": "Sharad Chitlangia",
+        "url": "https://www.sharadchitlang.ai"
+      }
+    ],
+    "date": "2021-04-24",
+    "categories": [
+      "Conference - ICLR"
+    ],
+    "contents": "\nBatch Normalization == No\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-05-15T01:45:56+00:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-05-03-reptile/",
+    "title": "REPTILE",
+    "description": "Reptile",
+    "author": [
+      {
+        "name": "Sharad Chitlangia",
+        "url": "https://www.sharadchitlang.ai"
+      }
+    ],
+    "date": "2021-04-24",
+    "categories": [
+      "Courses - MetaLearning"
+    ],
+    "contents": "\nReptile\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-05-15T01:45:56+00:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-05-03-trees/",
+    "title": "Trees",
+    "description": "Trees",
+    "author": [
+      {
+        "name": "Sharad Chitlangia",
+        "url": "https://www.sharadchitlang.ai"
+      }
+    ],
+    "date": "2021-04-24",
+    "categories": [
+      "Courses - ML",
+      "Lecture"
+    ],
+    "contents": "\nPDF\nTrees\nDiscriminatory models take the form of \\(P(Y|X)\\) in the probabilistic format. Here \\(X\\) and \\(Y\\) are Random Variables. What this means essentially is that we are modelling the conditional probability distribution \\(P(Y|X)\\). This distribution can be later utilised to predict \\(y\\) from \\(x\\).\nNaive Bayes Classifier\nThe Naive Bayes Classifier predicts the final value to be the maximum from the posterior distribution. The NB Classifier has the least expected error but the problem with NB classifier is that we dont know the posterior distribution. For instance, we approximate the posterior distribution in logistic regression to be representable with the logistic function.\nStructure and Parameters\nEvery Machine Learning models usually has two components: * Structure * Parameters\nFor instance, for a Neural network the structure is multiple layers connected together and the parameters are its weights. For a linear regression model, the structure is the linear line and the parameter is the weight. Similarly for a logistic model, the structure is the sigmoid function and the parameter is the weight.\nIn the case of a tree based classifier, the structure is a tree and the parameters are the probabilities.\nBuilding a Tree\nThe problem of learning a tree is unique in the sense that we also need to build the tree instead of just learning some weights. But lets assume we have a tree and binary valued data with a binary classification problem. The nodes in this tree are assigned variables where if a variable is \\(1\\), we move to the left or if is \\(0\\), then we move to the right. We can perform this procedure for the data instance and finally reach a leaf node where we keep track of the counts of the two classes\nFinally for this tree \\(T_0\\) at each leaf node, we can calculate the the class conditional probability as: \\[P(Y|X) = \\sum_{i=0}^{n}\\frac{\\mathbf{1}}{n}\\]\nFor a binary problem, if we choose a Beta Prior \\(Beta(a,b)\\) then the posterior can be calculated simply as \\(Beta(a+c_0,b+c_1)\\) where \\(c_0\\) and \\(c_1\\) just represent the counts that have been stored after running through the dataset at that leaf.\nFor a problem with more than 2 classes, a similar relationship is exhibited by the multinomial and dirichlet distributions.\nChoosing a Tree\nBut why should we pick a particular tree? We can create so many trees out of a set of variables. Lets assume we have a set of trees \\(T = \\{T_0, T_1, ..., T_k\\}\\). How do we calculate the class conditional probability now?\nThe answer is that we could use a simple Bayes rule over all these trees as so:\n\\[P(Y|X,D) = \\sum_{j=o}^{k}(P(T_j|D)P(Y|X,D,T_j))\\]\nThis will give us a final probabilistic estimate of the class conditional probability. We know how to compute \\(P(Y|X,D,T_j)\\) but how do we find \\(P(T_j|D)\\)? This is the posterior of a tree given a dataset. We can again use the Bayes Rule here:\n\\[P(T_j|D) = P(\\pi_j,\\theta_j|D)\\] \\[P(\\pi_j,\\theta_j|D) \\propto P(D|\\pi_j,\\theta_j)p(\\theta_j|\\pi_j)P(\\pi_j)\\]\nThe likelihood term here can be decomposed into indvidual likelihood terms of the leaves which is: \\[P(D|c_0, c_1; a, b) = \\frac{\\Gamma(a+c_0, b+c_1)}{\\Gamma(a,b)}\\]\nThe total likelihood from the tree now would just be a product of the individual likelihood terms: \\[P(D|Tj) = \\prod_{k=0}^{m}P(D|leaf)\\]\nSo we have the likelihood term calculated in the following equation \\[P(\\pi_j,\\theta_j|D) \\propto P(D|\\pi_j,\\theta_j)p(\\theta_j|\\pi_j)P(\\pi_j)\\]\nNow what is \\(P(\\theta_j, \\pi_j)\\)? \\(\\theta_j\\) is just the set of all priors in the tree hence:\n\\[P(\\theta_j, \\pi_j) = P(\\theta_{j0},\\theta_{j1}...|\\pi_j)P(\\pi_j)\\]\nAnd this can be calculated quite simply as this is just expected value of each individual distribution (before running the data i.e., prior distribution).\nNow \\(P(\\pi_j)\\) is just a regularization term at this point because we can keep going more and more deep like this but we have to stop at some point.\nSo finally, now we have each term calculated in the equation\n\\[P(Y|X,D) = \\sum_{j=o}^{k}(P(T_j|D)P(Y|X,D,T_j))\\]\nEnumerating Trees\nBut what is the problem with this kind of formulation? For each dataset, we can create so many trees that the computation described above would not be tractable in any sense.\nBut how can we enumerate all possible trees. Enumeration of all possible trees is straightforward as long it chooses its procedure in a stochastic manner over all possible.\nProcedure\nPick a box.\nPick a feature.\nChange the box to an internal node (with the selected feature) and add leaves.\nThis procedure will generate all possible trees if the picking is stochastic. Hence, for each tree we can now calculate \\(P(T|D)\\).\nConceptually this is feasible but the number of trees is exceptionally large. Hence, practically considering all possible trees is not feasible, so we search the space from some optimal trees.\nAn example of this is to use greedy search which maximizes \\(P(T_i|D)\\).\nOverfitting\nAs we go from top to bottom while expanding a tree, we’re imposing more and more conditions, so the number of instances keeps decreasing. At a point we will hit a tree with only pure leaves (instances of one class are not seen at this leaf). Here, the likelihood is maximum and it makes no sense to expand further. Theoretically, with enough features we would always end up with a tree with pure leaves (overfitting).\nIt is the prior in a tree, which ensures that we do not overfit. This is analogous to regularization in numeric prediction.\nGoing from one tree to another\nWhen we’re calculating the posterior for a tree, we will perform a lot of repeated calculations at each step. That is, only perhaps a few leaves are added but the posterior requires considering the older leaves as well. Hence, instead of going with the highest value of \\(P(T_i|D)\\), we will rather go in the direction of highest value of the ratio \\(\\frac{P(T_k|D)}{P(T_i|D)}\\), assuming the new tree is \\(T_k\\) and the older tree is \\(T_i\\). In this ratio, most of the terms get cancelled.\nIn practise, algorithms use other metrics such as entropy or gini. (Higher entropy correlated with higher likelihood). As we just saw this is clearly prone to overfitting. Libraries dont handle this explicitly but rather implicitly through conditions on maximum possible depth or pruning.\nEntropy of a Tree\nWe’ve already seen how to calculate the entropy of a leaf. Now we’ll see how to calculate the entropy of a tree. The entropy of a tree is just the weighted average of its leaves. Now we pick the tree with the maximum entropy gain.\nDecision Trees\nClassification trees can be made into a decision tree by simply setting a probability threshold. The choice of the threshold is usually dependent on the loss function.\nn-ary trees\nIf the attributes are not binary, we can still use the entropy gain as we have conditioned it to be dependent on 2 classes.\nReal Valued Attributes\nReal Valued attributes present a novel challenge since they are not bucketed. The solution to this is simple - We can discretize the an attribute based on its histogram. That is, we could use a threshold type of relation e.g. if \\(X < 11.8\\), etc. Each of these trees generated in this manner would have an entropy associated with them and the previously described procedure can be used here.\nRegression Trees (Real Valued Classes)\nIt is not that straightforward to calculate the entropy gain if the classes are real valued (e.g. in regression). Recall that entropy gain measures how much uncertainity exists in a distribution. The measure of uncertainity for a real valued distribution can simply be its standard deviation. Hence, the search can be directed using standard deviation over subtrees.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-05-15T01:45:56+00:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-05-05-generativemodels/",
+    "title": "Generative Models",
+    "description": "Generative Models",
+    "author": [
+      {
+        "name": "Sharad Chitlangia",
+        "url": "https://www.sharadchitlang.ai"
+      }
+    ],
+    "date": "2021-04-24",
+    "categories": [
+      "Courses - ML",
+      "Lecture"
+    ],
+    "contents": "\nPDF\nGenerative Models\nWhy are we interested in Generative Models?\nTill now we’ve been modelling \\(P(Y|X)\\). Generative Models have the general form \\(P(X,Y)\\)\nIf we are able to build a generative model then we can build a classifier out of that generative model really easily as so:\n\\[P(Y|X) = \\frac{P(X,Y)}{P(X)}\\]\nHere, \\(P(X)\\) can be substituted with \\(\\sum_{y}(P(X,Y))\\). Finally giving us:\n\\[P(Y|X) = \\frac{P(X,Y)}{\\sum_{y}P(X,Y)}\\]\nThe ideal goal is to be able to model \\(P(X_1, X_2, X_3, ..., X_d, Y)\\)\n\\[P(X_1, X_2, X_3, ..., X_d, Y) = P(X_1, X_2, X_3, ..., X_d|Y)P(Y)\\]\nIf \\(X_1, X_2, ... X_d\\) are conditionally independent given \\(Y\\), then the above equation simplifies to:\n\\[P(X_1, X_2, X_3, ..., X_d, Y) = P(X_1|Y)P(X_2|Y)P(X_3|Y)...P(X_d|Y) P(Y)\\]\nOr,\n\\[ P(X_1, X_2, X_3, ..., X_d, Y) = P(Y)\\prod_{i=1}^{d}P(X_i|Y)\\]\nA Naive Bayes ClassifierThe assumption of the variables being class conditionally independent is called the Naive Bayes Assumption. Since our end goal was to build a classifier from this generative model, we can use the generative model as so:\n\\[P(Y=0|X_1,X_2...X_d) \\propto P(Y=0,X_1,X_2...X_d)\\] \\[P(Y=1|X_1,X_2...X_d) \\propto P(Y=1,X_1,X_2...X_d)\\]\nWe know that the constant term in both these equations is going to be the same (i.e., the denominator term from the Bayes equation) So if we assume the constant term to be \\(\\alpha\\) to get rid of the proportionality and add the equations, we get:\n\\[\\alpha = \\frac{1}{P(Y=0,X_1,X_2...X_d)+P(Y=1,X_1,X_2...X_d)}\\]\nHence the naive bayes classifier equation becomes:\n\\[P(Y=0|X_1,X_2...X_d) = \\frac{P(Y=0,X_1,X_2...X_d)}{P(Y=0,X_1,X_2...X_d)+P(Y=1,X_1,X_2...X_d)}\\] \\[P(Y=1|X_1,X_2...X_d) = \\frac{P(Y=1,X_1,X_2...X_d)}{P(Y=0,X_1,X_2...X_d)+P(Y=1,X_1,X_2...X_d)}\\]\nBoth the probabilities in the denominator are joint pdfs and can be obtained from the generative model.\nStructure and Params\nThe Structure of the Naive Bayes Classifier is a DAG (short for Directed Acyclic Graph) and the parameters would be the conditional probabilities. The parameters could be esimated using MLE or using just the priors. But where are the priors in a Naive Bayes Classifier? The priors are encoded by the relationships between the variables and the variable which is assumed to be given (e.g. \\(Y\\)). So for each such relationship (e.g. \\(X_1|Y\\)), there can be two priors - one encoding the prior in the case \\(Y=0\\) and the other encoding the prior in the case \\(Y=1\\). Hence, if we are modelling P(Y|X_1, X_2, …, X_d) then there are \\(2\\ \\times\\ d\\) priors for the conditionally independent variables and a prior for \\(Y\\) itself giving us a total of \\(2\\ \\times\\ d + 1\\) priors.\nBayesian Network\nBayesian Networks are a type of model where the structure is a DAG such that the random variables encoded in it satisfy the Markov Condition.\nAn example Bayesian NetworkFor a network like the above, we will require a total of 10 priors (\\(1+1+4+2+2\\))\nNode\nParents\nNon-Descendents\nB\n\\(\\phi\\)\n\\(\\phi\\)\nE\n\\(\\phi\\)\n\\(\\phi\\)\nA\nB, E\n\\(\\phi\\)\nJ\nA\nB, E, M\nM\nA\nB, E, J\nNote that we dont include parents in its non-descendents.\nMarkov Condition\nThe Markov Condition states that a random variable \\(X\\) is a conditionally independent of its non-descendents given Parents.\n\\(X\\) is a parent of \\(Y\\) if there is an edge \\(X \\rightarrow Y\\).\n\\(Y\\) is a descendent of \\(X\\) if there is an edge \\(X \\rightarrow Y\\).\n\\(Y\\) is a non-descendent of \\(X\\) if there is no path from \\(X\\) to \\(Y\\) and \\(X\\), \\(Y\\) do not have a parent-child relationship.\nIf we know the Markov Condition holds, we should be able to answer any conditional query fairly easily using the joint distribution over all the variables\n\\[P(B,E,A,J,M) = P(B)P(E)P(A|B,E)P(J|A)P(M|A)\\]\nSelecting a Graph\nWhat was before BIC?\nBIC\nMarkov Equivalance Networks\nTwo sets of DAGs that encode the same set of conditional independences are called markov equivalence networks.\nNetwork A\nNetwork B\nNetwork C\n\n\n\nAn example of three markov equivalence networks.\nNeural Network based Generative Models\nAutoencoder\nA typical autoencoderAn autoencoder (AE) is a neural network that learns to copy its input to its output. The internal representation between the encoder and the decoder is commonly called as the code or the latent vector of that input sample.\nAE reconstructs the input approximately to preserve the most relevant parts of the data i.e., some important latent aspects.\nLet x be an input example. The encoder maps \\(Enc: \\mathcal{X} \\rightarrow \\mathcal{H}\\) and the decoder maps \\(Dec: \\mathcal{H} \\rightarrow \\mathcal{X}\\). The encoder and decoder functions are obtained by minimising a reconstruction loss:\n\\[Enc, Dec\\ =\\ argmin_{Enc, Dec} \\| \\ x \\ -\\ (Dec \\cdot Enc)(x) \\|^{2}\\]\nIn the simplest case, both encoder and decoder are single layered. That is,\n\\[h\\ =\\ \\sigma (wx\\ +\\ b)\\]\nUsually there is a regularization term added to the loss so that the encoder and decoder do not collapse into an identity function. h is referred to as the code or the latent variable or the latent representation.\nThe end to end pipeline of an autoencoderThe idea is that each hidden dimension represents some latent feature learned about the input. For example, for an autoencoder made to reconstruct human faces, it might learn features such as smile, skin tone, gender, beard, etc. Ofcourse, this is just to give an example. In actuality it may end up learning latent features that may not necessarily be even understandable to us.\nAn autoencoder is a discriminative model. It can be used for: * compressing data * greedy layer wise pre-training * cannot be used for generating new data.\nThe greedy way of pre-training is basically that we first train an autoencoder with encoder and decoder of only size 1. Then we keep adding layers and only train the new layers. This was very important back in the day when there was not a lot of compute at hand.\nFor generating new data, the model needs to learn a join distribution \\(p(x)\\) or \\(p(x,h)\\) Or, a model can be considered to be generative when the latent variable has a probability distribution associated with it - a kind of autoencoder that is called as a Variational Autoencoder.\nA basic Variational Autoencoder setupIn such a case, the encoder network is usually called as the recognition model and the decoder network is called as the generative model.\nFor the complete dataset, the VAE would output a range of values for each latent dimension hence creating a statistical distribution in each of those dimensions. Ideally, a very minute difference between the sampled points should result in the same output being created from the generative model.\nVariational Inference\nLimitations\nGenerative Adversarial Networks (GAN)\nGenerative Model\nDiscriminative Model\nEstimates the joint probability \\(p(x,y)\\).\nEstimates the conditional probability \\(p(y|x)\\) of the label y, given data instance x (e.g. MLP, CNN).\nIt can be used in a supervised and an unsupervised setting\nIt can be only used in a supervised setting\nThe goal of the generative model is to synthesize data instances that are so realistic that it is hard for an observer to say it is synthetic i.e., \\(D(x^\\prime) \\approx 1\\)\nThe goal of the Discriminative Model is to classify correctly real examples from training data from synthetic samples created using the generative model.\n\\(max_G(-(1-y)log(1-D(G(z))))\\) where \\(z \\sim \\mathcal{N}(0,1)\\)\n\\(min_D(-ylog(D(x)) - (1-y)log(1-D(x)))\\)\nThe term adversarial is used as the goals of the discriminator and generator is to fool each other.\nGenerative Adversarial NetworksTraining\nThe final objective is\n\\[min_D \\ max_G \\{- \\textbf{E}_{x \\sim \\mathcal{X}}(logD(x)) - \\textbf{E}_{z \\sim \\mathcal{N}(0,1)} (log(1 - D(G(z)))) \\}\\]\nThe solution is actually a saddle point here due to the combined minimization and maximization here. In game theoretic terms, it is a nash equlibrium.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-05-15T01:45:56+00:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-04-24-on-lipschitz-continuity/",
+    "title": "Lipschitz Continuity",
+    "description": "On Lipschitz Continuity",
+    "author": [
+      {
+        "name": "Sharad Chitlangia",
+        "url": "https://www.sharadchitlang.ai"
+      }
+    ],
+    "date": "2021-04-20",
+    "categories": [
+      "Math"
+    ],
+    "contents": "\nTheorem\nA function \\(f : I \\rightarrow \\mathbb{R}\\) over some set \\(I \\subseteq \\mathbb{R}\\) is called Lipschitz-continuous if there exists some \\(L \\geq 0\\) such that\n\\[\n|f(x)\\ -\\ f(y)| \\leq L (x\\ -\\ y)\n\\]\nwhere, \\(x,\\ y\\ \\epsilon\\ I\\)\nIf such a constant \\(L\\) exists, then we call \\(L\\) as the Lipschitz Constant of \\(f\\) over \\(I\\).\nEquivalently, \\(f\\) is Lipschitz continuous is there exists \\(L \\geq 0\\) such that\n\\[\n\\frac{|f(x)\\ -\\ f(y)|}{x\\ -\\ y} \\leq L\n\\]\nwhere, \\(x,\\ y\\ \\epsilon\\ I,\\ x\\ \\neq\\ y\\)\nLemma\nA function \\(f\\ :\\ I\\ \\rightarrow \\ \\mathbb{R}\\) is Lipschitz-continuous with Lipschitz-constant \\(L\\) if and only if \\[\nf(x)\\ -\\ L |x\\ -\\ y|\\ \\leq \\ f(y) \\ \\leq \\ f(x) \\ + \\ L |x\\ -\\ y|\n\\]\nProof\nIf \\(f\\) if Lipschitz-constinuous with constant \\(L\\) then,\n\\[\n|f(x)\\ -\\ f(y)| \\leq L (x\\ -\\ y)\n\\]\nOn resolving the modulus we can get two equations.\nThe first one, \\[f(x)\\ -\\ f(y) \\leq L (x\\ -\\ y)\\] which equivalently is \\[f(x)\\ -\\ L |x\\ -\\ y|\\ \\leq \\ f(y)\\]\nand the second one, \\[f(y)\\ -\\ f(x) \\leq L (x\\ -\\ y)\\] which is \\[f(y)\\ \\leq \\ f(x) +\\ L |x\\ -\\ y|\\]\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-05-15T01:45:56+00:00",
+    "input_file": {}
+  }
+]
