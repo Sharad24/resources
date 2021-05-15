@@ -119,6 +119,16 @@ $$P(B,E,A,J,M) = P(B)P(E)P(A|B,E)P(J|A)P(M|A)$$
 
 ### BIC
 
+## Markov Equivalance Networks
+
+Two sets of DAGs that encode the same set of conditional independences are called markov equivalence networks.
+
+Network A            |  Network B        | Network C
+:-------------------------:|:-------------------------:|:-------------------------:
+<img src="./markovB.png" alt="drawing" width="200"/> | <img src="./markovB.png" alt="drawing" width="200"/> | <img src="./markovC.png" alt="drawing" width="200"/>
+
+An example of three markov equivalence networks.
+
 # Neural Network based Generative Models
 
 ## Autoencoder

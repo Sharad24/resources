@@ -1,4 +1,6 @@
 setwd("Desktop/Others/github/resources")
+library(rmarkdown)
+library(distill)
 create_post("","")
 render("")
 render_site("")

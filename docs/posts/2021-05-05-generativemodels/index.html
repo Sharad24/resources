@@ -127,7 +127,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["autoencoder.png","bn.png","gan.png","generativemodels.pdf","generativemodels_files/anchor-4.2.2/anchor.min.js","generativemodels_files/bowser-1.9.3/bowser.min.js","generativemodels_files/distill-2.2.21/template.v2.js","generativemodels_files/header-attrs-2.7/header-attrs.js","generativemodels_files/jquery-1.11.3/jquery.min.js","generativemodels_files/popper-2.6.0/popper.min.js","generativemodels_files/tippy-6.2.7/tippy-bundle.umd.min.js","generativemodels_files/tippy-6.2.7/tippy-light-border.css","generativemodels_files/tippy-6.2.7/tippy.css","generativemodels_files/tippy-6.2.7/tippy.umd.min.js","generativemodels_files/webcomponents-2.0.0/webcomponents.js","nb.png","pipeline_an.png","vae.png"]}
+  {"type":"character","attributes":{},"value":["autoencoder.png","bn.png","gan.png","generativemodels.pdf","generativemodels_files/anchor-4.2.2/anchor.min.js","generativemodels_files/bowser-1.9.3/bowser.min.js","generativemodels_files/distill-2.2.21/template.v2.js","generativemodels_files/header-attrs-2.7/header-attrs.js","generativemodels_files/jquery-1.11.3/jquery.min.js","generativemodels_files/popper-2.6.0/popper.min.js","generativemodels_files/tippy-6.2.7/tippy-bundle.umd.min.js","generativemodels_files/tippy-6.2.7/tippy-light-border.css","generativemodels_files/tippy-6.2.7/tippy.css","generativemodels_files/tippy-6.2.7/tippy.umd.min.js","generativemodels_files/webcomponents-2.0.0/webcomponents.js","markovA.png","markovB.png","markovC.png","nb.png","pipeline_an.png","vae.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2524,6 +2524,25 @@ Conferences
 <h2 id="selecting-a-graph">Selecting a Graph</h2>
 <h3 id="what-was-before-bic">What was before BIC?</h3>
 <h3 id="bic">BIC</h3>
+<h2 id="markov-equivalance-networks">Markov Equivalance Networks</h2>
+<p>Two sets of DAGs that encode the same set of conditional independences are called markov equivalence networks.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Network A</th>
+<th style="text-align: center;">Network B</th>
+<th style="text-align: center;">Network C</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="markovB.png" alt="drawing" width="200"/></td>
+<td style="text-align: center;"><img src="markovB.png" alt="drawing" width="200"/></td>
+<td style="text-align: center;"><img src="markovC.png" alt="drawing" width="200"/></td>
+</tr>
+</tbody>
+</table>
+<p>An example of three markov equivalence networks.</p>
 <h1 id="neural-network-based-generative-models">Neural Network based Generative Models</h1>
 <h2 id="autoencoder">Autoencoder</h2>
 <figure>
