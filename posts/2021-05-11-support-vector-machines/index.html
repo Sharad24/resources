@@ -20,19 +20,19 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -52,7 +52,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
@@ -127,7 +127,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["XI.png","margins.png","support-vector-machines.pdf","support-vector-machines_files/anchor-4.2.2/anchor.min.js","support-vector-machines_files/bowser-1.9.3/bowser.min.js","support-vector-machines_files/distill-2.2.21/template.v2.js","support-vector-machines_files/header-attrs-2.7/header-attrs.js","support-vector-machines_files/jquery-1.11.3/jquery.min.js","support-vector-machines_files/popper-2.6.0/popper.min.js","support-vector-machines_files/tippy-6.2.7/tippy-bundle.umd.min.js","support-vector-machines_files/tippy-6.2.7/tippy-light-border.css","support-vector-machines_files/tippy-6.2.7/tippy.css","support-vector-machines_files/tippy-6.2.7/tippy.umd.min.js","support-vector-machines_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["margins.png","support-vector-machines_files/anchor-4.2.2/anchor.min.js","support-vector-machines_files/bowser-1.9.3/bowser.min.js","support-vector-machines_files/distill-2.2.21/template.v2.js","support-vector-machines_files/header-attrs-2.7/header-attrs.js","support-vector-machines_files/jquery-1.11.3/jquery.min.js","support-vector-machines_files/popper-2.6.0/popper.min.js","support-vector-machines_files/tippy-6.2.7/tippy-bundle.umd.min.js","support-vector-machines_files/tippy-6.2.7/tippy-light-border.css","support-vector-machines_files/tippy-6.2.7/tippy.css","support-vector-machines_files/tippy-6.2.7/tippy.umd.min.js","support-vector-machines_files/webcomponents-2.0.0/webcomponents.js","support-vector-machines.pdf","XI.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2361,7 +2361,6 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.7/header-attrs.js"></script>
   <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2450,7 +2449,7 @@ Conferences
 <p><img src="margins.png" /></p>
 <p>To introduce this effect, we add slack variables to our model which allow constraint violation. The slack variable <span class="math inline">\(\xi_i \in [0,1)\)</span> enables the point <span class="math inline">\(x_i\)</span> to be in between the margin and on the correct side of the hyperplane. This is called <strong>margin violation</strong>. If <span class="math inline">\(\xi_i &gt; 1\)</span>, then the point is misclassified.</p>
 <figure>
-<img src="XI.png" alt="Introduction of Slack Variables" /><figcaption aria-hidden="true">Introduction of Slack Variables</figcaption>
+<img src="XI.png" alt="" /><figcaption>Introduction of Slack Variables</figcaption>
 </figure>
 <p>The corresponding objective function of the SVM becomes:</p>
 <p><span class="math display">\[ \min_{\textbf{w}\in\mathop{\mathbb{R}}^d, \xi\in\mathop{\mathbb{R}}^+} \| \textbf{w} \|^2 + C\sum_{i}^{N}\xi_i \]</span></p>

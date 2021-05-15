@@ -20,19 +20,19 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -52,7 +52,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
@@ -127,7 +127,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["autoencoder.png","bn.png","gan.png","generativemodels.pdf","generativemodels_files/anchor-4.2.2/anchor.min.js","generativemodels_files/bowser-1.9.3/bowser.min.js","generativemodels_files/distill-2.2.21/template.v2.js","generativemodels_files/header-attrs-2.7/header-attrs.js","generativemodels_files/jquery-1.11.3/jquery.min.js","generativemodels_files/popper-2.6.0/popper.min.js","generativemodels_files/tippy-6.2.7/tippy-bundle.umd.min.js","generativemodels_files/tippy-6.2.7/tippy-light-border.css","generativemodels_files/tippy-6.2.7/tippy.css","generativemodels_files/tippy-6.2.7/tippy.umd.min.js","generativemodels_files/webcomponents-2.0.0/webcomponents.js","markovA.png","markovB.png","markovC.png","nb.png","pipeline_an.png","vae.png"]}
+  {"type":"character","attributes":{},"value":["autoencoder.png","bn.png","gan.png","generativemodels.pdf","markovA.png","markovB.png","markovC.png","nb.png","pipeline_an.png","vae.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2361,7 +2361,6 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.7/header-attrs.js"></script>
   <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2458,7 +2457,7 @@ Conferences
 <p>Or,</p>
 <p><span class="math display">\[ P(X_1, X_2, X_3, ..., X_d, Y) = P(Y)\prod_{i=1}^{d}P(X_i|Y)\]</span></p>
 <figure>
-<img src="nb.png" alt="A Naive Bayes Classifier" /><figcaption aria-hidden="true">A Naive Bayes Classifier</figcaption>
+<img src="nb.png" alt="" /><figcaption>A Naive Bayes Classifier</figcaption>
 </figure>
 <p>The assumption of the variables being class conditionally independent is called the <em>Naive Bayes Assumption</em>. Since our end goal was to build a classifier from this generative model, we can use the generative model as so:</p>
 <p><span class="math display">\[P(Y=0|X_1,X_2...X_d) \propto P(Y=0,X_1,X_2...X_d)\]</span> <span class="math display">\[P(Y=1|X_1,X_2...X_d) \propto P(Y=1,X_1,X_2...X_d)\]</span></p>
@@ -2472,7 +2471,7 @@ Conferences
 <h1 id="bayesian-network">Bayesian Network</h1>
 <p>Bayesian Networks are a type of model where the structure is a DAG such that the random variables encoded in it satisfy the Markov Condition.</p>
 <figure>
-<img src="bn.png" alt="An example Bayesian Network" /><figcaption aria-hidden="true">An example Bayesian Network</figcaption>
+<img src="bn.png" alt="" /><figcaption>An example Bayesian Network</figcaption>
 </figure>
 <p>For a network like the above, we will require a total of 10 priors (<span class="math inline">\(1+1+4+2+2\)</span>)</p>
 <table>
@@ -2546,7 +2545,7 @@ Conferences
 <h1 id="neural-network-based-generative-models">Neural Network based Generative Models</h1>
 <h2 id="autoencoder">Autoencoder</h2>
 <figure>
-<img src="autoencoder.png" alt="A typical autoencoder" /><figcaption aria-hidden="true">A typical autoencoder</figcaption>
+<img src="autoencoder.png" alt="" /><figcaption>A typical autoencoder</figcaption>
 </figure>
 <p>An autoencoder (AE) is a neural network that learns to copy its input to its output. The internal representation between the encoder and the decoder is commonly called as the <em>code</em> or the <em>latent vector</em> of that input sample.</p>
 <p>AE reconstructs the input <em>approximately</em> to preserve the most relevant parts of the data i.e., some important <strong>latent</strong> aspects.</p>
@@ -2556,14 +2555,14 @@ Conferences
 <p><span class="math display">\[h\ =\ \sigma (wx\ +\ b)\]</span></p>
 <p>Usually there is a regularization term added to the loss so that the encoder and decoder do not collapse into an identity function. <strong>h</strong> is referred to as the <em>code</em> or the <em>latent</em> variable or the <em>latent</em> representation.</p>
 <figure>
-<img src="pipeline_an.png" alt="The end to end pipeline of an autoencoder" /><figcaption aria-hidden="true">The end to end pipeline of an autoencoder</figcaption>
+<img src="pipeline_an.png" alt="" /><figcaption>The end to end pipeline of an autoencoder</figcaption>
 </figure>
 <p>The idea is that each hidden dimension represents some latent feature learned about the input. For example, for an autoencoder made to reconstruct human faces, it might learn features such as smile, skin tone, gender, beard, etc. Ofcourse, this is just to give an example. In actuality it may end up learning latent features that may not necessarily be even understandable to us.</p>
 <p>An autoencoder is a <strong>discriminative</strong> model. It can be used for: * compressing data * greedy layer wise pre-training * cannot be used for generating new data.</p>
 <p>The greedy way of pre-training is basically that we first train an autoencoder with encoder and decoder of only size 1. Then we keep adding layers and only train the new layers. This was very important back in the day when there was not a lot of compute at hand.</p>
 <p><strong>For generating new data, the model needs to learn a join distribution <span class="math inline">\(p(x)\)</span> or <span class="math inline">\(p(x,h)\)</span></strong> Or, a model can be considered to be generative when the latent variable has a probability distribution associated with it - a kind of autoencoder that is called as a Variational Autoencoder.</p>
 <figure>
-<img src="vae.png" alt="A basic Variational Autoencoder setup" /><figcaption aria-hidden="true">A basic Variational Autoencoder setup</figcaption>
+<img src="vae.png" alt="" /><figcaption>A basic Variational Autoencoder setup</figcaption>
 </figure>
 <p>In such a case, the encoder network is usually called as the <em>recognition</em> model and the decoder network is called as the <em>generative</em> model.</p>
 <p>For the complete dataset, the VAE would output a range of values for each latent dimension hence creating a statistical distribution in each of those dimensions. Ideally, a very minute difference between the sampled points should result in the same output being created from the generative model.</p>
@@ -2602,7 +2601,7 @@ Conferences
 </table>
 <p>The term <em><strong>adversarial</strong></em> is used as the goals of the discriminator and generator is to fool each other.</p>
 <figure>
-<img src="gan.png" alt="Generative Adversarial Networks" /><figcaption aria-hidden="true">Generative Adversarial Networks</figcaption>
+<img src="gan.png" alt="" /><figcaption>Generative Adversarial Networks</figcaption>
 </figure>
 <h2 id="training">Training</h2>
 <p>The final objective is</p>
